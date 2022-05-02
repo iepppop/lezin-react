@@ -14,8 +14,7 @@ export const GlobalStyles = createGlobalStyle`
   }
     body{
         background:${({ theme }) => theme.body};
-        color:${({ theme }) => theme.text};
-        font-family:'Pretendard,'JejuMyeongjo';       
+        color:${({ theme }) => theme.text}; 
         overflow-x:hidden;
         }
         ul,li{
