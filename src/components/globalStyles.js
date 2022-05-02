@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
     
 export const GlobalStyles = createGlobalStyle`
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
 
     body{
         background:${({ theme }) => theme.body};
