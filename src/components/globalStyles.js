@@ -2,16 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
     
 export const GlobalStyles = createGlobalStyle`
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./fonts/Pretendard-Thin.otf');
-  }
-  
-  
-  @font-face {
-    font-family: "JejuMyeongjo";
-    src: url('./fonts/JejuMyeongjo.ttf');
-  }
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
     body{
         background:${({ theme }) => theme.body};
         color:${({ theme }) => theme.text}; 
