@@ -79,7 +79,7 @@ const AFamous = styled.div`
     bottom:40px;
     width:80%;
     color:#f3f3f3; 
-    font-family: 'JejuMyeongjo';
+    font-family: 'Nanum Myeongjo', serif;
 
     h2{
         font-weight:400;
