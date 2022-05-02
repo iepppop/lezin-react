@@ -4,13 +4,13 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 @font-face {
     font-family: 'Pretendard';
-    src: url('/fonts/Pretendard-Thin.otf');
+    src: url('../fonts/Pretendard-Thin.otf');
   }
   
   
   @font-face {
     font-family: "JejuMyeongjo";
-    src: url('/fonts/JejuMyeongjo.ttf');
+    src: url('../fonts/JejuMyeongjo.ttf');
   }
     body{
         background:${({ theme }) => theme.body};
