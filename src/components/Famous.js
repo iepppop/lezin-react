@@ -79,7 +79,7 @@ const AFamous = styled.div`
     bottom:40px;
     width:80%;
     color:#f3f3f3; 
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Noto Serif KR', serif;
 
     h2{
         font-weight:400;
@@ -89,8 +89,8 @@ const AFamous = styled.div`
     h3{
         font-weight:400;
         font-size:26px;
-        margin:5px 0 0 0;
-        line-height:130%;
+        margin:2px 0 0 0;
+        line-height:140%;
     }
 
     h4{

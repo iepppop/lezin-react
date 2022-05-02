@@ -86,24 +86,26 @@ const Slider = styled.div`
     }
 
     h1{
-        font-weight: 400;
+        font-weight: 500;
         font-size:18px;
         margin:15px 0 0 0;
     }
 
     h2{
         margin:3px 0 0 0;
-        font-weight: 400;
+        font-weight:500;
+        opacity:0.8;
         font-size:14px; 
         display:inline-block;
     }
 
     span{
         display:inline-block;
-        font-weight: 400;
+        font-weight:500;
+        opacity:0.4;
         font-size:14px; 
         margin:0 10px 0 0;
-        opacity:0.8;
+
     }
 
     &:nth-child(5) {

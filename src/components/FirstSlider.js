@@ -214,6 +214,7 @@ const DotNum = styled.div`
     margin:0 0 0 24px;
     margin-top:-3px;
     color:#181818;
+    font-weight: 400;
 `
 
 const NextButton = styled.button`

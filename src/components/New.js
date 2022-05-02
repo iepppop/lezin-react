@@ -88,7 +88,7 @@ export default New;
 
 const Container = styled.div`
     margin: 100px 0 0 0;
-    height: 540px;
+    height: 640px;
     background:#fbfbfb;
     position:relative;
     overflow:hidden;
@@ -97,7 +97,7 @@ const Container = styled.div`
 const NewWrap = styled.div`
     margin:0 auto;
     max-width: 1280px;
-    height:70%;
+    height:60%;
     top:50%;
     transform: translate(0,-50%);
     position:relative;
@@ -127,7 +127,7 @@ const Info = styled.div`
 
     h1{
         font-size:19px;
-        font-weight:400;
+        font-weight:600;
     }
 
     h2{
@@ -216,13 +216,13 @@ const ContentBox = styled.div`
         }
     }
     h2{
-        font-weight:300;
-        font-size:12px;
+        font-weight:400;
+        font-size:14px;
         line-height: 150%;
     }
     h3{
-        font-weight:300;
-        font-size:12px;
+        font-weight:400;
+        font-size:14px;
         line-height: 150%;
         margin:20px 0 0 0;
     }
