@@ -16,8 +16,9 @@ export default Banner;
 
 const Contain = styled.div`
     max-width:1280px;
-    margin:150px auto 10px auto; 
+    margin:120px auto 0 auto; 
     padding: 0 20px;  
+    height:200px;
 `
 
 const Container = styled.div`

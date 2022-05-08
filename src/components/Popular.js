@@ -168,7 +168,7 @@ const Wrap = styled.div`
 
 const Slider = styled.div`
     width:20%;
-    padding:0 20px 0 0;
+    padding: 0 0 0 20px;
     position:relative;
     box-sizing:border-box;
 
@@ -202,9 +202,13 @@ const Slider = styled.div`
 
     }
 
-    &:nth-child(5){
-     
+    &:nth-child(1){
+     padding:0;
     }
+
+    &:nth-child(6){
+        padding: 0 0 0 1px;
+       }
 
 
 `

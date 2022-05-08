@@ -35,7 +35,8 @@ const New = ({theme}) => {
                     const keyword = [`${news.keyword}`]
                     return (
                         <>
-                            <Slide key={news.name} style={{ opacity: `${currentIndex === index ? "1" : "0"}` }}>
+                            <Slide key={news.name} style={{ opacity: `${currentIndex === index ? "1" : "0"}`,
+                         }}>
                                 <Info>
                                     <span>
                                         <h5>{currentIndex + 1} / 3</h5>
@@ -46,14 +47,19 @@ const New = ({theme}) => {
                                     </span>
                                 </Info>
                                 <Content style={{ 
-                                            background: `${currentIndex === 2 && theme === 'light'? '#0f1530' : ''}`
+                                            background: `${currentIndex === 2 && theme === 'light'? '#0f1530' : ''}`,
+                                            overflow:`${theme === 'light' ? '' : 'hidden'}`,
                                              }}>
                                     <Blur>
-                                        <img src={process.env.PUBLIC_URL + `${news.img}`} alt={news.name} />
+                                        <img src={process.env.PUBLIC_URL + `${news.img}`} alt={news.name} 
+                                         style={{filter:`${theme === 'light' ? 'blur(100px)' : 'blur(1000px)'}`}} 
+                                        />
                                     </Blur>
                                     <BlurContent>
                                     <ImgWrap>
-                                        <img src={process.env.PUBLIC_URL + `${news.img}`} alt={news.name} />
+                                        <img 
+                                        src={process.env.PUBLIC_URL + `${news.img}`} alt={news.name}
+                                       />
                                     </ImgWrap>
                                     <ContentWrap>
                                         <ContentBox style={{ 
@@ -184,6 +190,7 @@ const Content = styled.div`
     width:80%;    
     border-radius:15px;
     background: ${(props) => props.theme.newOne};
+    position: relative;
 `
 
 const BlurContent = styled.div`

@@ -18,13 +18,13 @@ export const news = [
         name: '하테마테',
         genre:'일상',
         author:'나솔',
-        profile:'https://blog.kakaocdn.net/dn/bSuG8i/btrAWzT2ACK/HFyokMuwuVZVK5WtObKxh0/img.png',
+        profile:'https://blog.kakaocdn.net/dn/bSuG8i/btrAWzT2ACK/HFyokMuwuVZVK5WtObKxh0/img.png',     
         img:'/image/new03.png',
         famous:'난 너랑 연애 못해서 병났어.',
         explain:'스무살 방수빈은 술김에 오랜 친구에게 고백을 해버린다. ',
         explain2:'그러나 남현우는 매몰차게 차버리고 군대로 가버린다. ',
         explain3: "몇년 후 군대에 다녀온 현우와 잉여인 수빈은 룸메이트로 다시 만나게 되는데...",
-        color:'#f6f6f6',
+        color:'#b7510b',
         keyword:[
             '현대물','일상물','감성',
         ]
@@ -39,7 +39,7 @@ export const news = [
         explain:'달빛이 유난히 시리던 밤, 희량의 무자비한 칼끝에 연조의 가문은 몰락하고만다. 하룻밤 사이 모든 것을 빼앗긴 연조는 복수를 다짐하며 권희량, 그에게 접근한다.',
         explain2:'',
         explain3: "향기로운 꽃 뒤에 서늘한 칼날을 숨 긴 채...",
-        color:'#040d44',
+        color:'#02004b',
         keyword:[
             '절륜공','굴림수','동양풍','주종관계','복수'
         ]
