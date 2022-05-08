@@ -22,10 +22,17 @@ export const GlobalStyles = createGlobalStyle`
 
 export const lightTheme = {
     body: '#fff',
-    text: '#181818'
+    text: '#181818',
+    newBack: "#fbfbfb",
+    newOne:'#f6f6f6',
+    newTwo:'#181818',
+    arrow:'url(/image/arrow.png);'
 };
 
 export const darkTheme = {
     body: '#181818',
-    text: '#eee'
+    text: '#eee',
+    newBack: "#262626",
+    newOne:'#1d1d1d',
+    arrow:'url(/image/arrowwh.png);'
 };

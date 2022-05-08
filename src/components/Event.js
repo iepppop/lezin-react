@@ -27,7 +27,9 @@ export default Event;
 
 const Container = styled.div`
     max-width:1280px;
-    margin:70px auto 0px auto;
+    margin:120px auto 0px auto;
+    padding:0 20px;
+
     h1{
         font-size:20px;
         font-weight:700;

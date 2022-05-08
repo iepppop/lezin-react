@@ -1,12 +1,14 @@
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { news } from './NewData';
 import React, { useState } from "react";
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import { RiDoubleQuotesL , RiDoubleQuotesR } from 'react-icons/ri'
+import { RiDoubleQuotesL , RiDoubleQuotesR } from 'react-icons/ri';
+import { MdOutlineArrowForwardIos } from 'react-icons/md';
 
 
 
-const New = () => {
+const New = ({theme}) => {
+    
     const [currentIndex, setCurrentIndex] = useState(0);
     const NextImg = () => {
         if (currentIndex !== news.length - 1) {
@@ -23,8 +25,10 @@ const New = () => {
             setCurrentIndex(news.length - 1)
         }
     }
+
     return (
-        <Container>
+        <Container theme={theme}>
+            <Containers>
             <NewWrap>
                 <h4>이번주 신작</h4>
                 {news.map((news, index) => {
@@ -34,13 +38,16 @@ const New = () => {
                             <Slide key={news.name} style={{ opacity: `${currentIndex === index ? "1" : "0"}` }}>
                                 <Info>
                                     <span>
+                                        <h5>{currentIndex + 1} / 3</h5>
                                         <h1>{news.name}</h1>
                                         <h2>{news.genre}</h2>
                                         <Profile><img src={news.profile} alt={news.author} /></Profile>
                                         <h3>© {news.author}</h3>
                                     </span>
                                 </Info>
-                                <Content style={{ background: `${news.color}` }}>
+                                <Content style={{ 
+                                            background: `${currentIndex === 2 && theme === 'light'? '#0f1530' : ''}`
+                                             }}>
                                     <Blur>
                                         <img src={process.env.PUBLIC_URL + `${news.img}`} alt={news.name} />
                                     </Blur>
@@ -49,7 +56,9 @@ const New = () => {
                                         <img src={process.env.PUBLIC_URL + `${news.img}`} alt={news.name} />
                                     </ImgWrap>
                                     <ContentWrap>
-                                        <ContentBox style={{ color: `${currentIndex === 2 ? '#fff' : ''}` }}>
+                                        <ContentBox style={{ 
+                                            color: `${currentIndex === 2 ? '#fff' : ''}`
+                                             }}>
                                             <Box>
                                             <h1><span><RiDoubleQuotesL /> </span>{news.famous}<span><RiDoubleQuotesR /></span></h1>
                                             <h2>{news.explain}</h2>
@@ -75,12 +84,13 @@ const New = () => {
                                 </Content>
                             </Slide>
                             <NextButton>
-                                <MdKeyboardArrowRight onClick={NextImg} />
+                                <NB onClick={NextImg} > </NB>
                             </NextButton>
                         </>
                     )
                 })}
             </NewWrap>
+            </Containers>
         </Container>
     )
 }
@@ -89,9 +99,16 @@ export default New;
 const Container = styled.div`
     margin: 100px 0 0 0;
     height: 640px;
-    background:#fbfbfb;
     position:relative;
     overflow:hidden;
+
+`
+
+const Containers = styled.div`
+    background: ${(props) => props.theme.newBack};
+    width:100%;
+    height:100%;
+    padding: 0 30px;
 `
 
 const NewWrap = styled.div`
@@ -101,6 +118,7 @@ const NewWrap = styled.div`
     top:50%;
     transform: translate(0,-50%);
     position:relative;
+    
 
     h4{
         font-size:20px;
@@ -143,6 +161,12 @@ const Info = styled.div`
         opacity:0.8;
         margin:15px 0 0 0;
     }
+
+    h5{
+        font-weight:200;
+        font-size:10px;
+        margin:0 0 20px 0;
+    }
 `
 
 const Profile = styled.div`
@@ -159,6 +183,7 @@ const Profile = styled.div`
 const Content = styled.div`
     width:80%;    
     border-radius:15px;
+    background: ${(props) => props.theme.newOne};
 `
 
 const BlurContent = styled.div`
@@ -260,4 +285,10 @@ const NextButton = styled.button`
     border:none;
     font-size:50px;
     cursor: pointer;
+`
+
+const NB = styled.div`
+    background: ${(props) => props.theme.arrow};
+    width:33px;
+    height:57px;
 `

@@ -221,7 +221,7 @@ const NextButton = styled.button`
     position:absolute;
     z-index: 2;
     background:#red;
-    right:-30px;
+    right:-32px;
     top:50%;
     transform:translate(0,-50%);
     background:rgba(255,255,255,0.8);
@@ -237,7 +237,7 @@ const NextButton = styled.button`
 const PrevButton = styled.button`
     position:absolute;
     z-index: 2;
-    left:-28px;
+    left:-32px;
     top:50%;
     transform:translate(0,-50%);
     background:rgba(255,255,255,0.8);
