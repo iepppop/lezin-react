@@ -30,6 +30,7 @@ const PopularEnding = () => {
 
 
     return (
+        <Box>
         <Container onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)}>
             <h1>인기 완결 작품</h1>
             <ButtonWrap style={{ opacity: `${seeArrow ? '1' : '0'}` }}>
@@ -59,15 +60,21 @@ const PopularEnding = () => {
             </Slider>
             </SliderWrap>
         </Container>
+        </Box>
     )
 }
 export default PopularEnding;
 
-const Container = styled.div`
-    max-width:1280px;
+const Box =  styled.div`
+    max-width:1320px;
     margin:120px auto 100px auto;
     padding:0 20px;
     height:440px;
+`
+
+const Container = styled.div`
+    width: 100%;
+    height: 100%;
     position:relative;
 
     h1{
@@ -127,7 +134,7 @@ const SliderWrap = styled.div`
 
 const Slider = styled.div`
     width:100%;
-    height:350px;
+    height:330px;
     position:absolute;
     margin:40px 0 0 0;
     transition:0.3s;

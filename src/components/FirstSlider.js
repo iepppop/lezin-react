@@ -29,6 +29,7 @@ const FirstSlider = () => {
     })
 
     return (
+        <Box>
         <Contain>
             <Container >
                 <SliderWrap ref={ref}>
@@ -84,13 +85,18 @@ const FirstSlider = () => {
                 <MdKeyboardArrowLeft />
             </PrevButton>
         </Contain>
+        </Box>
     )
 }
 export default FirstSlider
 
-const Contain = styled.div`
-    max-width:1280px;
+const Box = styled.div`
+    max-width:1320px;
     margin: 30px auto;
+    padding: 0 20px;
+`
+
+const Contain = styled.div`
     position:relative;
 `
 

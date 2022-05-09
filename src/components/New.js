@@ -107,24 +107,22 @@ const Container = styled.div`
     height: 640px;
     position:relative;
     overflow:hidden;
-
 `
 
 const Containers = styled.div`
     background: ${(props) => props.theme.newBack};
     width:100%;
     height:100%;
-    padding: 0 30px;
 `
 
 const NewWrap = styled.div`
     margin:0 auto;
-    max-width: 1280px;
+    max-width:1320px;
     height:60%;
     top:50%;
     transform: translate(0,-50%);
     position:relative;
-    
+    padding:0 20px;
 
     h4{
         font-size:20px;
@@ -139,7 +137,9 @@ const Slide = styled.div`
     position:absolute;
     left:0;
     display:flex;
-    transition:0.3s ease-in-out;
+    transition:0.3s;
+    padding:0 20px;
+    box-sizing:border-box;
 `
 
 const Info = styled.div`
@@ -229,6 +229,7 @@ const ContentWrap = styled.div`
     display:flex;
     align-items: center;
     justify-content: center;
+    padding:0 20px;
 `
 
 const ContentBox = styled.div`
@@ -285,7 +286,7 @@ const Keyword = styled.ul`
 
 const NextButton = styled.button`
     position:absolute;
-    right:-100px;
+    right:-50px;
     top:50%;
     transform:translate(0,-50%);
     background:none;

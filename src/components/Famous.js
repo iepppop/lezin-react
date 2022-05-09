@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 import { famousline } from './FamousData';
-import { RiHeart3Line } from 'react-icons/ri';
+import { RiHeart3Line, RiHeart3Fill } from 'react-icons/ri';
 import React, { useState, useRef, useEffect } from 'react';
 import Button from './Button';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 const Famous = () => {
-    const [ like, setLike ] = useState(false);
+    let [like, setLike] = useState([0, 0, 0]);
     const [seeArrow, setSeeArrow] = useState(false);
-    const [ currentIndex, setCurrentIndex ] = useState(0);
+    const [heart, setHeart] = useState([false,false,false,false,false]);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const ref = useRef(null);
 
-   
+
     const Nextslide = () => {
         if (currentIndex >= 1) {
             return;
@@ -29,65 +30,87 @@ const Famous = () => {
     }
     useEffect(() => {
         ref.current.style.transform = `translateX(-${currentIndex}00%)`;
-    },[currentIndex])
+    }, [currentIndex])
 
     return (
-        <Container onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)}>
-            <h1>명대사전</h1>
-            <ButtonWrap style={{ opacity: `${seeArrow ? '1' : '0'}` }}>
-           {currentIndex === 0 ? null : (
-                <Prev onClick={() => Prevslide()}><MdKeyboardArrowLeft /></Prev>
-           ) }
+        <Box>
+            <Container onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)}>
+                <h1>명대사전</h1>
+                <ButtonWrap style={{ opacity: `${seeArrow ? '1' : '0'}` }}>
+                    {currentIndex === 0 ? null : (
+                        <Prev onClick={() => Prevslide()}><MdKeyboardArrowLeft /></Prev>
+                    )}
 
-        {currentIndex === 1 ? null : (
-                    <Next onClick={() => Nextslide()}><MdKeyboardArrowRight /></Next>
-           ) }
-            </ButtonWrap>
-            <Hidden>
-            <Wrap ref={ref}>
-                <Contain>
-                    <WrapContain>
-                {famousline.map((line, index) => {
-                    const num = [`${line.number}`]
-                    return (
-                        <Wrapper key={line.name}>
-                            <ImgBox>
-                                <img src={process.env.PUBLIC_URL + `/image/fa0${index + 1}.png`} alt={line.name} />
-                                <Grad />
-                                <AFamous>
-                                    <h2> {line.famous}</h2>
-                                    <h3> {line.famous2}</h3>
-                                    <h4>- {line.name}</h4>
-                                </AFamous>
-                            </ImgBox>
-                            <Content>
-                                <Nickname>
-                                    <Imgline><img src={line.profile} alt={index}/></Imgline>
-                                    <h5>{line.nickname}</h5>
-                                </Nickname>
-                                <HeartClick onClick={() => setLike(true)}>
-                                    <RiHeart3Line style={{ marginRight: '5px' }} /> 
-                                    {like ? line.number + 1 : line.number}
-                                </HeartClick>
-                            </Content>
-                        </Wrapper>
-                    )
-                })}
-                </WrapContain>
-                </Contain>
-            </Wrap>
-            </Hidden>
-        </Container>
+                    {currentIndex === 1 ? null : (
+                        <Next onClick={() => Nextslide()}><MdKeyboardArrowRight /></Next>
+                    )}
+                </ButtonWrap>
+                <Hidden>
+                    <Wrap ref={ref}>
+                        <Contain>
+                            <WrapContain>
+                                {famousline.map((line, index) => {
+                                    const num = [`${line.number}`]
+                                    return (
+                                        <Wrapper key={line.name}>
+                                            <ImgBox>
+                                                <img src={process.env.PUBLIC_URL + `/image/fa0${index + 1}.png`} alt={line.name} />
+                                                <Grad />
+                                                <AFamous>
+                                                    <h2> {line.famous}</h2>
+                                                    <h3> {line.famous2}</h3>
+                                                    <h4>- {line.name}</h4>
+                                                </AFamous>
+                                            </ImgBox>
+                                            <Content>
+                                                <Nickname>
+                                                    <Imgline><img src={line.profile} alt={index} /></Imgline>
+                                                    <h5>{line.nickname}</h5>
+                                                </Nickname>
+                                                <HeartClick
+                                                    onClick={() => {
+                                                        setLike((arr) =>
+                                                            arr.map((el, idx) => (idx === index ? el + 1 : el)));
+                                                        setHeart((heart) =>
+                                                            heart.map((x, i) => (i === index ? true : false )));
+                                                    }}>                                          
+                                                        
+                                                    {heart[index] === true ? (
+                                                         <RiHeart3Fill style={{ marginRight: '5px', color: '#f72937'}} />
+                                                    ) : (
+                                                        <RiHeart3Line style={{ marginRight: '5px'}} />
+                                                    )}
+                                                    {line.number + like[index]}
+                                                </HeartClick>
+                                            </Content>
+                                        </Wrapper>
+                                    )
+                                })}
+                            </WrapContain>
+                        </Contain>
+                    </Wrap>
+                </Hidden>
+            </Container>
+        </Box>
     )
 }
 export default Famous;
 
-const Container = styled.div`
-    max-width:1280px;
+const ModColor = styled.div`
+    color:pink;
+`
+
+const Box = styled.div`
+    max-width:1320px;
     margin:120px auto 0px auto;
-    position:relative;
-    padding:0 20px;
     height:550px;
+    padding: 0 20px;
+`
+
+const Container = styled.div`
+    position:relative;
+    width:100%;
+    height:100%;
 
     h1{
         font-size:20px;
@@ -217,7 +240,7 @@ const Nickname = styled.div`
 const HeartClick = styled.div`
     display:flex;
     align-items:center;
-    margin:0 20px 0 0;
+    margin:0 5px 0 0;
     font-weight: 300;
     font-size:12px;
     cursor:pointer;

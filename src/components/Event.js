@@ -26,7 +26,7 @@ const Event = () => {
 export default Event;
 
 const Container = styled.div`
-    max-width:1280px;
+    max-width:1320px;
     margin:120px auto 0px auto;
     padding:0 20px;
 

@@ -31,71 +31,93 @@ const Popular = ({ title }) => {
     })
 
     return (
-        <Container onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)}>
-            <ButtonWrap style={{ opacity: `${seeArrow ? '1' : '0'}` }}>
-                {currentIndex === 0 ? null : (
-                    <Prev onClick={() => PrevSlider()}><MdKeyboardArrowLeft /></Prev>
-                )}
-
-                {currentIndex === 1 ? null : (
-                    <Next onClick={() => NextSlider()}><MdKeyboardArrowRight /></Next>
-                )}
-            </ButtonWrap>
-            <Title>
-                {title}
-            </Title>
-            <Hidden>
-            <TopWrap ref={ref}>
-
-                <Wrapper>
-
-                    {title === '금주의 화제작' ? (
-                        <>
-                            {populars2.map((popular, index) => {
-                                return (
-                                    <Slider key={popular.name}>
-                                        {
-                                            index < 3 ? (<Ribbon>{index + 1}위</Ribbon>) : (null)
-                                        }
-                                        <img src={popular.img} alt={popular.name} />
-                                        <h1>{popular.name}</h1>
-                                        <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
-
-                                    </Slider>
-                                )
-                            })}
-                        </>
-                    ) : (
-                        <>
-                            {populars.map((popular, index) => {
-                                return (
-                                    <Slider key={popular.name}>
-                                        {
-                                            index < 3 ? (<Ribbon>{index + 1}위</Ribbon>) : (null)
-                                        }
-                                        <img src={popular.img} alt={popular.name} />
-                                        <h1>{popular.name}</h1>
-                                        <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
-                                    </Slider>
-                                )
-                            })}
-                        </>
+        <Box>
+            <Container onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)}>
+                <ButtonWrap style={{ opacity: `${seeArrow ? '1' : '0'}` }}>
+                    {currentIndex === 0 ? null : (
+                        <Prev onClick={() => PrevSlider()}><MdKeyboardArrowLeft /></Prev>
                     )}
 
-                </Wrapper>
+                    {currentIndex === 1 ? null : (
+                        <Next onClick={() => NextSlider()}><MdKeyboardArrowRight /></Next>
+                    )}
+                </ButtonWrap>
+                <Title>
+                    {title}
+                </Title>
+                <Hidden>
+                    <TopWrap ref={ref}>
 
-            </TopWrap>
-            </Hidden>
-        </Container>
+                        <Wrapper>
+
+                            {title === '금주의 화제작' ? (
+                                <>
+                                    {populars2.map((popular, index) => {
+                                        return (
+                                            <Slider key={popular.name}>
+                                                {
+                                                    index < 3 ? (
+                                                        <RibbonWrap>
+                                                    <Ribbon>
+                                                    
+                                                        </Ribbon>
+                                                            <Ranking>{index + 1}위</Ranking>
+                                                        </RibbonWrap>
+                                                        ) : (null)
+                                                }
+                                                <img src={popular.img} alt={popular.name} />
+                                                <h1>{popular.name}</h1>
+                                                <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
+
+                                            </Slider>
+                                        )
+                                    })}
+                                </>
+                            ) : (
+                                <>
+                                    {populars.map((popular, index) => {
+                                        return (
+                                            <Slider key={popular.name}>
+                                                {
+                                                    index < 3 ? (
+                                                    
+                                                        <RibbonWrap>
+                                                        <Ribbon>
+                                                        
+                                                            </Ribbon>
+                                                                <Ranking>{index + 1}위</Ranking>
+                                                            </RibbonWrap>    ) : (null)
+                                                }
+                                                <img src={popular.img} alt={popular.name} />
+                                                <h1>{popular.name}</h1>
+                                                <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
+                                            </Slider>
+                                        )
+                                    })}
+                                </>
+                            )}
+
+                        </Wrapper>
+
+                    </TopWrap>
+                </Hidden>
+            </Container>
+        </Box>
     )
 }
 export default Popular;
 
-const Container = styled.div`
-    max-width:1280px;
+const Box = styled.div`
+    max-width:1320px;
     margin: 80px auto 100px auto;
-    position:relative;
     height:410px;
+    padding: 0 20px;
+`
+
+const Container = styled.div`
+    position:relative;
+    width:100%;
+    height: 100%;
 `
 
 const ButtonWrap = styled.div`
@@ -213,27 +235,37 @@ const Slider = styled.div`
 
 `
 
-const Ribbon = styled.div`
-    position:absolute;
-    right:30px;
-    top:10px;
-    z-index:1;
-    color:#fff;
-    font-size:13px;
-    width:24px;
+const RibbonWrap = styled.div`
 
-    :after {
-        content: "";
-        font-size: 10px;
-        position: absolute;
-        height:10px;
-        border: 1.5em solid #ff0008;
-        z-index: -1;
-        top: -1em;
-        border-top-width: 20px;
-        border-bottom-color: transparent;
-        right: 0;
-    }
+      
+`
+
+const Ribbon = styled.div`
+display: inline-block;
+position: absolute;
+right: 50px; top: 10px;
+box-shawdow: 3px 3px 3px black;
+&:before,
+&:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 14px;
+    bottom: -8px;
+    border: 18px solid #ed1c24;
+ }
+&:before {
+    border-bottom-color: transparent;
+    bottom: -40px;
+}
+`
+
+const Ranking = styled.div`
+    position:absolute;
+    color:#fff;
+    top:10px;
+    right:23px;
+    font-size:12px;
 `
 
 const Hidden = styled.div`

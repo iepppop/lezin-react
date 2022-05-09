@@ -63,7 +63,7 @@ const Main = () => {
 export default Main;
 
 const Containers = styled.div`
-    width:100vw;
+    width:100%;
     height: auto;
     font-family: 'Pretendard';
 `
@@ -73,14 +73,14 @@ const Pat = styled.div`
 `
 
 const Container = styled.div`
-    width:100vw;
-    height:5vh;
+    width:100%;
+    height:7vh;
     padding:10px 0;
     border-bottom: ${({theme}) => (theme === 'dark' ? '1px solid #3a3a3a' : '1px solid #f8f8f8')};
 `
 
 const Wrap = styled.div`
-    max-width: 1280px;
+    max-width:1320px;
     height: 100%;
     margin: 0 auto;
     padding:0 20px;
@@ -134,7 +134,7 @@ const MenuUl = styled.ul`
         background: rgba(255,255,255,0.9);
         border:1px solid #eee;
         border-radius:20px;
-        padding:6px 15px;
+        padding:5px 15px 6px;
         margin:6px 0 6px 10px;
         font-weight:600;
     }
