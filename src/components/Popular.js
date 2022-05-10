@@ -241,23 +241,23 @@ const RibbonWrap = styled.div`
 `
 
 const Ribbon = styled.div`
-display: inline-block;
-position: absolute;
-right: 50px; top: 10px;
-box-shawdow: 3px 3px 3px black;
-&:before,
-&:after {
-    content: "";
-    display: block;
+    display: inline-block;
     position: absolute;
-    height: 14px;
-    bottom: -8px;
-    border: 18px solid #ed1c24;
- }
-&:before {
-    border-bottom-color: transparent;
-    bottom: -40px;
-}
+    right: 50px; 
+    top: 10px;
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 18px;
+        bottom: -8px;
+        border: 18px solid #ed1c24;
+    }
+    &:before {
+        border-bottom-color: transparent;
+        bottom: -40px;
+    }
 `
 
 const Ranking = styled.div`

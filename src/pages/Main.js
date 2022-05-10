@@ -74,7 +74,7 @@ const Pat = styled.div`
 
 const Container = styled.div`
     width:100%;
-    height:7vh;
+    height:70px;
     padding:10px 0;
     border-bottom: ${({theme}) => (theme === 'dark' ? '1px solid #3a3a3a' : '1px solid #f8f8f8')};
 `

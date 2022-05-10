@@ -6,11 +6,13 @@ import Button from './Button';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 const Famous = () => {
-    let [like, setLike] = useState([0, 0, 0]);
+    let [like, setLike] = useState([0, 0, 0, 0, 0, 0]);
     const [seeArrow, setSeeArrow] = useState(false);
-    const [heart, setHeart] = useState([false,false,false,false,false]);
+    const [heart, setHeart] = useState([false,false,false,false,false,false]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const ref = useRef(null);
+
+    const [modal, setModal] = useState(false);
 
 
     const Nextslide = () => {
@@ -30,7 +32,9 @@ const Famous = () => {
     }
     useEffect(() => {
         ref.current.style.transform = `translateX(-${currentIndex}00%)`;
-    }, [currentIndex])
+    }, [currentIndex]);
+
+
 
     return (
         <Box>
@@ -54,7 +58,7 @@ const Famous = () => {
                                     return (
                                         <Wrapper key={line.name}>
                                             <ImgBox>
-                                                <img src={process.env.PUBLIC_URL + `/image/fa0${index + 1}.png`} alt={line.name} />
+                                                <img src={process.env.PUBLIC_URL + `/image/fa0${index + 1}.png`} alt={index} />
                                                 <Grad />
                                                 <AFamous>
                                                     <h2> {line.famous}</h2>
@@ -67,21 +71,24 @@ const Famous = () => {
                                                     <Imgline><img src={line.profile} alt={index} /></Imgline>
                                                     <h5>{line.nickname}</h5>
                                                 </Nickname>
-                                                <HeartClick
+                                  
+                                                    <HeartClick
                                                     onClick={() => {
                                                         setLike((arr) =>
                                                             arr.map((el, idx) => (idx === index ? el + 1 : el)));
                                                         setHeart((heart) =>
                                                             heart.map((x, i) => (i === index ? true : false )));
                                                     }}>                                          
+                                                                                            
                                                         
                                                     {heart[index] === true ? (
                                                          <RiHeart3Fill style={{ marginRight: '5px', color: '#f72937'}} />
                                                     ) : (
-                                                        <RiHeart3Line style={{ marginRight: '5px'}} />
+                                                        <RiHeart3Line style={{ marginRight: '5px', color: '#3b3b3b'}} />
                                                     )}
                                                     {line.number + like[index]}
                                                 </HeartClick>
+                                             
                                             </Content>
                                         </Wrapper>
                                     )
@@ -103,7 +110,7 @@ const ModColor = styled.div`
 const Box = styled.div`
     max-width:1320px;
     margin:120px auto 0px auto;
-    height:550px;
+    height:640px;
     padding: 0 20px;
 `
 
@@ -113,17 +120,14 @@ const Container = styled.div`
     height:100%;
 
     h1{
+       padding:40px 0 0 0;
         font-size:20px;
         font-weight:700;
     }
 `
 
 const ButtonWrap = styled.button`
-    width:100%;
-    height:500px;
-    position:absolute;
-    border: none;
-    background: none;
+
 `
 const Hidden = styled.div`
     overflow: hidden;
@@ -133,7 +137,7 @@ const Hidden = styled.div`
 `
 
 const Wrap = styled.div`
-    margin:40px 0 0 0;
+    margin:20px 0 0 0;
     height:100%;
     position:absolute;
     width: 100%;
@@ -144,16 +148,18 @@ const Wrap = styled.div`
 const Contain = styled.div`
     display:flex;
     width: 200%;
+    height:100%;
 `
 
 const WrapContain = styled.div`
     width:100%;
+    height: 100%;
     box-sizing:border-box;
     display:flex;
 `
 
 const Wrapper = styled.div`
-    width:33.33%;   
+    max-width:33.33%;  
     margin:0;  
 
     :nth-child(2){
@@ -241,7 +247,7 @@ const HeartClick = styled.div`
     display:flex;
     align-items:center;
     margin:0 5px 0 0;
-    font-weight: 300;
+    font-weight: 500;
     font-size:12px;
     cursor:pointer;
 `
@@ -249,7 +255,6 @@ const HeartClick = styled.div`
 const Next = styled.button`
     position:absolute;
     z-index: 2;
-    background:#red;
     right:-32px;
     top:50%;
     transform:translate(0,-50%);
@@ -266,7 +271,6 @@ const Next = styled.button`
 const Prev = styled.button`
     position:absolute;
     z-index: 2;
-    background:#red;
     left:-32px;
     top:50%;
     transform:translate(0,-50%);
