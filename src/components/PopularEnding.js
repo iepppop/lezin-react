@@ -52,7 +52,8 @@ const PopularEnding = () => {
                                 <Img>
                                 <img src={ending.img} />
                                 </Img>
-                                <SlidesBack style={{ background: `linear-gradient(to bottom, transparent 30%, ${ending.color} 65%` }} />
+                               <SlidesBack style={{ background: `linear-gradient(to bottom, transparent 30%, ${ending.color} 65%` }} />
+                     
                                 <SlideLogo>
                                     <img src={process.env.PUBLIC_URL + `${ending.logo}`} alt={ending.name} />
                                 </SlideLogo>
@@ -75,7 +76,7 @@ const Box =  styled.div`
     max-width:1320px;
     margin:120px auto 100px auto;
     padding:0 20px;
-    height:440px;
+    height:410px;
 `
 
 const Container = styled.div`
@@ -91,7 +92,7 @@ const Container = styled.div`
 
 const ButtonWrap = styled.button`
     width:100%;
-    height:420px;
+    height:380px;
     position:absolute;
     border: none;
     background: none;
@@ -100,7 +101,6 @@ const ButtonWrap = styled.button`
 const Next = styled.button`
     position:absolute;
     z-index: 2;
-    background:#red;
     right:-32px;
     top:50%;
     transform:translate(0,-50%);
@@ -117,7 +117,6 @@ const Next = styled.button`
 const Prev = styled.button`
     position:absolute;
     z-index: 2;
-    background:#red;
     left:-32px;
     top:50%;
     transform:translate(0,-50%);
@@ -176,6 +175,7 @@ const Img = styled.div`
     position:absolute;
     top:0;
     transition:0.3s;
+    height:100%;
 
     img{
         width: 100%;
@@ -184,6 +184,8 @@ const Img = styled.div`
 
     ${Slides}:hover & {
         transform: scale(1.08);
+        height:100%;
+        object-fit: cover;
       }
 `
 

@@ -6,37 +6,105 @@ import { firstSliders } from './FirstSliderData';
 const FirstSlider = () => {
     const [seeArrow, setSeeArrow] = useState(false);
     const ref = useRef(null);
+    const sliderRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const transitionTime = 500;
+    const transitionStyle = `transform ${transitionTime}ms ease 0s`;
+    const [slideTransition, setTransition] = useState(transitionStyle);
+    const [isSwiping, setIsSwiping] = useState(false);
+    const [prevSlideX, setPrevSlideX] = useState(false);
 
-    const Nextslide = () => {
-        if (currentIndex >= firstSliders.length - 1) {
-            setCurrentIndex(0);
-        } else {
-            setCurrentIndex(currentIndex + 1);
-        }
+    const slideCopy = () => {
+        let addedFront = [];
+        let addedLast = [];
+        let index = 0;
+        while (index < 1) {
+            addedLast.push(firstSliders[0],firstSliders[1])
+            addedFront.unshift(firstSliders[3])
+            index ++;
+        } 
+        return[...addedFront, ...firstSliders, ...addedLast]
     }
 
-    const Prevslide = () => {
-        if (currentIndex === 0) {
-            setCurrentIndex(firstSliders.length - 1);
-        } else {
-            setCurrentIndex(currentIndex - 1);
-        }
+    let slides = slideCopy();
+
+    const replaceSlide = (index) => {
+        setTimeout(()=>{
+            setTransition('');
+            setCurrentIndex(index);
+        }, transitionTime);
     }
+
+    const handleSlide = (index) => {
+        setCurrentIndex(index);
+        if(index - 1 < 0) {
+            index += firstSliders.length;
+            replaceSlide(index);
+        }else if(index - 1  >= firstSliders.length){
+            index -= firstSliders.length;
+            replaceSlide(index);
+        }
+        setTransition(transitionStyle);
+    }
+
+    const handleSwipe = (direction) => {
+        setIsSwiping(true);
+        handleSlide(currentIndex + direction);
+    }
+
+    const getItemIndex = (index) => {
+        index -= 1;
+        if (index < 0) {
+            index += slides.length;
+        }else if(index >= slides.length){
+            index -= slides.length;
+        }
+        return index;
+    }
+
+    const useInterval = (callback, delay) => {
+        const savedCallback = useRef();
+        useEffect(() => {
+            savedCallback.current = callback;
+        },[callback]);
+
+        useEffect(() =>{
+            const tick =()=> {
+                savedCallback.current();
+            }
+            if(delay !== null){
+                let id = setInterval(tick, delay);
+                return () => clearInterval(id);
+            }
+        },[delay])
+    }
+
+    useInterval(() => {
+        handleSlide(currentIndex + 1)
+    }, !isSwiping && !prevSlideX ? 2000 : null);
+
 
     useEffect(() => {
         ref.current.style.transform = `translateX(-${currentIndex}00%)`;
+        sliderRef.current.style.width = `${slides.length}00%`;
     })
 
     return (
         <Box>
+            <BoxWrap>
         <Contain>
-            <Container >
-                <SliderWrap ref={ref}>
-                    <Slider>
-                        {firstSliders.map((slider, index) => {
+            <Container>
+                <SliderWrap ref={ref} style={{transition: slideTransition}}>
+                    <Slider ref={sliderRef}>
+                        {slides.map((slider, index) => {
+                            const itemIndex = getItemIndex(index);
                             return (
-                                <Slides style={{ background: `${slider.color}` }} onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)} key= {slider.one}>
+                                <Slides 
+                                style={{ 
+                                background: `${slider.color}`}}
+                                onMouseOver={() => setSeeArrow(true)} 
+                                onMouseOut={() => setSeeArrow(false)} 
+                                key={index}>
                                    {seeArrow ? (
                                         <Effect style={{ transform: `${slider.hover}`}}>
                                         <img src={slider.effect} alt={index} />
@@ -68,23 +136,24 @@ const FirstSlider = () => {
                     </Slider>
                 </SliderWrap>
 
-                <DotsWrap>
-                    <Dots>
-                        <Dot style={{ opacity: `${currentIndex === 0 ? "1" : "0.6"}` }}></Dot>
-                        <Dot style={{ opacity: `${currentIndex === 1 ? "1" : "0.6"}` }}></Dot>
-                        <Dot style={{ opacity: `${currentIndex === 2 ? "1" : "0.6"}` }}></Dot>
-                        <Dot style={{ opacity: `${currentIndex === 3 ? "1" : "0.6"}` }}></Dot>
-                    </Dots>
-                    <DotNum>{currentIndex + 1}/{firstSliders.length}</DotNum>
-                </DotsWrap>
             </Container>
-            <NextButton style={{ opacity: `${seeArrow ? '1' : '0'}` }} onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)} onClick={() => Nextslide()}>
+        </Contain>
+        <NextButton style={{ opacity: `${seeArrow ? '1' : '0'}` }} onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)} onClick={() => handleSwipe(+1)}>
                 <MdKeyboardArrowRight />
             </NextButton>
-            <PrevButton style={{ opacity: `${seeArrow ? '1' : '0'}` }} onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)} onClick={() => Prevslide()}>
+            <PrevButton style={{ opacity: `${seeArrow ? '1' : '0'}` }} onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)} onClick={() => handleSwipe(-1)}>
                 <MdKeyboardArrowLeft />
             </PrevButton>
-        </Contain>
+        <DotsWrap>
+                    <Dots>
+                        <Dot style={{ opacity: `${currentIndex === 0 ? "1" : currentIndex === 4 ? "1" : "0"}` }} />
+                        <Dot style={{ opacity: `${currentIndex === 1 ? "1" : currentIndex === 5 ? "1" : "0"}` }} />
+                        <Dot style={{ opacity: `${currentIndex === 2 ? "1" : "0"}` }} />
+                        <Dot style={{ opacity: `${currentIndex === 3 ? "1" : "0"}` }} />
+                    </Dots>
+                    <DotNum>{currentIndex === 4 ? '1' : currentIndex === 5 ? '2' : currentIndex + 1}/{firstSliders.length}</DotNum>
+                </DotsWrap>
+                </BoxWrap>
         </Box>
     )
 }
@@ -96,17 +165,27 @@ const Box = styled.div`
     padding: 0 20px;
 `
 
-const Contain = styled.div`
+const BoxWrap = styled.div`
     position:relative;
+    max-width:1280px;
+    margin: 30px auto;
+`
+
+const Contain = styled.div`
+    max-width:1280px;
+    margin: 30px auto;
+    position:relative;
+    height:500px;    
+    border-radius:20px;
+    overflow:hidden;
 `
 
 const Container = styled.div`
     max-width:1280px;
-    margin: 30px auto;
     position:relative;
-    height:500px;
+    height:100%;
+    transform:translateX(-100%);
     border-radius:20px;
-    overflow: hidden;
 `
 
 const Effect = styled.div`
@@ -122,7 +201,7 @@ const SliderWrap = styled.div`
     height:100%;
     cursor: pointer;
     position:absolute;
-    transition: 0.4s;
+
 
     :hover ${Effect}{
         // transform: translateX(55px) translateY(20px);
@@ -130,7 +209,6 @@ const SliderWrap = styled.div`
 `
 
 const Slider = styled.div`
-    width: 400%;
     height:100%;
     display:flex;
 `
@@ -202,6 +280,7 @@ const Dots = styled.div`
     display:flex;
     height:5px;
     overflow:hidden;
+    background:rgba(255,255,255,0.5);
 `
 
 const Dot = styled.div`
@@ -209,9 +288,7 @@ const Dot = styled.div`
     height:5px;
     background:#fff;
     opacity:0.6;
-    :last-child{
-        border-radius:0 4px 4px 0;
-    }
+    border-radius:4px;
 `
 
 const DotNum = styled.div`
