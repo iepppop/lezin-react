@@ -122,7 +122,7 @@ const WrapUl = styled.ul`
     }
 
     li:hover{
-        color:red;
+        color:#ed1c24;
     }
 `
 
