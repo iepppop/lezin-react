@@ -240,7 +240,7 @@ const ImgBox = styled.div`
     border-radius:10px;
 
     &:hover img{
-        transform:scale(1.1);
+        transform: scale(1.08);
     }
 
     img{

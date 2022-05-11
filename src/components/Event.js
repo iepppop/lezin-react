@@ -9,6 +9,7 @@ const Event = () => {
        {events.map((eve,idx)=>{
            return (
                <Wrap key={eve.name}>
+
                    <ImgWrap>
                  <img src={process.env.PUBLIC_URL + `/image/event0${idx + 1}.png`} alt={eve.name} />
                  </ImgWrap>
@@ -45,6 +46,7 @@ const Wrap = styled.div`
     margin:15px 0 0 0;
     width:16.66%;
     text-align:center;
+    padding:0 20px;
 
     h2{
         font-size:18px;
@@ -78,15 +80,19 @@ const Wrap = styled.div`
 
 const ImgWrap =styled.div`
     width:100%;
-    padding:20px 20px 10px 20px;
     box-sizing:border-box;
     overflow:hidden;
     border-radius: 50%;
 
-
     img{
         width:100%;
         height:100%;
-        border-radius: 50%;
+        object-fit: cover;
+        vertical-align:bottom;   
+        transition: 0.3s;
+    }
+
+    &:hover img{
+        transform: scale(1.08);
     }
 `

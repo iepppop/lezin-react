@@ -7,6 +7,7 @@ const PopularEnding = () => {
     const [current, setCurrent] = useState(0);
     const ref = useRef(null);
     const [seeArrow, setSeeArrow] = useState(false);
+    const [ full, setFull ] = useState(false);
 
     const NextSlide = () => {
         if (current === 1) {
@@ -48,11 +49,16 @@ const PopularEnding = () => {
                     {popularEnding.map((ending, index) => {
                         return (
                             <Slides>
+                                <Img>
                                 <img src={ending.img} />
+                                </Img>
                                 <SlidesBack style={{ background: `linear-gradient(to bottom, transparent 30%, ${ending.color} 65%` }} />
                                 <SlideLogo>
                                     <img src={process.env.PUBLIC_URL + `${ending.logo}`} alt={ending.name} />
                                 </SlideLogo>
+                                <Author>
+                                <h5>©</h5> {ending.author}
+                                </Author>
                             </Slides>
                         )
                     })}
@@ -134,7 +140,7 @@ const SliderWrap = styled.div`
 
 const Slider = styled.div`
     width:100%;
-    height:330px;
+    height:310px;
     position:absolute;
     margin:40px 0 0 0;
     transition:0.3s;
@@ -162,10 +168,23 @@ const Slides = styled.div`
         margin: 0 0 0 0;
     }
 
+
+    
+`
+
+const Img = styled.div`
+    position:absolute;
+    top:0;
+    transition:0.3s;
+
     img{
         width: 100%;
         object-fit: cover;
     }
+
+    ${Slides}:hover & {
+        transform: scale(1.08);
+      }
 `
 
 const SlidesBack = styled.div`
@@ -181,10 +200,25 @@ const SlideLogo = styled.div`
     left:50%;
     transform: translate(-50%,0);
     bottom:30px;
+    padding:0 10px;
 
     img{
         width:100%;
         padding:0 10px;
         box-sizing: border-box;
+    }
+`
+
+const Author = styled.div`
+    position:absolute;
+    bottom:15px;
+    right:15px;
+    color:#fff;
+    font-size:12px;
+    font-weight:200;
+
+    h5{
+        font-weight:100;
+        display:inline-block;
     }
 `

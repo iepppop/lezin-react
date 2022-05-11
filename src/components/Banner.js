@@ -37,12 +37,7 @@ const Wrap = styled.div`
     background-size: cover;
     background-position: center center;
     overflow:hidden;
-    transition:0.3s;
     height:100%;
-
-    &:hover {
-        transform:scale(1.1);
-    }  
 `
 
 const Event = styled.div`
