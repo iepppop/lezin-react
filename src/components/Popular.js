@@ -238,7 +238,7 @@ const ImgBox = styled.div`
     height:300px;
     overflow:hidden;
     border-radius:10px;
-    
+
     &:hover img{
         transform:scale(1.1);
     }
@@ -246,7 +246,8 @@ const ImgBox = styled.div`
     img{
         width:100%;
         height:300px;
-        object-fit: cover;   transition:0.3s;
+        object-fit: cover;
+        transition:0.3s;
     }
 `
 
