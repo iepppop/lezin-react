@@ -259,7 +259,7 @@ const RibbonWrap = styled.div`
 const Ribbon = styled.div`
     display: inline-block;
     position: absolute;
-    right: 50px; 
+    right: 44px; 
     top: 10px;
     z-index:99;
     &:before,
@@ -269,7 +269,7 @@ const Ribbon = styled.div`
         position: absolute;
         height: 18px;
         bottom: -8px;
-        border: 18px solid #ed1c24;
+        border: 18px solid #ed1c24;    
     }
     &:before {
         border-bottom-color: transparent;
@@ -281,7 +281,7 @@ const Ranking = styled.div`
     position:absolute;
     color:#fff;
     top:10px;
-    right:23px;
+    right:16px;
     font-size:12px;
     z-index:100;
 `

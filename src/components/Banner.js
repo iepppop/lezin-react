@@ -4,10 +4,12 @@ const Banner = () => {
   return (
       <Contain>
     <Container>
+        <Wrap>
       <Event>
           <h5>5월 릴레이 할인</h5>
           <h1>총 <span>30 작품</span> , 최대 <span>50% 할인</span></h1>
           </Event >
+          </Wrap>
     </Container>
     </Contain>
   )
@@ -22,12 +24,25 @@ const Contain = styled.div`
 `
 
 const Container = styled.div`
-    background:url('/image/banner.png') no-repeat;
     height:170px;
+    border-radius:20px;
+    overflow: hidden;
+
+`
+
+const Wrap = styled.div`
+    background:url('/image/banner.png') no-repeat;
     border-radius:20px;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
+    overflow:hidden;
+    transition:0.3s;
+    height:100%;
+
+    &:hover {
+        transform:scale(1.1);
+    }  
 `
 
 const Event = styled.div`
