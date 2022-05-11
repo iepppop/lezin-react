@@ -30,10 +30,10 @@ export const populars = [
         img:'https://ccdn.lezhin.com/v2/comics/4740116490027008/images/tall.webp?updated=1632989304770&width=720',
     },
     {
-        name:'걷지 않는 다리',
-        genre:'BL',
-        author:'흑살구',
-        img:'https://ccdn.lezhin.com/v2/comics/5246741193490432/images/tall.webp?updated=1646877518952&width=720',
+        name:'이토록 다채로운 핏빛',
+        genre:'판타지',
+        author:'므앵갱',
+        img:'https://ccdn.lezhin.com/v2/comics/4705963879235584/images/tall.webp?updated=1649401028557&width=720',
     },
     {
         name:'러브 오어 헤이트',
@@ -42,10 +42,10 @@ export const populars = [
         img:'https://ccdn.lezhin.com/v2/comics/5755073970438144/images/tall.webp?updated=1644553514948&width=720',
     },
     {
-        name:'도깨비도 수풀이 있어야 모인다',
-        genre:'BL',
-        author:'신',
-        img:'https://ccdn.lezhin.com/v2/comics/4843937733148672/images/tall.webp?updated=1632990399399&width=720',
+        name:'아기가 생겼어요',
+        genre:'로맨스',
+        author:'강기',
+        img:'https://ccdn.lezhin.com/v2/comics/5564344987877376/images/tall.webp?updated=1647219661399&width=720',
     },
     {
         name:'불멸의 날들',
@@ -54,9 +54,9 @@ export const populars = [
         img:'https://ccdn.lezhin.com/v2/comics/5308438415671296/images/tall.webp?updated=1642388989254&width=720',
     },
     {
-        name:'기물들의 세계',
-        genre:'BL',
-        author:'EVY',
-        img:'https://ccdn.lezhin.com/v2/comics/5562533167824896/images/tall.webp?updated=1645427509251&width=720',
+        name:'표준규격전사',
+        genre:'액션',
+        author:'오솟',
+        img:'https://ccdn.lezhin.com/v2/comics/4733152235356160/images/tall.webp?updated=1626417540383&width=720',
     },
 ]
