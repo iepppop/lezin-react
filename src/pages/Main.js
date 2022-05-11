@@ -120,6 +120,10 @@ const WrapUl = styled.ul`
         font-weight:600;
         cursor: pointer;
     }
+
+    li:hover{
+        color:red;
+    }
 `
 
 const MenuUl = styled.ul`
@@ -142,6 +146,7 @@ const MenuUl = styled.ul`
         border:1px solid #eee;
         border-radius:15px;
         padding:10px 16px;
+        outline: none;
     }
 
     button{
