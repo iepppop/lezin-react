@@ -238,16 +238,15 @@ const ImgBox = styled.div`
     height:300px;
     overflow:hidden;
     border-radius:10px;
-
+    
     &:hover img{
         transform:scale(1.1);
-        transition:0.3s;
     }
 
     img{
         width:100%;
         height:300px;
-        object-fit: cover;
+        object-fit: cover;   transition:0.3s;
     }
 `
 

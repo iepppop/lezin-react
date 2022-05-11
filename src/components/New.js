@@ -113,6 +113,7 @@ const Containers = styled.div`
     background: ${(props) => props.theme.newBack};
     width:100%;
     height:100%;
+    
 `
 
 const NewWrap = styled.div`
@@ -191,6 +192,12 @@ const Content = styled.div`
     border-radius:15px;
     background: ${(props) => props.theme.newOne};
     position: relative;
+    z-index:2;
+    transition:0.3s ease-in-out;
+    
+    &:hover{
+        transform:scale(1.02);
+    }
 `
 
 const BlurContent = styled.div`
