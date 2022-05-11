@@ -65,7 +65,9 @@ const Popular = ({ title }) => {
                                                         </RibbonWrap>
                                                         ) : (null)
                                                 }
+                                                  <ImgBox>
                                                 <img src={popular.img} alt={popular.name} />
+                                                </ImgBox>
                                                 <h1>{popular.name}</h1>
                                                 <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
 
@@ -88,7 +90,9 @@ const Popular = ({ title }) => {
                                                                 <Ranking>{index + 1}위</Ranking>
                                                             </RibbonWrap>    ) : (null)
                                                 }
+                                                <ImgBox>
                                                 <img src={popular.img} alt={popular.name} />
+                                                </ImgBox>
                                                 <h1>{popular.name}</h1>
                                                 <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
                                             </Slider>
@@ -193,13 +197,7 @@ const Slider = styled.div`
     padding: 0 0 0 20px;
     position:relative;
     box-sizing:border-box;
-
-    img{
-        width:100%;
-        height:300px;
-        object-fit: cover;
-        border-radius:10px;
-    }
+    height:450px;
 
     h1{
         font-weight: 500;
@@ -235,6 +233,24 @@ const Slider = styled.div`
 
 `
 
+const ImgBox = styled.div`
+    width:100%;
+    height:300px;
+    overflow:hidden;
+    border-radius:10px;
+
+    &:hover img{
+        transform:scale(1.1);
+        transition:0.3s;
+    }
+
+    img{
+        width:100%;
+        height:300px;
+        object-fit: cover;
+    }
+`
+
 const RibbonWrap = styled.div`
 
       
@@ -245,6 +261,7 @@ const Ribbon = styled.div`
     position: absolute;
     right: 50px; 
     top: 10px;
+    z-index:99;
     &:before,
     &:after {
         content: "";
@@ -266,6 +283,7 @@ const Ranking = styled.div`
     top:10px;
     right:23px;
     font-size:12px;
+    z-index:100;
 `
 
 const Hidden = styled.div`

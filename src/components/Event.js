@@ -78,11 +78,15 @@ const Wrap = styled.div`
 
 const ImgWrap =styled.div`
     width:100%;
-    padding:20px 20px 0 20px;
+    padding:20px 20px 10px 20px;
     box-sizing:border-box;
+    overflow:hidden;
+    border-radius: 50%;
+
 
     img{
         width:100%;
+        height:100%;
         border-radius: 50%;
     }
 `

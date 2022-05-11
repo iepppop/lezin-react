@@ -13,10 +13,12 @@ import lezinlogo from '../img/lezinlogo.png';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Toggle } from '../components/Toggle';
 import Footer from "../components/Footer";
+import { useState } from "react";
 
 const Main = () => {
   const [ theme, toggleTheme ] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
+  const [ search, setSearch] = useState(false);
   return (
     <ThemeProvider theme={themeMode}>
     <Containers>
@@ -39,7 +41,12 @@ const Main = () => {
                         <li>이벤트</li>
                     </WrapUl>
                     <MenuUl>
-                        <li><AiOutlineSearch /></li>
+                        <li>
+                            <ClickInput style={{right:`${search ? '0' : '-100%'}`}}>
+                            <AiOutlineSearch  onClick={()=>setSearch(false)} style={{margin:'0 10px 0 0'}}/>
+                            <input type="" placeholder="작품/작가명을 검색해주세요"/>
+                            </ClickInput>
+                            <AiOutlineSearch onClick={()=>setSearch(true)} style={{cursor:'pointer'}}/></li>
                         <li> <Toggle theme={theme} toggleTheme={toggleTheme} /></li>
                         <button>로그인</button>
                     </MenuUl>
@@ -61,7 +68,6 @@ const Main = () => {
   )
 }
 export default Main;
-
 const Containers = styled.div`
     width:100%;
     height: auto;
@@ -122,6 +128,8 @@ const MenuUl = styled.ul`
     display: flex;
     justify-content: end;
     align-items: center;
+    position:relative;
+    overflow:hidden;
 
     li{
         font-size:19px;
@@ -130,12 +138,32 @@ const MenuUl = styled.ul`
         cursor: pointer;
     }
 
+    input{
+        border:1px solid #eee;
+        border-radius:15px;
+        padding:10px 16px;
+    }
+
     button{
         background: rgba(255,255,255,0.9);
         border:1px solid #eee;
         border-radius:20px;
         padding:5px 15px 6px;
-        margin:6px 0 6px 10px;
+        margin:10px 0 6px 10px;
         font-weight:600;
     }
+`
+
+const ClickInput = styled.div`
+    position:absolute;
+    text-align:right;
+    top:50%;
+    transform:translate(0,-50%);
+    cursor:pointer;
+    transition:0.3s;
+    right:0;
+    display:flex;
+    align-items:center;
+`
+const Icon = styled.div`
 `
