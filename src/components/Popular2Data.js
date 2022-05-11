@@ -48,15 +48,15 @@ export const populars2 = [
         img:'https://ccdn.lezhin.com/v2/comics/4843937733148672/images/tall.webp?updated=1632990399399&width=720',
     },
     {
-        name:'불멸의 날들',
-        genre:'액션',
-        author:'허긴개',
-        img:'https://ccdn.lezhin.com/v2/comics/5308438415671296/images/tall.webp?updated=1642388989254&width=720',
+        name:'왓치가이',
+        genre:'드라마',
+        author:'ASURA',
+        img:'https://ccdn.lezhin.com/v2/comics/4625200343023616/images/tall.webp?updated=1619320632111&width=720',
     },
     {
-        name:'기물들의 세계',
-        genre:'BL',
+        name:'위장여친',
+        genre:'학원',
         author:'EVY',
-        img:'https://ccdn.lezhin.com/v2/comics/5562533167824896/images/tall.webp?updated=1645427509251&width=720',
+        img:'https://ccdn.lezhin.com/v2/comics/6301365414658048/images/tall.webp?updated=1602323500283&width=720',
     },
 ]
