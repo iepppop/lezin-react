@@ -23,7 +23,7 @@ const FirstSlider = () => {
             addedFront.unshift(firstSliders[3])
             index ++;
         } 
-        return[...addedFront, ...firstSliders, ...addedLast]
+        return[...addedFront, ...firstSliders, ...addedLast];
     }
 
     let slides = slideCopy();
