@@ -21,7 +21,7 @@ export const firstSliders = [
         one:'5 / 22까지',
         two:'8화 무료',
         name:'https://blog.kakaocdn.net/dn/b8xmAf/btrBT6Q2a3V/ayyI9CQ1ksLhhktBNomtmk/img.png',
-        effect:'https://blog.kakaocdn.net/dn/bfV4NL/btrASwhU1L2/VU9QhTj3NZoRgFpz4WGWLk/img.png',
+        effect:'',
         img:'https://blog.kakaocdn.net/dn/K7XPk/btrARqW4aZc/4kc7aP1fXhZNDlNccL6kR1/img.png',
         color:'linear-gradient(to right, #fdaf6a, #f9ed9a, #fdaf6a)',
         hover:'scale(1.1)'

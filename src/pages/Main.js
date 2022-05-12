@@ -1,36 +1,31 @@
-import Header from "../components/Header";
-import styled,  { ThemeProvider } from 'styled-components';
-import FirstSlider from "../components/FirstSlider";
-import Popular from "../components/Popular";
-import Banner from "../components/Banner";
-import New from "../components/New";
-import Event from "../components/Event";
-import Famous from "../components/Famous";
-import PopularEnding from "../components/PopularEnding";
-import { useDarkMode } from '../components/useDarkMode';
-import { GlobalStyles, lightTheme, darkTheme } from '../components/globalStyles';
+import styled from 'styled-components';
+import FirstSlider from "../components/main/FirstSlider";
+import Popular from "../components/main/Popular";
+import Banner from "../components/main/Banner";
+import New from "../components/main/New";
+import Event from "../components/main/Event";
+import Famous from "../components/main/Famous";
+import PopularEnding from "../components/main/PopularEnding";
 import lezinlogo from '../img/lezinlogo.png';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { Toggle } from '../components/Toggle';
 import Footer from "../components/Footer";
-import { useState } from "react";
+
 
 const Main = () => {
-  const [ theme, toggleTheme ] = useDarkMode();
-  const themeMode = theme === 'light' ? lightTheme : darkTheme;
-  const [ search, setSearch] = useState(false);
   return (
-    <ThemeProvider theme={themeMode}>
     <Containers>
-    <Container theme={theme}>
-            <GlobalStyles />
-            <Wrap>
-                <Logo>
+    <Container>
+
+            
+            {/* <Wrap>
+       
+                <Logo><Link to ="/">
                 <img src={lezinlogo} alt="" width={35} height={35} />
-                </Logo>
+                </Link></Logo>
+               
                 <Menu>
                     <WrapUl>
-                        <li>연재</li>
+                     <li><Link to ="/scheduled">연재</Link></li>
                         <li>로맨스</li>
                         <li>소년</li>
                         <li>드라마</li>
@@ -51,20 +46,19 @@ const Main = () => {
                         <button>로그인</button>
                     </MenuUl>
                 </Menu>
-            </Wrap>
+            </Wrap> */}
         </Container>
         <FirstSlider/>
         <Popular title="오늘의 인기 TOP"/>
         <Pat />
         <Popular title="금주의 화제작"/>
         <Banner/>
-        <New theme={theme}/>
+        <New/>
         <Event />
         <Famous />
         <PopularEnding />
         <Footer />
     </Containers>
-    </ThemeProvider>
   )
 }
 export default Main;
@@ -75,14 +69,11 @@ const Containers = styled.div`
 `
 
 const Pat = styled.div`
-  margin:40px 0 0 0;
+  margin:30px 0 0 0;
 `
 
 const Container = styled.div`
     width:100%;
-    height:70px;
-    padding:10px 0;
-    border-bottom: ${({theme}) => (theme === 'dark' ? '1px solid #3a3a3a' : '1px solid #f8f8f8')};
 `
 
 const Wrap = styled.div`
@@ -119,6 +110,10 @@ const WrapUl = styled.ul`
         padding:0 20px;
         font-weight:600;
         cursor: pointer;
+    }
+
+    a:hover{
+        color:#ed1c24;
     }
 
     li:hover{

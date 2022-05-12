@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { famousline } from './FamousData';
 import { RiHeart3Line, RiHeart3Fill } from 'react-icons/ri';
 import React, { useState, useRef, useEffect } from 'react';
-import Button from './Button';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 const Famous = () => {

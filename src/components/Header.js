@@ -1,56 +1,58 @@
 import styled, { ThemeProvider } from "styled-components";
 import lezinlogo from '../img/lezinlogo.png';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { useDarkMode } from '../components/useDarkMode';
-import { Toggle } from '../components/Toggle';
-import { GlobalStyles, lightTheme, darkTheme } from './globalStyles'
+import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Toggle } from './Toggle';
 
-const Header = () => {
-    const [ theme, toggleTheme ] = useDarkMode();
-    const themeMode = theme === 'light' ? lightTheme : darkTheme;
+const Header = ({ theme, toggleTheme }) => {
+    const [search, setSearch] = useState(false);
 
     return (
-        <ThemeProvider theme={themeMode}>
-              <Container theme={theme}>
-            <GlobalStyles />
-            <Wrap>
-                <Logo>
+        <Contain>
+        <Wrap>
+            <Logo><Link to="/">
                 <img src={lezinlogo} alt="" width={35} height={35} />
-                </Logo>
-                <Menu>
-                    <WrapUl>
-                        <li>연재</li>
-                        <li>로맨스</li>
-                        <li>소년</li>
-                        <li>드라마</li>
-                        <li>BL</li>
-                        <li>후방주의</li>
-                        <li>무료</li>
-                        <li>랭킹</li>
-                        <li>이벤트</li>
-                    </WrapUl>
-                    <MenuUl>
-                        <li><AiOutlineSearch /></li>
-                        <li> <Toggle theme={theme} toggleTheme={toggleTheme} /></li>
-                        <button>로그인</button>
-                    </MenuUl>
-                </Menu>
-            </Wrap>
-        </Container>
-        </ThemeProvider>
+            </Link></Logo>
+
+            <Menu>
+                <WrapUl>
+                    <li><Link to="/scheduled">연재</Link></li>
+                    <li>로맨스</li>
+                    <li>소년</li>
+                    <li>드라마</li>
+                    <li>BL</li>
+                    <li>후방주의</li>
+                    <li>무료</li>
+                    <li>랭킹</li>
+                    <li>이벤트</li>
+                </WrapUl>
+                <MenuUl>
+                    <li>
+                        <ClickInput style={{ right: `${search ? '0' : '-100%'}` }}>
+                            <AiOutlineSearch onClick={() => setSearch(false)} style={{ margin: '0 10px 0 0' }} />
+                            <input type="" placeholder="작품/작가명을 검색해주세요" />
+                        </ClickInput>
+                        <AiOutlineSearch onClick={() => setSearch(true)} style={{ cursor: 'pointer' }} /></li>
+                    <li> <Toggle theme={theme} toggleTheme={toggleTheme} /></li>
+                    <button>로그인</button>
+                </MenuUl>
+            </Menu>
+        </Wrap>
+        </Contain>
     )
 }
 export default Header;
 
-const Container = styled.div`
-    width:100vw;
-    height:5vh;
-    padding:10px 0;
-    border-bottom: ${({theme}) => (theme === 'dark' ? '1px solid #3a3a3a' : '1px solid #f8f8f8')};
+const Contain = styled.div`
+    width:100%;
+    height:7vh;
+    padding:5px 0;
+    border-bottom: 1px solid ${(props) => props.theme.border};
 `
 
 const Wrap = styled.div`
-    max-width: 1280px;
+    max-width:1320px;
     height: 100%;
     margin: 0 auto;
     padding:0 20px;
@@ -84,6 +86,14 @@ const WrapUl = styled.ul`
         font-weight:600;
         cursor: pointer;
     }
+
+    a:hover{
+        color:#ed1c24;
+    }
+
+    li:hover{
+        color:#ed1c24;
+    }
 `
 
 const MenuUl = styled.ul`
@@ -92,6 +102,8 @@ const MenuUl = styled.ul`
     display: flex;
     justify-content: end;
     align-items: center;
+    position:relative;
+    overflow:hidden;
 
     li{
         font-size:19px;
@@ -100,12 +112,31 @@ const MenuUl = styled.ul`
         cursor: pointer;
     }
 
+    input{
+        border:1px solid #eee;
+        border-radius:15px;
+        padding:10px 16px;
+        outline: none;
+    }
+
     button{
         background: rgba(255,255,255,0.9);
         border:1px solid #eee;
         border-radius:20px;
-        padding:6px 15px;
-        margin:6px 0 6px 10px;
+        padding:5px 15px 6px;
+        margin:10px 0 6px 10px;
         font-weight:600;
     }
+`
+
+const ClickInput = styled.div`
+    position:absolute;
+    text-align:right;
+    top:50%;
+    transform:translate(0,-50%);
+    cursor:pointer;
+    transition:0.3s;
+    right:0;
+    display:flex;
+    align-items:center;
 `

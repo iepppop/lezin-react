@@ -81,7 +81,7 @@ const FirstSlider = () => {
 
     useInterval(() => {
         handleSlide(currentIndex + 1)
-    }, !isSwiping && !prevSlideX ? 2000 : null);
+    }, !isSwiping && !prevSlideX ? 3000 : null);
 
 
     useEffect(() => {

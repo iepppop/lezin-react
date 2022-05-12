@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { populars } from './PopularData';
 import { populars2 } from './Popular2Data';
-import Button from './Button';
 import React, { useState, useRef, useEffect } from 'react';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
