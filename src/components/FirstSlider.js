@@ -52,15 +52,15 @@ const FirstSlider = () => {
         handleSlide(currentIndex + direction);
     }
 
-    const getItemIndex = (index) => {
-        index -= 1;
-        if (index < 0) {
-            index += slides.length;
-        }else if(index >= slides.length){
-            index -= slides.length;
-        }
-        return index;
-    }
+    // const getItemIndex = (index) => {
+    //     index -= 1;
+    //     if (index < 0) {
+    //         index += slides.length;
+    //     }else if(index >= slides.length){
+    //         index -= slides.length;
+    //     }
+    //     return index;
+    // }
 
     const useInterval = (callback, delay) => {
         const savedCallback = useRef();
@@ -97,7 +97,7 @@ const FirstSlider = () => {
                 <SliderWrap ref={ref} style={{transition: slideTransition}}>
                     <Slider ref={sliderRef}>
                         {slides.map((slider, index) => {
-                            const itemIndex = getItemIndex(index);
+                            // const itemIndex = getItemIndex(index);
                             return (
                                 <Slides 
                                 style={{ 
@@ -115,6 +115,7 @@ const FirstSlider = () => {
                                 </Effect>
                                    )}
                                     <Contentbox>
+                                        <Content>
                                         <h1>
                                             EVENT
                                         </h1>
@@ -125,6 +126,7 @@ const FirstSlider = () => {
                                         <span>
                                             <img src={slider.name} alt={index} />
                                         </span>
+                                        </Content>
                                     </Contentbox>
                                     <Imgbox>
                                         <img src={slider.img} alt={index} />
@@ -239,10 +241,10 @@ const Imgbox = styled.div`
 
 const Contentbox = styled.div`
     width:40%;
+    height:100%;
     display:flex;
     flex-direction:column;
     align-items:start;
-    justify-content:center;
     padding:0 0 0 130px;
 
     h1{
@@ -260,9 +262,17 @@ const Contentbox = styled.div`
 
     span{
         margin:60px 0 0 0;
-        position:relative;
+        position:absolute;
         z-index:99;
+        bottom:120px;
     }
+`
+
+const Content = styled.div`
+    height:45%;
+    display:flex;
+    flex-direction:column;
+    justify-content:end;
 `
 
 const DotsWrap = styled.div`
