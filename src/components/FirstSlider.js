@@ -230,12 +230,13 @@ const Imgbox = styled.div`
     width:60%;
     height:100%;
     position:relative;
+    right:0;
 
     img{
         object-fit: cover;
         height:100%;
         position:absolute;
-        left:-200px;
+        left:-120px;
     }
 `
 
