@@ -5,6 +5,8 @@ const Slider = () => {
     <Container>
       <Wrap>
         <SliderWrap>
+          <Box>
+            <BoxWrap>
           <MainSlider>
             <img src="https://blog.kakaocdn.net/dn/HDwjH/btrBXwb55DV/2cSKfkV5JPjQrz44mYfTz1/img.gif" />
             <Bgop />
@@ -25,6 +27,7 @@ const Slider = () => {
               </ContentDep>
             </Content>
           </MainSlider>
+          <Blank />
           <SubSlider>    
           <BgB />    
             <SubContent>
@@ -33,6 +36,8 @@ const Slider = () => {
             </SubContent>
             
               </SubSlider>
+              </BoxWrap>
+              </Box>
         </SliderWrap>
       </Wrap>
     </Container>
@@ -49,19 +54,30 @@ const Wrap = styled.div`
   max-width:1320px;
   height: 100%;
   margin: 0 auto;
-  padding:0 20px;
   display:flex;
   align-items:center;
+  position:relative;
 `
 
 const SliderWrap = styled.div`
   width:100%;
   height:70%;
   display:flex;
+  position:absolute;  padding:0 20px;
+`
+
+const Box = styled.div`
+  width:200%;
+  display:flex;
+`
+
+const BoxWrap = styled.div`
+  width:100%;
+  display:flex;
 `
 
 const MainSlider = styled.div`
-  width:82%;
+  width:80%;
   background:#eee;
   height:100%;
   border-radius:15px;
@@ -156,11 +172,15 @@ const Total = styled.div`
 `
 
 
+const Blank = styled.div`
+  width: 2%;
+`
+
+
 const SubSlider = styled.div`
   width: 18%;
   height:100%;
   border-radius:15px;
-  margin:0 0 0 30px;
   position:relative;
   background:url('https://ccdn.lezhin.com/v2/comics/5755073970438144/images/tall.webp?updated=1644553514948&width=720');
   background-size:cover;
