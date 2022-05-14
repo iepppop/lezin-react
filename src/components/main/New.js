@@ -7,7 +7,7 @@ import { MdOutlineArrowForwardIos } from 'react-icons/md';
 
 
 
-const New = ({theme}) => {
+const New = ({ theme }) => {
     
     const [currentIndex, setCurrentIndex] = useState(0);
     const NextImg = () => {
@@ -47,11 +47,11 @@ const New = ({theme}) => {
                                     </span>
                                 </Info>
                                 <Content style={{ 
-                                            background: `${currentIndex === 2 && theme === 'light'? '#0f1530' : ''}`,
+                                            background: `${currentIndex === 2 ? '#0f1530' : ''}`,
                                             overflow:`${theme === 'light' ? '' : 'hidden'}`,
                                              }}>
                                     <Blur>
-                                        <img src={process.env.PUBLIC_URL + `${news.img}`} alt={news.name} 
+                                        <img src={process.env.PUBLIC_URL + `${news.img}`} alt={index} 
                                          style={{filter:`${theme === 'light' ? 'blur(100px)' : 'blur(1000px)'}`}} 
                                         />
                                     </Blur>
@@ -73,7 +73,6 @@ const New = ({theme}) => {
                                             </Box>
                                             {keyword.map((x, i) => {
                                                 const words = x.split(',', 5);
-                                                console.log(words[i])
                                                 return (
                                                     <Keyword>
                                                         <li># {words[0]}</li>
@@ -256,12 +255,12 @@ const ContentBox = styled.div`
         }
     }
     h2{
-        font-weight:400;
+        font-weight:500;
         font-size:14px;
         line-height: 150%;
     }
     h3{
-        font-weight:400;
+        font-weight:500;
         font-size:14px;
         line-height: 150%;
         margin:20px 0 0 0;

@@ -10,6 +10,7 @@ import { GlobalStyles, lightTheme, darkTheme } from './components/globalStyles';
 function App() {
   const [ theme, toggleTheme ] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
   return (
     <BrowserRouter>
         <ThemeProvider theme={themeMode}>
