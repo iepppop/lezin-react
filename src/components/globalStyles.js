@@ -2,8 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 
 export const GlobalStyles = createGlobalStyle`
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-@import url(fonts.googleapis.com/earlyaccess/kopubbatang.css);
+
     
     *{
     padding:0; 
@@ -48,6 +47,9 @@ export const lightTheme = {
     newTwo: '#181818',
     arrow: 'url(/image/arrow.png);',
     border:'#f8f8f8',
+    login:'#f8f8f8',
+    lborder:'#eee',
+    lback:'#fff',
 };
 
 export const darkTheme = {
@@ -57,4 +59,7 @@ export const darkTheme = {
     newOne: '#2d2d2d',
     arrow: 'url(/image/arrowwh.png);',
     border:'#3a3a3a',
+    login:'#181818',
+    lborder:'#3a3a3a',
+    lback:'#3a3a3a',
 };

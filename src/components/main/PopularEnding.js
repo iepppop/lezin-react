@@ -7,7 +7,6 @@ const PopularEnding = () => {
     const [current, setCurrent] = useState(0);
     const ref = useRef(null);
     const [seeArrow, setSeeArrow] = useState(false);
-    const [ full, setFull ] = useState(false);
 
     const NextSlide = () => {
         if (current === 1) {
@@ -48,7 +47,7 @@ const PopularEnding = () => {
                 <Slide>
                     {popularEnding.map((ending, index) => {
                         return (
-                            <Slides>
+                            <Slides key={ending.name}>
                                 <Img>
                                 <img src={ending.img} />
                                 </Img>

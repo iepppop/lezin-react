@@ -74,7 +74,7 @@ const New = ({ theme }) => {
                                             {keyword.map((x, i) => {
                                                 const words = x.split(',', 5);
                                                 return (
-                                                    <Keyword>
+                                                    <Keyword key={words[0]}>
                                                         <li># {words[0]}</li>
                                                         <li># {words[1]}</li>
                                                         <li># {words[2]}</li>

@@ -6,6 +6,8 @@ import Header from './components/Header';
 import { useDarkMode } from './components/useDarkMode';
 import { GlobalStyles, lightTheme, darkTheme } from './components/globalStyles';
 import Login from './components/Login';
+import { AuthContextProvider } from './contexts/AuthContext';
+import Register from './components/Register';
 
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   return (
+    <AuthContextProvider>
     <BrowserRouter>
         <ThemeProvider theme={themeMode}>
         <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
@@ -23,10 +26,12 @@ function App() {
         <Route path="/" element={<Main />}></Route>
         <Route path="/scheduled" element={<Scheduled />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/Register" element={<Register />}></Route>
       </Routes>
       </Container>
       </ThemeProvider>
     </BrowserRouter>
+    </AuthContextProvider>
   );
 }
 

@@ -160,13 +160,6 @@ const Prev = styled.div`
     cursor: pointer;
 `
 
-const Contain = styled.div`
-    width:100%;
-    height:100%;
-    position: absolute;
-    z-index:99;
-`
-
 const Title = styled.div`
     font-size:20px;
     font-weight:700;
@@ -184,11 +177,6 @@ const TopWrap = styled.div`
 const Wrapper = styled.div`
     display:flex;
     width:200%;
-`
-
-const Wrap = styled.div`
-    width:100%;
-    display:flex;
 `
 
 const Slider = styled.div`
