@@ -35,7 +35,7 @@ const Header = ({ theme, toggleTheme }) => {
                         </ClickInput>
                         <AiOutlineSearch onClick={() => setSearch(true)} style={{ cursor: 'pointer' }} /></li>
                     <li> <Toggle theme={theme} toggleTheme={toggleTheme} /></li>
-                    <button>로그인</button>
+                    <button><Link to="/login">로그인</Link></button>
                 </MenuUl>
             </Menu>
         </Wrap>
@@ -126,6 +126,12 @@ const MenuUl = styled.ul`
         padding:5px 15px 6px;
         margin:10px 0 6px 10px;
         font-weight:600;
+        transition:0.3s;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:#eee;
     }
 `
 

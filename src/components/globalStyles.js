@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+@import url(fonts.googleapis.com/earlyaccess/kopubbatang.css);
     
     *{
     padding:0; 
@@ -12,8 +12,12 @@ export const GlobalStyles = createGlobalStyle`
     }
  
     body{
+        width:100%;
+        height:100%;
+        margin: 0;
         background:${({ theme }) => theme.body};
         color:${({ theme }) => theme.text}; 
+        font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
         }
 
     ul,li{
@@ -50,7 +54,7 @@ export const darkTheme = {
     body: '#181818',
     text: '#eee',
     newBack: "#262626",
-    newOne: '#1d1d1d',
+    newOne: '#2d2d2d',
     arrow: 'url(/image/arrowwh.png);',
     border:'#3a3a3a',
 };

@@ -251,8 +251,7 @@ const ImgBox = styled.div`
 `
 
 const RibbonWrap = styled.div`
-
-      
+    position:relative;
 `
 
 const Ribbon = styled.div`
@@ -280,9 +279,10 @@ const Ranking = styled.div`
     position:absolute;
     color:#fff;
     top:10px;
-    right:16px;
     font-size:12px;
     z-index:100;
+    font-weight:500;
+    right: 17px;
 `
 
 const Hidden = styled.div`

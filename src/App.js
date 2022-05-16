@@ -5,6 +5,7 @@ import Scheduled from './pages/Scheduled';
 import Header from './components/Header';
 import { useDarkMode } from './components/useDarkMode';
 import { GlobalStyles, lightTheme, darkTheme } from './components/globalStyles';
+import Login from './components/Login';
 
 
 function App() {
@@ -14,12 +15,14 @@ function App() {
   return (
     <BrowserRouter>
         <ThemeProvider theme={themeMode}>
+        <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
         <GlobalStyles />
         <Container>
       <Header theme={theme} toggleTheme={toggleTheme}/>
       <Routes>
         <Route path="/" element={<Main />}></Route>
         <Route path="/scheduled" element={<Scheduled />}></Route>
+        <Route path="/login" element={<Login />}></Route>
       </Routes>
       </Container>
       </ThemeProvider>

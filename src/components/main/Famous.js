@@ -193,11 +193,12 @@ const AFamous = styled.div`
     bottom:40px;
     width:80%;
     color:#f3f3f3; 
-    font-family: 'Noto Serif KR', serif;
+    font-family: 'KoPub Batang', serif;
 
     h2{
-        font-weight:500;
+        font-weight:00;
         font-size:26px;
+        font-weight:500;
     }
 
     h3{
@@ -209,7 +210,7 @@ const AFamous = styled.div`
 
     h4{
         font-family: 'Pretendard';
-        font-weight:200;
+        font-weight:400;
         font-size:13px;
         margin:15px 0 0 0;
     }

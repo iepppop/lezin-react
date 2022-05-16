@@ -139,7 +139,7 @@ const SliderWrap = styled.div`
 
 const Slider = styled.div`
     width:100%;
-    height:310px;
+    height:340px;
     position:absolute;
     margin:40px 0 0 0;
     transition:0.3s;
@@ -201,7 +201,7 @@ const SlideLogo = styled.div`
     position:absolute;
     left:50%;
     transform: translate(-50%,0);
-    bottom:30px;
+    bottom:45px;
     padding:0 10px;
 
     img{
@@ -216,11 +216,11 @@ const Author = styled.div`
     bottom:15px;
     right:15px;
     color:#fff;
-    font-size:12px;
-    font-weight:200;
+    font-size:13px;
+    font-weight:500;
 
     h5{
-        font-weight:100;
         display:inline-block;
+        font-weight:300;
     }
 `
