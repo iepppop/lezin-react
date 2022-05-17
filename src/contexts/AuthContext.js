@@ -5,13 +5,19 @@ import {
     signInWithEmailAndPassword,
     onAuthStateChange,
     onAuthStateChanged,
-    signOut
+    signOut,
+    GoogleAuthProvider,
+    signInWithPopup,
+    FacebookAuthProvider
 } from 'firebase/auth';
 
 const AuthContext = createContext({
     currentUser: null,
     register: () => Promise,
     login: () => Promise,
+    logout: () => Promise,
+    signInWithGoogle: () => Promise,
+    signInWithFacebook: () => Promise,
 })
 
 export const useAuth = () => useContext(AuthContext);
@@ -37,11 +43,23 @@ export const AuthContextProvider = ({ children }) => {
     const logout = () => {
         signOut(auth);
     }
+    const signInWithGoogle = (email, password) => {
+        const provider =  new GoogleAuthProvider();
+        return signInWithPopup(auth, provider)
+    }
+
+    const signInWithFacebook = (email, password) => {
+        const provider =  new FacebookAuthProvider();
+        return signInWithPopup(auth, provider)
+    }
+
     const value = {
         currentUser,
         register,
         login,
-        logout
+        logout,
+        signInWithGoogle,
+        signInWithFacebook
     }
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

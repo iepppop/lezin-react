@@ -5,15 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { BsFillExclamationCircleFill } from 'react-icons/bs';
 import { VscLoading } from 'react-icons/vsc';
+import useMounted from './hooks/useMounted';
 
 const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const { login } = useAuth();
+    const { login, signInWithGoogle, signInWithFacebook } = useAuth();
     const [msg, setMsg] = useState('');
-
+    const mounted = useMounted();
 
     return (
         <Wrap>
@@ -23,11 +24,11 @@ const Login = () => {
                         e.preventDefault();
                         setIsSubmitting(true);
                         login(email, password)
-                        .then((response) => {
-                            navigate('/');
-                        })
-                        .catch((error)=> setMsg(error.message))
-                        .finally(()=> setIsSubmitting(false));
+                            .then((response) => {
+                                navigate('/');
+                            })
+                            .catch((error) => setMsg(error.message))
+                            .finally(() => mounted.current && setIsSubmitting(false));
                     }}>
                     <Input
                         value={email}
@@ -45,20 +46,36 @@ const Login = () => {
                         autoComplete="password"
                         placeholder="비밀번호"
                     />
-                     {msg.length > 1 ? (
-                        <ErrorMSg><BsFillExclamationCircleFill style={{margin:'0 10px 0 0'}}/> {msg === 'Firebase: Password should be at least 6 characters (auth/weak-password).' ? (<>비밀번호는 6자 이상이어야 합니다.</>) : msg ==="Firebase: Error (auth/invalid-email)." ? "이메일을 입력해주세요." : msg === 'Firebase: Error (auth/internal-error).' ? '비밀번호를 입력해주세요.' : msg === 'Firebase: Error (auth/email-already-in-use).' ? '이미 등록된 아이디입니다.' : msg === 'Firebase: Error (auth/wrong-password).' || 'Firebase: Error (auth/user-not-found).' ? '아이디 또는 비밀번호를 확인해주세요.' : msg}</ErrorMSg>
-                   ) : ''}
-                   {isSubmitting ? (
-                       <Button style={{opacity:'0.4'}}>
-                   <LoadingIcon>
-                       <VscLoading />
-                       </LoadingIcon>
-                       </Button>) : (
-                        <Button 
-                        type="submit"
+                    {msg.length > 1 ? (
+                        <ErrorMSg><BsFillExclamationCircleFill style={{ margin: '0 10px 0 0' }} /> {msg === 'Firebase: Password should be at least 6 characters (auth/weak-password).' ? (<>비밀번호는 6자 이상이어야 합니다.</>) : msg === "Firebase: Error (auth/invalid-email)." ? "이메일을 입력해주세요." : msg === 'Firebase: Error (auth/internal-error).' ? '비밀번호를 입력해주세요.' : msg === 'Firebase: Error (auth/email-already-in-use).' ? '이미 등록된 아이디입니다.' : msg === 'Firebase: Error (auth/wrong-password).' || 'Firebase: Error (auth/user-not-found).' ? '아이디 또는 비밀번호를 확인해주세요.' : msg}</ErrorMSg>
+                    ) : ''}
+                    {isSubmitting ? (
+                        <Button style={{ opacity: '0.4' }}>
+                            <LoadingIcon>
+                                <VscLoading />
+                            </LoadingIcon>
+                        </Button>) : (
+                        <Button
+                            type="submit"
                         >로그인</Button>
-                   )}
+                    )}
                     <Link to="/register"><Register type="button">회원가입</Register></Link>
+                    <Register
+                        type="button"
+                        onClick={() =>
+                            signInWithGoogle()
+                                .then(user => console.log(user))
+                                .catch(error => console.log(error))
+                        }>
+                        구글로 회원가입</Register>
+                        <Register
+                        type="button"
+                        onClick={() =>
+                            signInWithFacebook()
+                                .then(user => console.log(user))
+                                .catch(error => console.log(error))
+                        }>
+                        페이스북으로 회원가입</Register>
                 </Contain>
             </Container>
         </Wrap>

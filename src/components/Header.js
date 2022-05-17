@@ -1,44 +1,65 @@
 import styled, { ThemeProvider } from "styled-components";
 import lezinlogo from '../img/lezinlogo.png';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { useState } from 'react';
 import { Toggle } from './Toggle';
+import { useAuth } from "../contexts/AuthContext";
 
 const Header = ({ theme, toggleTheme }) => {
     const [search, setSearch] = useState(false);
+    const { currentUser, logout } = useAuth();
+    const location = useLocation();
 
     return (
         <Contain>
-        <Wrap>
-            <Logo><Link to="/">
-                <img src={lezinlogo} alt="" width={35} height={35} />
-            </Link></Logo>
+            {location.pathname === '/login' || location.pathname === '/register' ? (<ContainBg />) : null}
+            <Wrap>
+                <Logo><Link to="/">
+                    <img src={lezinlogo} alt="" width={35} height={35} />
+                </Link></Logo>
 
-            <Menu>
-                <WrapUl>
-                    <li><Link to="/scheduled">연재</Link></li>
-                    <li>로맨스</li>
-                    <li>소년</li>
-                    <li>드라마</li>
-                    <li>BL</li>
-                    <li>후방주의</li>
-                    <li>무료</li>
-                    <li>랭킹</li>
-                    <li>이벤트</li>
-                </WrapUl>
-                <MenuUl>
-                    <li>
-                        <ClickInput style={{ right: `${search ? '0' : '-100%'}` }}>
-                            <AiOutlineSearch onClick={() => setSearch(false)} style={{ margin: '0 10px 0 0' }} />
-                            <input type="" placeholder="작품/작가명을 검색해주세요" />
-                        </ClickInput>
-                        <AiOutlineSearch onClick={() => setSearch(true)} style={{ cursor: 'pointer' }} /></li>
-                    <li> <Toggle theme={theme} toggleTheme={toggleTheme} /></li>
-                    <button><Link to="/login">로그인</Link></button>
-                </MenuUl>
-            </Menu>
-        </Wrap>
+                <Menu>
+                    {location.pathname === '/login' || location.pathname === '/register' ? (
+                        <></>
+                    ) : (
+                        <WrapUl>
+                            <li><Link to="/scheduled">연재</Link></li>
+                            <li>로맨스</li>
+                            <li>소년</li>
+                            <li>드라마</li>
+                            <li>BL</li>
+                            <li>후방주의</li>
+                            <li>무료</li>
+                            <li>랭킹</li>
+                            <li>이벤트</li>
+                        </WrapUl>
+                    )}
+                    <MenuUl>
+                        <li>
+                            <ClickInput style={{ right: `${search ? '0' : '-100%'}` }}>
+                                <AiOutlineSearch onClick={() => setSearch(false)} style={{ margin: '0 10px 0 0' }} />
+                                <input type="" placeholder="작품/작가명을 검색해주세요" />
+                            </ClickInput>
+                            <AiOutlineSearch onClick={() => setSearch(true)} style={{ cursor: 'pointer' }} /></li>
+                        <li> <Toggle theme={theme} toggleTheme={toggleTheme} /></li>
+                        {location.pathname === '/login' || location.pathname === '/register' ? null : (
+                            <button>
+                                {currentUser
+                                    ? (<span
+                                        onClick={async e => {
+                                            e.preventDefault()
+                                            logout()
+                                        }}
+                                    >로그아웃</span>)
+                                    : (
+                                        <Link to="/login">로그인</Link>
+                                    )}
+                            </button>
+                        )}
+                    </MenuUl>
+                </Menu>
+            </Wrap>
         </Contain>
     )
 }
@@ -47,8 +68,16 @@ export default Header;
 const Contain = styled.div`
     width:100%;
     height:7vh;
-    padding:5px 0;
+    position:relative;
     border-bottom: 1px solid ${(props) => props.theme.border};
+`
+
+const ContainBg = styled.div`
+    background:${(props) => props.theme.login};
+    width:100%;
+    height:100%;
+    position:absolute;
+    z-index:-1;
 `
 
 const Wrap = styled.div`
@@ -72,6 +101,7 @@ const Menu = styled.div`
     width: 100%;
     height: 100%;
     align-items: center;
+    justify-content: end;
 `
 const WrapUl = styled.ul`
     display:flex;

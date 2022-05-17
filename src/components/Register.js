@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../contexts/AuthContext";
 import { BsFillExclamationCircleFill } from 'react-icons/bs';
 import { VscLoading } from 'react-icons/vsc';
+import useMounted from "./hooks/useMounted";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -12,6 +13,8 @@ const Register = () => {
     const [isSubmitting , setIsSubmittig] = useState(false);
     const { register }  = useAuth();
     const [msg, setMsg] = useState('');
+
+    const mounted = useMounted();
 
     return (
         <Wrap>
@@ -22,7 +25,7 @@ const Register = () => {
                     register(email, password)
                     .then((response) => navigate('/'))
                     .catch((error)=> setMsg(error.message))
-                    .finally(()=> setIsSubmittig(false));
+                    .finally(()=> mounted.current && setIsSubmittig(false));
                 }}>
                     <Input 
                     id='email'
