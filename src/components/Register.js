@@ -46,7 +46,9 @@ const Register = () => {
                     placeholder="비밀번호" 
                     />
                    {msg.length > 1 ? (
-                        <ErrorMSg><BsFillExclamationCircleFill style={{margin:'0 10px 0 0'}}/> {msg === 'Firebase: Password should be at least 6 characters (auth/weak-password).' ? (<>비밀번호는 6자 이상이어야 합니다.</>) : msg ==="Firebase: Error (auth/invalid-email)." ? "이메일을 입력해주세요." : msg === 'Firebase: Error (auth/internal-error).' ? '비밀번호를 입력해주세요.' : msg === 'Firebase: Error (auth/email-already-in-use).' ? '이미 등록된 아이디입니다.' : msg}</ErrorMSg>
+                        <ErrorMSg>
+                            <BsFillExclamationCircleFill style={{margin:'0 10px 0 0'}}/> 
+                            {msg === 'Firebase: Password should be at least 6 characters (auth/weak-password).' ? (<>비밀번호는 6자 이상이어야 합니다.</>) : msg ==="Firebase: Error (auth/invalid-email)." ? "이메일을 입력해주세요." : msg === 'Firebase: Error (auth/internal-error).' ? '비밀번호를 입력해주세요.' : msg === 'Firebase: Error (auth/email-already-in-use).' ? '이미 등록된 아이디입니다.' : msg}</ErrorMSg>
                    ) : ''}
                       {isSubmitting ? (
                        <Button style={{opacity:'0.4'}}>

@@ -8,7 +8,8 @@ import {
     signOut,
     GoogleAuthProvider,
     signInWithPopup,
-    FacebookAuthProvider
+    FacebookAuthProvider,
+    sendPasswordResetEmail
 } from 'firebase/auth';
 
 const AuthContext = createContext({
@@ -18,6 +19,7 @@ const AuthContext = createContext({
     logout: () => Promise,
     signInWithGoogle: () => Promise,
     signInWithFacebook: () => Promise,
+    forgotPassword: () => Promise,
 })
 
 export const useAuth = () => useContext(AuthContext);
@@ -53,13 +55,20 @@ export const AuthContextProvider = ({ children }) => {
         return signInWithPopup(auth, provider)
     }
 
+    const forgotPassword = (email) => {
+        return sendPasswordResetEmail(auth, email, {
+            url: 'http://localhost:3000/login'
+        })
+    }
+
     const value = {
         currentUser,
         register,
         login,
         logout,
         signInWithGoogle,
-        signInWithFacebook
+        signInWithFacebook,
+        forgotPassword
     }
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

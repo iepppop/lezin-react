@@ -8,6 +8,7 @@ import { GlobalStyles, lightTheme, darkTheme } from './components/globalStyles';
 import Login from './components/Login';
 import { AuthContextProvider } from './contexts/AuthContext';
 import Register from './components/Register';
+import ForgotPassword from './components/ForgotPassword';
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
         <Route path="/" element={<Main />}></Route>
         <Route path="/scheduled" element={<Scheduled />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/Register" element={<Register />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/forgot-password" element={<ForgotPassword />}></Route>
       </Routes>
       </Container>
       </ThemeProvider>

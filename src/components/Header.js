@@ -13,14 +13,20 @@ const Header = ({ theme, toggleTheme }) => {
 
     return (
         <Contain>
-            {location.pathname === '/login' || location.pathname === '/register' ? (<ContainBg />) : null}
+            {location.pathname === '/login' 
+            || location.pathname === '/register' 
+            || location.pathname === '/forgot-password'
+            ? (<ContainBg />) : null}
             <Wrap>
                 <Logo><Link to="/">
                     <img src={lezinlogo} alt="" width={35} height={35} />
                 </Link></Logo>
 
                 <Menu>
-                    {location.pathname === '/login' || location.pathname === '/register' ? (
+                    {location.pathname === '/login' 
+                    || location.pathname === '/register'
+                    || location.pathname === '/forgot-password'
+                     ? (
                         <></>
                     ) : (
                         <WrapUl>
@@ -44,18 +50,23 @@ const Header = ({ theme, toggleTheme }) => {
                             <AiOutlineSearch onClick={() => setSearch(true)} style={{ cursor: 'pointer' }} /></li>
                         <li> <Toggle theme={theme} toggleTheme={toggleTheme} /></li>
                         {location.pathname === '/login' || location.pathname === '/register' ? null : (
-                            <button>
+                            <>
                                 {currentUser
-                                    ? (<span
-                                        onClick={async e => {
-                                            e.preventDefault()
-                                            logout()
-                                        }}
-                                    >로그아웃</span>)
+                                    ? (
+                                        <button>
+                                            <span
+                                                onClick={async e => {
+                                                    e.preventDefault()
+                                                    logout()
+                                                }}
+                                            >로그아웃</span>
+                                        </button>)
                                     : (
-                                        <Link to="/login">로그인</Link>
+                                        <Link to="/login">
+                                            <button>로그인</button>
+                                        </Link>
                                     )}
-                            </button>
+                            </>
                         )}
                     </MenuUl>
                 </Menu>
@@ -78,6 +89,7 @@ const ContainBg = styled.div`
     height:100%;
     position:absolute;
     z-index:-1;
+    border-bottom:1px solid ${(props) => props.theme.lborder};
 `
 
 const Wrap = styled.div`

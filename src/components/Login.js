@@ -59,7 +59,10 @@ const Login = () => {
                             type="submit"
                         >로그인</Button>
                     )}
-                    <Link to="/register"><Register type="button">회원가입</Register></Link>
+                    <BorderOr>
+                    <h5>혹은</h5>
+                    </BorderOr>
+                    {/* <Link to="/register"><Register type="button">회원가입</Register></Link> */}
                     <Register
                         type="button"
                         onClick={() =>
@@ -67,7 +70,7 @@ const Login = () => {
                                 .then(user => console.log(user))
                                 .catch(error => console.log(error))
                         }>
-                        구글로 회원가입</Register>
+                        <LogoIcon><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/24px-Google_%22G%22_Logo.svg.png" height={16}></img></LogoIcon>구글로 로그인</Register>
                         <Register
                         type="button"
                         onClick={() =>
@@ -75,7 +78,10 @@ const Login = () => {
                                 .then(user => console.log(user))
                                 .catch(error => console.log(error))
                         }>
-                        페이스북으로 회원가입</Register>
+                           <LogoIcon><img src="https://blog.kakaocdn.net/dn/YIv5n/btrCp5LjyUl/36xbgDXfDwmdVZUDCQDy21/tfile.svg" height={16}></img></LogoIcon>페이스북으로 로그인</Register>
+                        <RegisterForm>
+<h4><Link to="/forgot-password">비밀번호 찾기 ></Link></h4> <SignIn type="button"><Link to="/register">회원가입</Link></SignIn>
+                        </RegisterForm>
                 </Contain>
             </Container>
         </Wrap>
@@ -126,12 +132,42 @@ const Register = styled.button`
     border-radius:5px;
     padding:15px;
     width:300px;
-    text-align: center;
     font-weight:500;
     font-size:16px;
     cursor: pointer;
     background:${(props) => props.theme.newBack};
+    display:flex;
+    justify-content:center;
+    color:${(props) => props.theme.text};
 
+    :hover{
+        opacity:0.8;
+    }
+`
+
+const RegisterForm = styled.div`
+    width:300px; 
+    display:flex;
+    justify-content: space-between;
+    margin:15px 0 0 0;
+    padding:5px;
+    h4{
+        font-size:12px;
+        font-weight:500;
+    }
+
+`
+const SignIn = styled.button`
+        font-size:12px;
+        font-weight:500;
+
+        :hover{
+            opacity:0.8;
+        }
+`
+
+const LogoIcon = styled.div`
+    margin:0 15px 0 0;
 `
 
 const ErrorMSg = styled.div`
@@ -160,7 +196,27 @@ const Button = styled.button`
     transition:0.3s;
 
     &:hover{
-        background:#ea040d;
+        opacity:0.8;
+    }
+`
+
+const BorderOr = styled.div`
+    width:300px;
+    height:15px;
+    margin:25px 0 0px 0;
+    border-top:1px solid ${(props) => props.theme.lborder};
+    position:relative;
+
+    h5{
+        position:absolute;
+        left:50%;
+        transform:translate(-50%,0);
+        top:-7px;
+        padding:0 10px;
+        background: ${(props) => props.theme.login};
+        font-size: 12px;
+        color:${(props) => props.theme.text};
+        font-weight:600;
     }
 `
 
