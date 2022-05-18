@@ -127,8 +127,8 @@ const Button = styled.button`
     margin:20px 0 0 0;
     transition:0.3s;
 
-    &:hover{
-        background:#ea040d;
+    :hover{
+        opacity:0.8;
     }
 `
 

@@ -3,13 +3,14 @@ import { auth } from '../utils/init-firebase';
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
-    onAuthStateChange,
     onAuthStateChanged,
     signOut,
     GoogleAuthProvider,
     signInWithPopup,
     FacebookAuthProvider,
-    sendPasswordResetEmail
+    sendPasswordResetEmail,
+    confirmPasswordReset,
+
 } from 'firebase/auth';
 
 const AuthContext = createContext({
@@ -20,6 +21,7 @@ const AuthContext = createContext({
     signInWithGoogle: () => Promise,
     signInWithFacebook: () => Promise,
     forgotPassword: () => Promise,
+    resetPassword: () => Promise,
 })
 
 export const useAuth = () => useContext(AuthContext);
@@ -61,6 +63,10 @@ export const AuthContextProvider = ({ children }) => {
         })
     }
 
+    const resetPassword = (oobCode, newPassword) =>{
+        return confirmPasswordReset(auth, oobCode, newPassword);
+    }
+
     const value = {
         currentUser,
         register,
@@ -68,7 +74,8 @@ export const AuthContextProvider = ({ children }) => {
         logout,
         signInWithGoogle,
         signInWithFacebook,
-        forgotPassword
+        forgotPassword,
+        resetPassword
     }
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

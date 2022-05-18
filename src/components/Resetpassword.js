@@ -4,57 +4,59 @@ import { useAuth } from "../contexts/AuthContext";
 import { BsFillExclamationCircleFill } from "react-icons/bs";
 import { VscLoading } from "react-icons/vsc";
 import { AiFillCheckCircle } from 'react-icons/ai'
+import { useLocation, useNavigate } from "react-router-dom";
 
-const ForgotPassword = () => {
-  const [email, setEmail] = useState("");
-  const { forgotPassword } = useAuth();
+const Resetpassword = () => {
+  const { resetPassword } = useAuth();
   const [msg, setMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
 
-  return (
+  const useQuery = () => {
+    const location = useLocation();
+    return new URLSearchParams(location.search);
+  }
+  
+  const query = useQuery();
+  const [ newPassword, setNewPassword ] = useState('');
+  
+    return (
     <Container>
       <Contain>
         <Wrap>
           <Content
             onSubmit={async (e) => {
               e.preventDefault();
-              forgotPassword(email)
-                .then((res) => {
-                  setSuccess('이메일을 보냈습니다.');
-                  console.log(res);
-                })
-                .catch((err) => {
-                  setMsg(err.message);
-                  console.log(err);
-                });
-            }}
+              resetPassword(query.get('oobCode'), newPassword)
+              .then(res=>{
+                console.log(res);
+                navigate('/login');
+              })
+              .catch(err => setMsg(err.message))
+            }
+          }
           >
             {/* <h1>비밀번호 재설정</h1> */}
 
             <Input
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              name="email"
-              type="email"
-              autoComplete="email"
-              placeholder="이메일"
+              id="password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              name="password"
+              type="password"
+              autoComplete="password"
+              placeholder="비밀번호"
             />
 
             <h2>
-              비밀번호를 재설정할 레진코믹스 계정의 이메일을 입력해 주세요.
+             변경할 비밀번호를 입력해주세요.
             </h2>
             {msg.length > 1 ? (
               <ErrorMSg>
                 <BsFillExclamationCircleFill style={{ margin: "0 10px 0 0" }} />
-                {msg === "Firebase: Error (auth/invalid-email)."
-                  ? "올바른 이메일 형식이 아닙니다"
-                  : msg === "Firebase: Error (auth/user-not-found)."
-                  ? "일치하는 회원 정보가 없습니다."
-                  : msg === "Firebase: Error (auth/missing-email)."
-                  ? "이메일을 입력해주세요."
-                  : msg}
+                {msg === 'Firebase: Password should be at least 6 characters (auth/weak-password).'
+                ? '비밀번호를 6자 이상 입력해주세요.' : ''}
               </ErrorMSg>
             ) : (
               ""
@@ -73,7 +75,7 @@ const ForgotPassword = () => {
                 </LoadingIcon>
               </Send>
             ) : (
-              <Send type="submit">보내기</Send>
+              <Send type="submit">비밀번호 재설정</Send>
             )}
           </Content>
         </Wrap>
@@ -81,7 +83,7 @@ const ForgotPassword = () => {
     </Container>
   );
 };
-export default ForgotPassword;
+export default Resetpassword;
 
 const Container = styled.div`
   width: 100%;

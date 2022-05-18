@@ -162,7 +162,6 @@ const MenuUl = styled.ul`
     }
 
     button{
-        background: ${(props) => props.theme.lback};
         border:1px solid ${(props) => props.theme.lborder};
         border-radius:20px;
         padding:5px 15px 6px;
@@ -170,10 +169,12 @@ const MenuUl = styled.ul`
         font-weight:600;
         transition:0.3s;
         cursor:pointer;
+        color:${(props) => props.theme.text};
     }
 
     button:hover{
-        background: ${(props) => props.theme.login};
+        background: #2d2d2d;
+        color:white;
     }
 `
 
