@@ -35,11 +35,12 @@ const ForgotPassword = () => {
                      
                       <h2>비밀번호를 재설정할
                             레진코믹스 계정의 이메일을 입력해 주세요.</h2>
+                            {msg.length > 1 ? (
                             <ErrorMSg>
                       <BsFillExclamationCircleFill style={{margin:'0 10px 0 0'}}/> 
                      {msg === 'Firebase: Error (auth/invalid-email).'
                      ? '올바른 이메일 형식이 아닙니다' : msg === 'Firebase: Error (auth/user-not-found).' ? '일치하는 회원 정보가 없습니다.' : msg}
-                     </ErrorMSg>
+                     </ErrorMSg>) : ''}
                             <Send>
                                 보내기
                             </Send>
