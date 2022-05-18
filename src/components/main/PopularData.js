@@ -4,12 +4,14 @@ export const populars = [
         genre:'판타지',
         author:'므앵갱',
         img:'https://ccdn.lezhin.com/v2/comics/4705963879235584/images/tall.webp?updated=1649401028557&width=720',
+        up:'UP'
     },
     {
         name:'러브 오어 헤이트',
         genre:'BL',
         author:'영하,박담',
         img:'https://ccdn.lezhin.com/v2/comics/5755073970438144/images/tall.webp?updated=1644553514948&width=720',
+        new: 'NEW',
     },
     {
         name:'아기가 생겼어요',
@@ -28,6 +30,7 @@ export const populars = [
         genre:'액션',
         author:'오솟',
         img:'https://ccdn.lezhin.com/v2/comics/4733152235356160/images/tall.webp?updated=1626417540383&width=720',
+        up:'UP'
     },
     {
         name:'도와줘요, 이비씨!',

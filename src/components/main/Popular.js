@@ -54,7 +54,7 @@ const Popular = ({ title }) => {
                                     {populars2.map((popular, index) => {
                                         return (
                                             <Slider key={popular.name}>
-                                                {
+                                                {/* {
                                                     index < 3 ? (
                                                         <RibbonWrap>
                                                     <Ribbon>
@@ -63,9 +63,15 @@ const Popular = ({ title }) => {
                                                             <Ranking>{index + 1}위</Ranking>
                                                         </RibbonWrap>
                                                         ) : (null)
-                                                }
+                                                } */}
+                                                
                                                   <ImgBox>
                                                 <img src={popular.img} alt={popular.name} />
+                                                <Rank><h2>{index + 1}</h2></Rank>
+                                                <News>
+                                               {popular.new !== undefined ? ( <New>{popular.new}</New>) : (<></>)}
+                                               {popular.up !== undefined ? ( <Up>{popular.up}</Up>) : (<></>)}
+                                               </News>
                                                 </ImgBox>
                                                 <h1>{popular.name}</h1>
                                                 <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
@@ -79,7 +85,7 @@ const Popular = ({ title }) => {
                                     {populars.map((popular, index) => {
                                         return (
                                             <Slider key={popular.name}>
-                                                {
+                                                {/* {
                                                     index < 3 ? (
                                                     
                                                         <RibbonWrap>
@@ -88,10 +94,14 @@ const Popular = ({ title }) => {
                                                             </Ribbon>
                                                                 <Ranking>{index + 1}위</Ranking>
                                                             </RibbonWrap>    ) : (null)
-                                                }
+                                                } */}
                                                 <ImgBox>
                                                 <img src={popular.img} alt={popular.name} />
-                                                <Rank>{index + 1}</Rank>
+                                                <Rank><h2>{index + 1}</h2></Rank>
+                                                <News>
+                                               {popular.new !== undefined ? ( <New>{popular.new}</New>) : (<></>)}
+                                               {popular.up !== undefined ? ( <Up>{popular.up}</Up>) : (<></>)}
+                                               </News>
                                                 </ImgBox>
                                                 <h1>{popular.name}</h1>
                                                 <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
@@ -190,7 +200,7 @@ const Slider = styled.div`
     h1{
         font-weight: 500;
         font-size:18px;
-        margin:15px 0 0 0;
+        margin:15px 0 0 15px;
     }
 
     h2{
@@ -206,7 +216,7 @@ const Slider = styled.div`
         font-weight:500;
         opacity:0.4;
         font-size:14px; 
-        margin:0 10px 0 0;
+        margin:0 10px 0 15px;
 
     }
 
@@ -242,12 +252,52 @@ const ImgBox = styled.div`
 
 const Rank = styled.div`
     position:absolute;
-    z-index:9999;
-    font-size:70px;
-    bottom:-16px;
+    bottom:-0;
     left:0;
-    background:linear-gradient(to bottom, transparent 80%, rgba(0,0,0,0.4) 100%)
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4) 100%);
     width:100%;
+    height:100%;
+
+    h2{
+        z-index:9999;
+        font-size:70px;
+        position:absolute;
+        bottom:-18px;
+        left:10px;
+        color:white;
+    }
+`
+
+const News = styled.div`
+    position:absolute;
+    display:flex;
+    width:100%;
+    top:0;
+    right:0;
+    justify-content:end;
+    margin:10px 10px 0 0;
+`
+
+const New = styled.div`
+     background:#00ad00;
+    // background:#ed1c24;
+    border-radius:10px;
+    padding:4px 10px 5px 10px;
+    font-size:10px;
+    font-weight:800;
+    color:white;
+    transform:scale(0.9);
+`
+
+const Up = styled.div`
+background:#ff208b;
+border-radius:10px;
+    padding:4px 10px 5px 10px;
+    font-size:10px;
+    font-weight:800;
+    color:white;
+
+    transform:scale(0.9);
 `
 
 const RibbonWrap = styled.div`

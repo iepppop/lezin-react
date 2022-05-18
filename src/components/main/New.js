@@ -52,7 +52,6 @@ const New = ({ theme }) => {
                                              }}>
                                     <Blur>
                                         <img src={process.env.PUBLIC_URL + `${news.img}`} alt={index} 
-                                         style={{filter:`${theme === 'light' ? 'blur(100px)' : 'blur(1000px)'}`}} 
                                         />
                                     </Blur>
                                     <BlurContent>
@@ -277,14 +276,14 @@ const Box = styled.div`
 const Keyword = styled.ul`
     height: 10%;
     display: flex;
-    margin:30px 0 0 0;
+   
     li{
-        padding:5px 15px;
+        padding:5px 10px;
         background: #020202;
-        border-radius:15px;
+        border-radius:5px;
         margin:0 10px 0 0 ;
         color:#fff;
-        font-weight:300;
+        font-weight:500;
         font-size:12px;
         white-space:nowrap;
     }
