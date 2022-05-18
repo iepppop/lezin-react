@@ -91,6 +91,7 @@ const Popular = ({ title }) => {
                                                 }
                                                 <ImgBox>
                                                 <img src={popular.img} alt={popular.name} />
+                                                <Rank>{index + 1}</Rank>
                                                 </ImgBox>
                                                 <h1>{popular.name}</h1>
                                                 <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
@@ -225,6 +226,7 @@ const ImgBox = styled.div`
     height:300px;
     overflow:hidden;
     border-radius:10px;
+    position:relative;
 
     &:hover img{
         transform: scale(1.08);
@@ -236,6 +238,16 @@ const ImgBox = styled.div`
         object-fit: cover;
         transition:0.3s;
     }
+`
+
+const Rank = styled.div`
+    position:absolute;
+    z-index:9999;
+    font-size:70px;
+    bottom:-16px;
+    left:0;
+    background:linear-gradient(to bottom, transparent 80%, rgba(0,0,0,0.4) 100%)
+    width:100%;
 `
 
 const RibbonWrap = styled.div`

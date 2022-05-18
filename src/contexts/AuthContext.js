@@ -10,6 +10,7 @@ import {
     FacebookAuthProvider,
     sendPasswordResetEmail,
     confirmPasswordReset,
+    GithubAuthProvider
 
 } from 'firebase/auth';
 
@@ -22,6 +23,7 @@ const AuthContext = createContext({
     signInWithFacebook: () => Promise,
     forgotPassword: () => Promise,
     resetPassword: () => Promise,
+    signInWithGithub: ()=> Promise,
 })
 
 export const useAuth = () => useContext(AuthContext);
@@ -57,6 +59,11 @@ export const AuthContextProvider = ({ children }) => {
         return signInWithPopup(auth, provider)
     }
 
+    const signInWithGithub = (email, password) => {
+        const provider =  new GithubAuthProvider();
+        return signInWithPopup(auth, provider)
+    }
+
     const forgotPassword = (email) => {
         return sendPasswordResetEmail(auth, email, {
             url: 'http://localhost:3000/login'
@@ -75,7 +82,8 @@ export const AuthContextProvider = ({ children }) => {
         signInWithGoogle,
         signInWithFacebook,
         forgotPassword,
-        resetPassword
+        resetPassword,
+        signInWithGithub
     }
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

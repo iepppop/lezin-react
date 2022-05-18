@@ -12,7 +12,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const { login, signInWithGoogle, signInWithFacebook } = useAuth();
+    const { login, signInWithGoogle, signInWithFacebook, signInWithGithub } = useAuth();
     const [msg, setMsg] = useState('');
     const mounted = useMounted();
 
@@ -66,11 +66,21 @@ const Login = () => {
                     <Register
                         type="button"
                         onClick={() =>
+                            signInWithGithub()
+                                .then(user => navigate('/'))
+                                .catch(error => console.log(error))
+                        }>
+                           <LogoIcon><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/600px-Octicons-mark-github.svg.png?20180806170715" height={16}></img></LogoIcon>깃헙으로 로그인
+                           </Register>
+                    <Register
+                        type="button"
+                        onClick={() =>
                             signInWithGoogle()
                                 .then(user => navigate('/'))
                                 .catch(error => console.log(error))
                         }>
                         <LogoIcon><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/24px-Google_%22G%22_Logo.svg.png" height={16}></img></LogoIcon>구글로 로그인</Register>
+                        
                         <Register
                         type="button"
                         onClick={() =>
@@ -79,6 +89,7 @@ const Login = () => {
                                 .catch(error => console.log(error))
                         }>
                            <LogoIcon><img src="https://blog.kakaocdn.net/dn/YIv5n/btrCp5LjyUl/36xbgDXfDwmdVZUDCQDy21/tfile.svg" height={16}></img></LogoIcon>페이스북으로 로그인</Register>
+
                         <RegisterForm>
 <h4><Link to="/forgot-password">비밀번호 찾기 {'>'}</Link></h4> <SignIn type="button"><Link to="/register">회원가입</Link></SignIn>
                         </RegisterForm>
