@@ -51,6 +51,7 @@ export const lightTheme = {
     login:'#f8f8f8',
     lborder:'#eee',
     lback:'#fff',
+    overflow:'',
 };
 
 export const darkTheme = {
@@ -63,4 +64,5 @@ export const darkTheme = {
     login:'#181818',
     lborder:'#3a3a3a',
     lback:'#3a3a3a',
+    overflow:'hidden',
 };

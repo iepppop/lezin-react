@@ -48,7 +48,7 @@ const New = ({ theme }) => {
                                 </Info>
                                 <Content style={{ 
                                             background: `${currentIndex === 2 ? '#0f1530' : ''}`,
-                                            overflow:`${theme === 'light' ? '' : 'hidden'}`,
+                                            
                                              }}>
                                     <Blur>
                                         <img src={process.env.PUBLIC_URL + `${news.img}`} alt={index} 
@@ -192,6 +192,7 @@ const Content = styled.div`
     position: relative;
     z-index:2;
     transition:0.3s ease-in-out;
+    overflow:${(props) => props.theme.overflow};
     
     &:hover{
         transform:scale(1.02);
@@ -211,6 +212,7 @@ const Blur = styled.div`
     bottom:0;
     img{
         filter: blur(100px);
+        width:100%;
     }
 `
 
