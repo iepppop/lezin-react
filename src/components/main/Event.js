@@ -40,6 +40,7 @@ const Container = styled.div`
 const Contain = styled.div`
     width: 100%;
     display:flex;
+    margin:30px 0 0 0;
 `
 
 const Wrap = styled.div`
