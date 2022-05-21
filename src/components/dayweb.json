@@ -1,0 +1,233 @@
+{
+    "webtoon": [
+        {
+            "id" : 1, 
+            "title" : "바퀴멘터리", 
+            "artist" : "박바퀴",
+            "genre" : "일상",
+            "day" : "mon", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6185833387393024/images/tall.webp?updated=1626417739320&width=720"
+        },
+        {
+            "id" : 2, 
+            "title" : "바른쀼생활", 
+            "artist" : "윤박",
+            "genre" : "일상",
+            "day" : "mon", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4566161041522688/images/tall.webp?updated=1641192704813&width=720"
+        },
+        {
+            "id" : 3, 
+            "title" : "나우이", 
+            "artist" : "나단",
+            "genre" : "BL",
+            "day" : "mon", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4974692363730944/images/tall.webp?updated=1650616164701&width=720"
+        },
+        {
+            "id" : 4, 
+            "title" : "4컷용사", 
+            "artist" : "고지라군",
+            "genre" : "판타지",
+            "day" : "tue", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/248/images/tall.webp?updated=1649059443521&width=720"
+        },
+        {
+            "id" : 5, 
+            "title" : "소꿉친구가 자꾸 괴롭혀", 
+            "artist" : "NAKTA",
+            "genre" : "학원",
+            "day" : "wed", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5015838139940864/images/tall.webp?updated=1626418904502&width=720"
+        },
+        {
+            "id" : 6, 
+            "title" : "미성년", 
+            "artist" : "히눈",
+            "genre" : "BL",
+            "day" : "wed", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4509144894210048/images/tall.webp?updated=1648886689504&width=720"
+        },
+        {
+            "id" : 7, 
+            "title" : "이토록 다채로운 핏빛", 
+            "artist" : "므앵갱",
+            "genre" : "판타지",
+            "day" : "mon", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4705963879235584/images/tall.webp?updated=1649401028557&width=840"
+        },
+        {
+            "id" : 8, 
+            "title" : "안나 이야기", 
+            "artist" : "김지효",
+            "genre" : "로맨스",
+            "day" : "mon", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.jpg?updated=1651545808918&width=720"
+        },
+        {
+            "id" : 9, 
+            "title" : "러브 오어 헤이트", 
+            "artist" : "박담영하",
+            "genre" : "BL",
+            "day" : "tue", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5641055802818560/images/tall.webp?updated=1603872486579&width=720"
+        },
+        {
+            "id" : 10, 
+            "title" : "조만국박람회", 
+            "artist" : "조만국",
+            "genre" : "일상",
+            "day" : "tue", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5275168827310080/images/tall.webp?updated=1626417570580&width=720"
+        },
+        {
+            "id" : 11, 
+            "title" : "머쉬룸 스프", 
+            "artist" : "부발",
+            "genre" : "판타지",
+            "day" : "wed", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6614679117758464/images/tall.webp?updated=1638758362171&width=720"
+        },
+        {
+            "id" : 12, 
+            "title" : "왓치가이", 
+            "artist" : "ASURA",
+            "genre" : "드라마",
+            "day" : "wed", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4625200343023616/images/tall.webp?updated=1619320632111&width=840"
+        },
+        {
+            "id" : 13, 
+            "title" : "인시크릿", 
+            "artist" : "이파도",
+            "genre" : "BL",
+            "day" : "tue", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5665181768679424/images/tall.webp?updated=1621229868182&width=720"
+        },
+        {
+            "id" : 14, 
+            "title" : "킹스메이커", 
+            "artist" : "강지영",
+            "genre" : "BL",
+            "day" : "wed", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5172685072760832/images/tall.webp?updated=1550127491993&width=720"
+        },
+        {
+            "id" : 15, 
+            "title" : "나의 수하", 
+            "artist" : "차현",
+            "genre" : "BL",
+            "day" : "tue", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6234227991969792/images/tall.webp?updated=1610419380910&width=720"
+        },
+        {
+            "id" : 16, 
+            "title" : "소년이 소년에게", 
+            "artist" : "엠제이",
+            "genre" : "BL",
+            "day" : "thu", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6402044966010880/images/tall.webp?updated=1643271862715&width=720"
+        },
+        {
+            "id" : 17, 
+            "title" : "비밀을 사수하라", 
+            "artist" : "네치",
+            "genre" : "로맨스",
+            "day" : "thu", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6430096279011328/images/tall.webp?updated=1645091903455&width=720"
+        },
+        {
+            "id" : 18, 
+            "title" : "히어로즈 플랜비", 
+            "artist" : "인디고",
+            "genre" : "액션",
+            "day" : "thu", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/312/images/tall.webp?updated=1632989104931&width=720"
+        },
+        {
+            "id" : 19, 
+            "title" : "다윗의 초상", 
+            "artist" : "금선",
+            "genre" : "로맨스",
+            "day" : "thu", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6753509090590720/images/tall.webp?updated=1645092031171&width=840"
+        },
+        {
+            "id" : 20, 
+            "title" : "보름달 식당", 
+            "artist" : "김보름",
+            "genre" : "드라마",
+            "day" : "thu", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5873525665628160/images/tall.webp?updated=1583219994404&width=720"
+        }
+        ,
+        {
+            "id" : 20, 
+            "title" : "매드독", 
+            "artist" : "하리보",
+            "genre" : "BL",
+            "day" : "fri", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5290374773145600/images/tall.jpg?updated=1643187292864&width=720"
+        },
+        {
+            "id" : 21, 
+            "title" : "블랙보이", 
+            "artist" : "노커",
+            "genre" : "판타지",
+            "day" : "fri", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/235/images/tall.jpg?updated=1533904309733&width=720"
+        },
+        {
+            "id" : 22, 
+            "title" : "너는 나의 귀여운 카피캣", 
+            "artist" : "마롭믹",
+            "genre" : "BL",
+            "day" : "fri", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5305536612728832/images/tall.webp?updated=1617246605493&width=720"
+        },
+        {
+            "id" : 23, 
+            "title" : "프로가 되고 싶어", 
+            "artist" : "라돌",
+            "genre" : "로맨스",
+            "day" : "fri", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4727234536734720/images/tall.webp?updated=1645092405587&width=720"
+        },
+        {
+            "id" : 24, 
+            "title" : "보름달 식당", 
+            "artist" : "김보름",
+            "genre" : "드라마",
+            "day" : "fri", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5053488885465088/images/tall.webp?updated=1649293177776&width=720"
+        }
+        ,
+        {
+            "id" : 25, 
+            "title" : "클라우드", 
+            "artist" : "김파스",
+            "genre" : "BL",
+            "day" : "sat", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5183802990723072/images/tall.jpg?updated=1645421373661&width=720"
+        }
+        ,
+        {
+            "id" : 26, 
+            "title" : "여우비 내리는 날에", 
+            "artist" : "우시목",
+            "genre" : "학원",
+            "day" : "sun", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5901673735454720/images/tall.webp?updated=1651314534255&width=720"
+        }
+        ,
+        {
+            "id" : 27, 
+            "title" : "표준규격전사", 
+            "artist" : "오솟",
+            "genre" : "개그",
+            "day" : "ten", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4733152235356160/images/tall.webp?updated=1626417540383&width=720"
+        }
+    ]
+}
+    
