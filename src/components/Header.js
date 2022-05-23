@@ -5,11 +5,14 @@ import { Link, Navigate, useLocation } from "react-router-dom";
 import { useState } from 'react';
 import { Toggle } from './Toggle';
 import { useAuth } from "../contexts/AuthContext";
+import SearchBar from "./SearchBar";
+import dayweb from './dayweb.json';
 
 const Header = ({ theme, toggleTheme }) => {
     const [search, setSearch] = useState(false);
     const { currentUser, logout } = useAuth();
     const location = useLocation();
+    const webtoon = dayweb.webtoon;
 
     return (
         <Contain>
@@ -43,9 +46,9 @@ const Header = ({ theme, toggleTheme }) => {
                     )}
                     <MenuUl>
                         <li>
-                            <ClickInput style={{ right: `${search ? '0' : '-100%'}` }}>
-                                <AiOutlineSearch onClick={() => setSearch(false)} style={{ margin: '0 10px 0 0' }} />
-                                <input type="" placeholder="작품/작가명을 검색해주세요" />
+                            <ClickInput style={{ opacity: `${search ? '1' : '0'}`, zIndex: `${search ? '99' : '-1'}` }}>
+                                <AiOutlineSearch onClick={() => setSearch(false)} style={{ padding : '0 0 0 0' }} />
+                                <SearchBar placeholder="작품/작가명을 검색해주세요." data={webtoon}/>
                             </ClickInput>
                             <AiOutlineSearch onClick={() => setSearch(true)} style={{ cursor: 'pointer' }} /></li>
                         <li> <Toggle theme={theme} toggleTheme={toggleTheme} /></li>
@@ -97,7 +100,7 @@ const Wrap = styled.div`
     height: 100%;
     margin: 0 auto;
     padding:0 20px;
-    display:flex;
+    display:flex; 
 `
 
 const Logo = styled.div`
@@ -145,7 +148,6 @@ const MenuUl = styled.ul`
     justify-content: end;
     align-items: center;
     position:relative;
-    overflow:hidden;
 
     li{
         font-size:19px;
@@ -156,8 +158,8 @@ const MenuUl = styled.ul`
 
     input{
         border:1px solid #eee;
-        border-radius:15px;
-        padding:10px 16px;
+        border-radius:10px;
+        padding:9px 14px;
         outline: none;
     }
 
@@ -180,7 +182,6 @@ const MenuUl = styled.ul`
 
 const ClickInput = styled.div`
     position:absolute;
-    text-align:right;
     top:50%;
     transform:translate(0,-50%);
     cursor:pointer;
@@ -188,4 +189,5 @@ const ClickInput = styled.div`
     right:0;
     display:flex;
     align-items:center;
+    z-index:9999;
 `

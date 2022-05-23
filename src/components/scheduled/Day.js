@@ -7,6 +7,7 @@ const Day = () => {
     const webtoon = dayweb.webtoon;
     const [data, setData] = useState([webtoon]);  
     const [currentItems, setCurrentItems] = useState([webtoon]);
+    const [currentClick, setCurrentClick] = useState(1);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
     const itemsPerPage = 13;
@@ -26,19 +27,24 @@ const Day = () => {
 
     const handlePageClick = (event) => {
       const newOffset = (event.selected * itemsPerPage) % webtoon.length;
-      setItemOffset(newOffset); }
+      setItemOffset(newOffset); 
+    }
 
+    const toggleTab = (index) => {
+        setCurrentClick(index);
+    }
+        
     return (
         <Contain>
             <DayScheduled>
-                <button onClick={() => filterResult('mon')}>월</button>
-                <button onClick={() => filterResult('tue')}>화</button>
-                <button onClick={() => filterResult('wed')}>수</button>
-                <button onClick={() => filterResult('thu')}>목</button>
-                <button onClick={() => filterResult('fri')}>금</button>
-                <button onClick={() => filterResult('sat')}>토</button>
-                <button onClick={() => filterResult('sun')}>일</button>
-                <button onClick={() => filterResult('ten')}>열흘</button>
+                <button onClick={() => {filterResult('mon'); toggleTab(1)}} style={{background:`${currentClick === 1 ? 'red' : ''}`, color:`${currentClick === 1 ? 'white' : ''}`}}>월</button>
+                <button onClick={() => {filterResult('tue'); toggleTab(2)}} style={{background:`${currentClick === 2 ? 'red' : ''}`, color:`${currentClick === 2 ? 'white' : ''}`}}>화</button>
+                <button onClick={() => {filterResult('wed'); toggleTab(3)}} style={{background:`${currentClick === 3 ? 'red' : ''}`}}>수</button>
+                <button onClick={() => {filterResult('thu'); toggleTab(4)}} style={{background:`${currentClick === 4 ? 'red' : ''}`}}>목</button>
+                <button onClick={() => {filterResult('fri'); toggleTab(5)}} style={{background:`${currentClick === 5 ? 'red' : ''}`}}>금</button>
+                <button onClick={() => {filterResult('sat'); toggleTab(6)}} style={{background:`${currentClick === 6 ? 'red' : ''}`}}>토</button>
+                <button onClick={() => {filterResult('sun'); toggleTab(7)}} style={{background:`${currentClick === 7 ? 'red' : ''}`}}>일</button>
+                <button onClick={() => {filterResult('ten'); toggleTab(8)}} style={{background:`${currentClick === 8 ? 'red' : ''}`}}>열흘</button>
             </DayScheduled>
             <DayWrap>
             {
@@ -58,15 +64,22 @@ const Day = () => {
                         </>
                     )
                 })}
+              
                     <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel=">"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel="< previous"
+        previousLabel="<"
         renderOnZeroPageCount={null}
+        containerClassName="paginate"
+        pageLinkClassName="page-num"
+        previousLinkClassName="page-num"
+        nextLinkClassName="page-num"
+        activeLinkClassName="active"
       />
+  
                 </DayWrap>
                 </Contain>
     )
@@ -77,10 +90,47 @@ const Contain = styled.div`
     max-width:1320px;
     height: 100%;
     margin: 0 auto;
+
+   .paginate {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        gap:5px;
+
+        .page-num{
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius:50%;
+            font-weight: 400;
+        }
+
+        .page-num:hover{
+            opacity:0.3;
+        }
+
+
+    }
+
+    .paginate .active{
+        background:red;
+        color:white;
+    }
 `
 
 const DayScheduled = styled.div`
-    padding:0 20px;
+    padding:20px 20px 25px 20px;
+    margin:25px 20px;
+    text-align:center;
+
+    button{
+  
+        padding:10px 20px;
+        margin:0 10px;
+        font-size:16px;
+        border-radius:25px;
+        cursor: pointer;
+        font-weight:600;
+    }
 `
 
 const DayWrap = styled.div`
@@ -89,8 +139,9 @@ const DayWrap = styled.div`
     padding:0 20px 0 0;
 `
 
+
 const Slider = styled.div`
-    width:33.33%;
+    width:20%;
     padding: 0 0 0 20px;
     position:relative;
     box-sizing:border-box;
