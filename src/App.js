@@ -10,6 +10,8 @@ import { AuthContextProvider } from './contexts/AuthContext';
 import Register from './components/Register';
 import ForgotPassword from './components/ForgotPassword';
 import Resetpassword from './components/Resetpassword';
+import Romance from './pages/Romance';
+import Boys from './pages/Boys';
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
         <Route path="/reset-password" element={<Resetpassword />}></Route>
+        <Route path="/romance" element={<Romance />}></Route>
+        <Route path="/boys" element={<Boys />}></Route>
       </Routes>
       </Container>
       </ThemeProvider>

@@ -10,7 +10,7 @@ const Day = () => {
     const [currentClick, setCurrentClick] = useState(1);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
-    const itemsPerPage = 13;
+    const itemsPerPage = 15;
 
     const filterResult = (day) => {
         const result = webtoon.filter((curDate) => {
@@ -33,18 +33,22 @@ const Day = () => {
     const toggleTab = (index) => {
         setCurrentClick(index);
     }
+    
+    useEffect((e) => {
+        filterResult('mon');
+    },[])
         
     return (
         <Contain>
             <DayScheduled>
-                <button onClick={() => {filterResult('mon'); toggleTab(1)}} style={{background:`${currentClick === 1 ? 'red' : ''}`, color:`${currentClick === 1 ? 'white' : ''}`}}>월</button>
-                <button onClick={() => {filterResult('tue'); toggleTab(2)}} style={{background:`${currentClick === 2 ? 'red' : ''}`, color:`${currentClick === 2 ? 'white' : ''}`}}>화</button>
-                <button onClick={() => {filterResult('wed'); toggleTab(3)}} style={{background:`${currentClick === 3 ? 'red' : ''}`}}>수</button>
-                <button onClick={() => {filterResult('thu'); toggleTab(4)}} style={{background:`${currentClick === 4 ? 'red' : ''}`}}>목</button>
-                <button onClick={() => {filterResult('fri'); toggleTab(5)}} style={{background:`${currentClick === 5 ? 'red' : ''}`}}>금</button>
-                <button onClick={() => {filterResult('sat'); toggleTab(6)}} style={{background:`${currentClick === 6 ? 'red' : ''}`}}>토</button>
-                <button onClick={() => {filterResult('sun'); toggleTab(7)}} style={{background:`${currentClick === 7 ? 'red' : ''}`}}>일</button>
-                <button onClick={() => {filterResult('ten'); toggleTab(8)}} style={{background:`${currentClick === 8 ? 'red' : ''}`}}>열흘</button>
+                <button onClick={() => {filterResult('mon'); toggleTab(1)}} style={{background:`${currentClick === 1 ? '#ed1c24' : ''}`, color:`${currentClick === 1 ? 'white' : ''}`}}>월</button>
+                <button onClick={() => {filterResult('tue'); toggleTab(2)}} style={{background:`${currentClick === 2 ? '#ed1c24' : ''}`, color:`${currentClick === 2 ? 'white' : ''}`}}>화</button>
+                <button onClick={() => {filterResult('wed'); toggleTab(3)}} style={{background:`${currentClick === 3 ? '#ed1c24' : ''}`, color:`${currentClick === 3 ? 'white' : ''}`}}>수</button>
+                <button onClick={() => {filterResult('thu'); toggleTab(4)}} style={{background:`${currentClick === 4 ? '#ed1c24' : ''}`, color:`${currentClick === 4 ? 'white' : ''}`}}>목</button>
+                <button onClick={() => {filterResult('fri'); toggleTab(5)}} style={{background:`${currentClick === 5 ? '#ed1c24' : ''}`, color:`${currentClick === 5 ? 'white' : ''}`}}>금</button>
+                <button onClick={() => {filterResult('sat'); toggleTab(6)}} style={{background:`${currentClick === 6 ? '#ed1c24' : ''}`, color:`${currentClick === 6 ? 'white' : ''}`}}>토</button>
+                <button onClick={() => {filterResult('sun'); toggleTab(7)}} style={{background:`${currentClick === 7 ? '#ed1c24' : ''}`, color:`${currentClick === 7 ? 'white' : ''}`}}>일</button>
+                <button onClick={() => {filterResult('ten'); toggleTab(8)}} style={{background:`${currentClick === 8 ? '#ed1c24' : ''}`, color:`${currentClick === 8 ? 'white' : ''}`}}>열흘</button>
             </DayScheduled>
             <DayWrap>
             {
@@ -55,7 +59,7 @@ const Day = () => {
                             <Slider key={title}>
                                 <ImgBox>
                                     <img src={thumbnail} alt={title} />
-                                    <Rank><h2>{idx + 1}</h2></Rank>
+                                    <Rank><h2></h2></Rank>
                                 </ImgBox>
                                 <h1>{title}</h1>
                                 <span>{genre}&nbsp;&nbsp;l</span><h2>{artist}</h2>
@@ -64,7 +68,7 @@ const Day = () => {
                         </>
                     )
                 })}
-              
+              {/* <Paginate>
                     <ReactPaginate
         breakLabel="..."
         nextLabel=">"
@@ -79,7 +83,7 @@ const Day = () => {
         nextLinkClassName="page-num"
         activeLinkClassName="active"
       />
-  
+  </Paginate> */}
                 </DayWrap>
                 </Contain>
     )
@@ -95,13 +99,13 @@ const Contain = styled.div`
         display:flex;
         align-items: center;
         justify-content: center;
-        gap:5px;
+
 
         .page-num{
             padding: 8px 15px;
             cursor: pointer;
-            border-radius:50%;
             font-weight: 400;
+            
         }
 
         .page-num:hover{
@@ -112,19 +116,19 @@ const Contain = styled.div`
     }
 
     .paginate .active{
-        background:red;
-        color:white;
+        border: 1px solid #eee;
+        border-radius:5px;
     }
 `
 
 const DayScheduled = styled.div`
-    padding:20px 20px 25px 20px;
+    padding:30px 0 20px 0;
     margin:25px 20px;
     text-align:center;
 
     button{
-  
-        padding:10px 20px;
+        background:#f8f8f8;
+        padding:10px 24px;
         margin:0 10px;
         font-size:16px;
         border-radius:25px;
@@ -145,7 +149,7 @@ const Slider = styled.div`
     padding: 0 0 0 20px;
     position:relative;
     box-sizing:border-box;
-    height:450px;
+    height:400px;
     display:inline-block;
 
     h1{
@@ -208,4 +212,8 @@ const Rank = styled.div`
         left:10px;
         color:white;
     }
+`
+
+const Paginate = styled.div`
+    margin:40px 0 40px 0;
 `

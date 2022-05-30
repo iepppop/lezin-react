@@ -227,6 +227,198 @@
             "genre" : "개그",
             "day" : "ten", 
             "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4733152235356160/images/tall.webp?updated=1626417540383&width=720"
+        },
+        {
+            "id" : 28, 
+            "title" : "패스, 논패스", 
+            "artist" : "강파클럽",
+            "genre" : "BL",
+            "day" : "mon", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6290037509783552/images/tall.webp?updated=1641716468916&width=720"
+        },
+        {
+            "id" : 29, 
+            "title" : "잠깐 사정이 있습니다", 
+            "artist" : "은별",
+            "genre" : "로맨스",
+            "day" : "mon", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4766866720751616/images/tall.webp?updated=1635218379860&width=720"
+        },
+        {
+            "id" : 30, 
+            "title" : "백만원의 로맨스", 
+            "artist" : "달현지",
+            "genre" : "BL",
+            "day" : "mon", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5253353104277504/images/tall.webp?updated=1632643453479&width=720"
+        },
+        {
+            "id" : 31, 
+            "title" : "미미", 
+            "artist" : "개운밀밀",
+            "genre" : "BL",
+            "day" : "mon", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5530699001298944/images/tall.webp?updated=1639724777138&width=720"
+        },
+        {
+            "id" : 32, 
+            "title" : "모모세 헬프", 
+            "artist" : "성원",
+            "genre" : "판타지",
+            "day" : "mon", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6453048194760704/images/tall.webp?updated=1609317064257&width=720"
+        },
+        {
+            "id" : 33, 
+            "title" : "울프 인더 하우스", 
+            "artist" : "박지연",
+            "genre" : "BL",
+            "day" : "tue", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5005186239102976/images/tall.webp?updated=1585215124298&width=720"
+        },
+        {
+            "id" : 34, 
+            "title" : "더블트랩", 
+            "artist" : "굿맨",
+            "genre" : "BL",
+            "day" : "sat", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5371258054443008/images/tall.webp?updated=1632989229712&width=720"
+        },
+        {
+            "id" : 35, 
+            "title" : "와해된 시선 R", 
+            "artist" : "루즌아",
+            "genre" : "미스터리",
+            "day" : "sun", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4711815315783680/images/tall.webp?updated=1637214226624&width=720"
+        },
+        {
+            "id" : 36, 
+            "title" : "자살 소년", 
+            "artist" : "박지",
+            "genre" : "일상",
+            "day" : "ten", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5035412962410496/images/tall.webp?updated=1649402619900&width=720"
+        },
+        {
+            "id" : 37, 
+            "title" : "LOVE WINS", 
+            "artist" : "목도리",
+            "genre" : "백합",
+            "day" : "wed", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4527189402124288/images/tall.webp?updated=1643271913299&width=720"
+        },
+        {
+            "id" : 38, 
+            "title" : "바람", 
+            "artist" : "반메",
+            "genre" : "판타지",
+            "day" : "wed", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6400253992501248/images/tall.webp?updated=1637205016851&width=720"
+        },
+        {
+            "id" : 39, 
+            "title" : "그녀와 그녀의 전남자친구", 
+            "artist" : "신비",
+            "genre" : "백합",
+            "day" : "tue", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6231427484221440/images/tall.webp?updated=1632991062957&width=720"
+        },
+        {
+            "id" : 40, 
+            "title" : "낮에 뜨는 별", 
+            "artist" : "고다고",
+            "genre" : "로맨스",
+            "day" : "sat", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6719108801691648/images/tall.webp?updated=1652856131444&width=720"
+        },
+        {
+            "id" : 41, 
+            "title" : "아가씨와 우렁총각", 
+            "artist" : "제이드",
+            "genre" : "로맨스",
+            "day" : "end", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5310249108766720/images/tall.webp?updated=1610007388299&width=720"
+        },
+        {
+            "id" : 42, 
+            "title" : "연필의 각도", 
+            "artist" : "홍자",
+            "genre" : "로맨스",
+            "day" : "end", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5849944865636352/images/tall.webp?updated=1628154558737&width=720"
+        },
+        {
+            "id" : 43, 
+            "title" : "내가 원하는 건", 
+            "artist" : "정",
+            "genre" : "로맨스",
+            "day" : "end", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6694684605874176/images/tall.webp?updated=1649322667131&width=720"
+        },
+        {
+            "id" : 44, 
+            "title" : "월간 백합", 
+            "artist" : "레드피치",
+            "genre" : "로맨스",
+            "day" : "ten", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5197379572924416/images/tall.webp?updated=1650860103834&width=720"
+        },
+        {
+            "id" : 45, 
+            "title" : "우리사이느은", 
+            "artist" : "이연지",
+            "genre" : "로맨스",
+            "day" : "end", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/272/images/tall.webp?updated=1602323552147&width=720"
+        },
+        {
+            "id" : 46, 
+            "title" : "애늙은이", 
+            "artist" : "환댕",
+            "genre" : "판타지",
+            "day" : "end", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6217220923850752/images/tall.webp?updated=1602323255972&width=720"
+        },
+        {
+            "id" : 47, 
+            "title" : "불멸의 날들", 
+            "artist" : "허긴개",
+            "genre" : "판타지",
+            "day" : "end", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5308438415671296/images/tall.webp?updated=1642388989254&width=720"
+        },
+        {
+            "id" : 48, 
+            "title" : "너와 사는 오늘", 
+            "artist" : "두르",
+            "genre" : "로맨스",
+            "day" : "end", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5565232769728512/images/tall.webp?updated=1645665635282&width=720"
+        },
+        {
+            "id" : 49, 
+            "title" : "식사하고 가세요!", 
+            "artist" : "스튜디오 웨이브",
+            "genre" : "판타지",
+            "day" : "thu", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5999784268988416/images/tall.webp?updated=1651561291598&width=720"
+        },
+        {
+            "id" : 50, 
+            "title" : "커튼콜 아래그랑", 
+            "artist" : "바싹탄숯",
+            "genre" : "판타지",
+            "day" : "ten", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5/images/tall.webp?updated=1643271778230&width=720"
+        },
+        {
+            "id" : 51, 
+            "title" : "블랙보이", 
+            "artist" : "노커",
+            "genre" : "판타지",
+            "day" : "fri", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/235/images/tall.webp?updated=1533904309733&width=720"
         }
     ]
 }

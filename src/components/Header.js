@@ -34,7 +34,7 @@ const Header = ({ theme, toggleTheme }) => {
                     ) : (
                         <WrapUl>
                             <li><Link to="/scheduled">연재</Link></li>
-                            <li>로맨스</li>
+                            <li><Link to="/romance">로맨스</Link></li>
                             <li>소년</li>
                             <li>드라마</li>
                             <li>BL</li>

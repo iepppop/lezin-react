@@ -64,14 +64,14 @@ const Popular = ({ title }) => {
                                                         </RibbonWrap>
                                                         ) : (null)
                                                 } */}
-                                                
-                                                  <ImgBox>
-                                                <img src={popular.img} alt={popular.name} />
-                                                <Rank><h2>{index + 1}</h2></Rank>
-                                                <News>
-                                               {popular.new !== undefined ? ( <New>{popular.new}</New>) : (<></>)}
-                                               {popular.up !== undefined ? ( <Up>{popular.up}</Up>) : (<></>)}
-                                               </News>
+
+                                                <ImgBox>
+                                                    <img src={popular.img} alt={popular.name} />
+                                                    <Rank><h2>{index + 1}</h2></Rank>
+                                                    <News>
+                                                        {popular.new !== undefined ? (<New>{popular.new}</New>) : (<></>)}
+                                                        {popular.up !== undefined ? (<Up>{popular.up}</Up>) : (<></>)}
+                                                    </News>
                                                 </ImgBox>
                                                 <h1>{popular.name}</h1>
                                                 <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
@@ -96,12 +96,12 @@ const Popular = ({ title }) => {
                                                             </RibbonWrap>    ) : (null)
                                                 } */}
                                                 <ImgBox>
-                                                <img src={popular.img} alt={popular.name} />
-                                                <Rank><h2>{index + 1}</h2></Rank>
-                                                <News>
-                                               {popular.new !== undefined ? ( <New>{popular.new}</New>) : (<></>)}
-                                               {popular.up !== undefined ? ( <Up>{popular.up}</Up>) : (<></>)}
-                                               </News>
+                                                    <img src={popular.img} alt={popular.name} />
+                                                    <Rank><h2>{index + 1}</h2></Rank>
+                                                    <News>
+                                                        {popular.new !== undefined ? (<New>{popular.new}</New>) : (<></>)}
+                                                        {popular.up !== undefined ? (<Up>{popular.up}</Up>) : (<></>)}
+                                                    </News>
                                                 </ImgBox>
                                                 <h1>{popular.name}</h1>
                                                 <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
