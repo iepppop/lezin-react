@@ -1,6 +1,7 @@
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { sliderdatas } from './SliderData';
 import React, { useState, useEffect, useRef } from 'react';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 const Slider = () => {
   const ref = useRef(null);
@@ -9,34 +10,35 @@ const Slider = () => {
   const transitionTime = 500;
   const transitionStyle = `transform ${transitionTime}ms ease 0s`;
   const [slideTransition, setTransition] = useState(transitionStyle);
+  const [seeArrow, setSeeArrow] = useState(false);
 
   const slideCopy = () => {
     let addedFront = [];
     let addedLast = [];
     let index = 0;
-    while (index < 1){
-      addedLast.push(sliderdatas[0],sliderdatas[1])
+    while (index < 1) {
+      addedLast.push(sliderdatas[0], sliderdatas[1])
       addedFront.unshift(sliderdatas[1])
-      index ++;
+      index++;
     }
-    return[...addedFront,...sliderdatas,...addedLast];
+    return [...addedFront, ...sliderdatas, ...addedLast];
   }
 
   let slides = slideCopy();
 
   const replaceSlide = (index) => {
-    setTimeout(()=>{
-        setTransition('');
-        setCurrentIndex(index);
+    setTimeout(() => {
+      setTransition('');
+      setCurrentIndex(index);
     }, transitionTime);
-}
+  }
 
   const handleSlide = (index) => {
     setCurrentIndex(index);
-    if(index - 1 < 0){
+    if (index - 1 < 0) {
       index += sliderdatas.length;
       replaceSlide(index);
-    }else if(index - 1 >= sliderdatas.length){
+    } else if (index - 1 >= sliderdatas.length) {
       index -= sliderdatas.length;
       replaceSlide(index);
     }
@@ -45,65 +47,76 @@ const Slider = () => {
 
   const handleSwipe = (direction) => {
     handleSlide(currentIndex + direction);
-}
+  }
 
 
   useEffect(() => {
     ref.current.style.transform = `translateX(-${currentIndex}00%)`;
-    slideref.current.style.width =  `${slides.length}00%`;
-})
+    slideref.current.style.width = `${slides.length}00%`;
+  })
 
   return (
-    <Container style={{background:`${currentIndex === 1 || currentIndex === 3? '#1b1b1b' : '#a52424'}`}}>
+    <Container style={{ background: `${currentIndex === 1 || currentIndex === 3 ? '#1b1b1b' : '#a52424'}` }}>
+
       <Wrap>
-        <Padd>
-        <Contain>
-        <SliderWrap ref={ref} style={{transition: slideTransition}}>
-          <Box ref={slideref}>
-          {slides.map((data,index)=>{
-            return(
-              <BoxWrap key={data.name}>
-              <MainSlider>
-                <img src={data.img} />
-                <Bgop />
-                <Content>
-                  <span>
-                  <h1>NEW</h1>
-                  <Line />
-                  </span>
-                  <ContentDep>
-                    <Title>
-                    <h2>{data.name}</h2>
-                    <h3>{data.dep}</h3>
-                    <h4>#액션 #불사 #불사신</h4>
-                    </Title>
-                    <Total>
-                      <h5>{currentIndex === 2 ? '1' : currentIndex + 1} / {sliderdatas.length}</h5>
-                    </Total>
-                  </ContentDep>
-                </Content>
-              </MainSlider>
-              <Blank />
-              <SubSlider style={{
-                background: `url('${data.nextimg}')`,
-                backgroundSize:'cover',
-                backgroundPosition:'center center',
-                }}
-                onClick={() => handleSwipe(+1)}>    
-              <BgB />    
-                <SubContent>
-                 <h1>{data.nextname}</h1>
-                 <button><Icon>→</Icon> 다음작품보기</button>
-                </SubContent>
-                
-                  </SubSlider>
-                  </BoxWrap>
-            )
-          })}
-              </Box>
-        </SliderWrap>
-        </Contain>
-        </Padd>
+        <Wrapper>
+          <Padd>
+            <Contain>
+              <SliderWrap ref={ref} style={{ transition: slideTransition }}>
+                <Box ref={slideref}>
+                  {slides.map((data, index) => {
+                    return (
+                      <BoxWrap key={data.name}
+                        onMouseOver={() => setSeeArrow(true)}
+                        onMouseOut={() => setSeeArrow(false)}
+                      >
+                        <MainSlider>
+                          <img src={data.img} />
+                          <Bgop />
+                          <Content>
+                            <span>
+                              <h1>NEW</h1>
+                              <Line />
+                            </span>
+                            <ContentDep>
+                              <Title>
+                                <h2>{data.name}</h2>
+                                <h3>{data.dep}</h3>
+                                <h4>#액션 #불사 #불사신</h4>
+                              </Title>
+                              <Total>
+                                <h5>{currentIndex === 2 ? '1' : currentIndex + 1} / {sliderdatas.length}</h5>
+                              </Total>
+                            </ContentDep>
+                          </Content>
+
+                        </MainSlider>
+
+                        <Blank />
+
+
+                      </BoxWrap>
+                    )
+                  })}
+
+                </Box>
+              </SliderWrap>
+            </Contain>
+
+          </Padd>
+
+          <SubSlider
+            onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)}
+            onClick={() => handleSwipe(+1)}
+            style={{ opacity: `${seeArrow ? '1' : '0'}` }}>
+            {/* <BgB />     */}
+            <SubContent>
+
+              <button>< MdKeyboardArrowRight /></button>
+            </SubContent>
+
+          </SubSlider>
+        </Wrapper>
       </Wrap>
     </Container>
   )
@@ -112,22 +125,28 @@ export default Slider;
 
 const Container = styled.div`
   width:100%;
-  height:500px;
-  background:#a52424;
+  height:550px;
   transition:0.3s;
+  background:#eee;
 `
 const Wrap = styled.div`
   max-width:1320px;
   height: 100%;
   margin: 0 auto;
+`
+
+const Wrapper = styled.div`
   padding:0 20px;
+  width:100%;
+  height:100%;
   display:flex;
   align-items:center;
+  position:relative;
 `
 
 const Padd = styled.div`
   width:100%;
-  height:70%;
+  height:80%;
   position:relative;
   overflow:hidden;
 `
@@ -153,16 +172,16 @@ const Box = styled.div`
 
 const BoxWrap = styled.div`
   width:100%;
+  height:100%;
   display:flex;
 `
 
 const MainSlider = styled.div`
-  width:80%;
-  background:#eee;
+  width:100%;
   height:100%;
   border-radius:15px;
-  overflow:hidden;
   position:relative;
+  overflow:hidden;
 
   img{
     object-fit:cover;
@@ -253,25 +272,22 @@ const Total = styled.div`
 
 
 const Blank = styled.div`
-  width: 2%;
+  
 `
 
 
 const SubSlider = styled.div`
-  width: 18%;
-  height:100%;
-  border-radius:15px;
-  position:relative;
-  background-size:cover;
-  background-position:center center;
-  overflow:hidden;
-  cursor: pointer;
-
-  img{
-    height:100%;
-    margin-left:-20px;
-    objcet-fit:cover;
-  }
+    position:absolute;
+    right:0;
+    top:50%;
+    transform:translate(0,-50%);
+    background:rgba(255,255,255,0.8);
+    padding:20px 20px 15px 20px;
+    border-radius:50%;
+    color:#000;
+    z-index:999;
+    right:-8px;
+    cursor:pointer;
 `
 
 const BgB = styled.div`
@@ -290,21 +306,12 @@ const BgB = styled.div`
 `
 
 const SubContent = styled.div`
-  z-index:999;
-  width:100%;
-  color:white;
-  position:absolute;
-  bottom:30px;
-  text-align:center;
+  button {
+    cursor:pointer;
+  }
 
   h1{
     font-size:15px;
-  }
-
-  button{
-    color:white;
-    font-weight:500;
-    margin:5px 10px 0 25px;
   }
 `
 
@@ -320,12 +327,4 @@ const nexteffef = keyframes`
  }
 `
 
-const Icon = styled.div`
-  display:inline-block;
-  font-weight:200;
-  position:absolute;
-  left:60px;
-  bottom:2px;
-  padding:0 5px 0 0;
-  animation: ${nexteffef} 2s infinite linear alternate;;
-`
+
