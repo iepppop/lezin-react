@@ -41,6 +41,7 @@ const Day = () => {
                 <button onClick={() => {filterResultDay('sun'); toggleTab(7)}} style={{background:`${currentClick === 7 ? '#ed1c24' : ''}`, color:`${currentClick === 7 ? 'white' : ''}`}}>일</button>
                 <button onClick={() => {filterResultDay('ten'); toggleTab(8)}} style={{background:`${currentClick === 8 ? '#ed1c24' : ''}`, color:`${currentClick === 8 ? 'white' : ''}`}}>열흘</button>
             </DayScheduled>
+            <DayBorder />
             <DayWrap>
             {
                 currentItems.map((values, idx) => {
@@ -113,7 +114,7 @@ const Contain = styled.div`
 `
 
 const DayScheduled = styled.div`
-    padding:10px 0 20px 0;
+    padding:10px 0 10px 0;
     max-width:1280px;
     margin: 0 auto;
 
@@ -124,6 +125,13 @@ const DayScheduled = styled.div`
         cursor: pointer;
         font-weight:600;
     }
+`
+
+const DayBorder = styled.div`
+    width:100%;
+    height:1px;
+    border-bottom:1px solid #f8f8f8;
+    margin:0 0 30px 0;
 `
 
 const DayWrap = styled.div`
