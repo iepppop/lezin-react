@@ -1,23 +1,14 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
-import dayweb from '../dayweb.json';
+import { useData } from "../../contexts/DataContext";
 
 const Pages = () => {
-    const webtoon = dayweb.webtoon;
-    const [currentItems, setCurrentItems] = useState([webtoon]);
-    
-
-    const filterResult = (day) => {
-        const result = webtoon.filter((curDate) => {
-            return curDate.genre === day;
-        });
-        setCurrentItems(result);
-    }
+    const { filterResult, currentItems } = useData();
 
     useEffect(() => {
-        filterResult('로맨스');
-    }, [])
-
+      filterResult('로맨스');
+  }, [currentItems])
+  
     return (
         <Container>
             <Wrap>
