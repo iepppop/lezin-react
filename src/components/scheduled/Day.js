@@ -1,54 +1,45 @@
 import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import dayweb from '../dayweb.json';
-import ReactPaginate from 'react-paginate';
+import { useData } from '../../contexts/DataContext';
 
 const Day = () => {
-    const webtoon = dayweb.webtoon;
-    const [data, setData] = useState([webtoon]);  
-    const [currentItems, setCurrentItems] = useState([webtoon]);
     const [currentClick, setCurrentClick] = useState(1);
-    const [pageCount, setPageCount] = useState(0);
-    const [itemOffset, setItemOffset] = useState(0);
-    const itemsPerPage = 15;
+    // const [pageCount, setPageCount] = useState(0);
+    // const [itemOffset, setItemOffset] = useState(0);
+    // const itemsPerPage = 15;
 
-    const filterResult = (day) => {
-        const result = webtoon.filter((curDate) => {
-            return curDate.day === day;
-        });
-        setCurrentItems(result);
-    }
+    const { filterResultDay, currentItems } = useData();
 
-    useEffect(() => {
-      const endOffset = itemOffset + itemsPerPage;
-      setCurrentItems(webtoon.slice(itemOffset, endOffset));
-      setPageCount(Math.ceil(webtoon.length / itemsPerPage));
-    }, [itemOffset, itemsPerPage]);
+    // useEffect(() => {
+    //   const endOffset = itemOffset + itemsPerPage;
+    //   setCurrentItems(webtoon.slice(itemOffset, endOffset));
+    //   setPageCount(Math.ceil(webtoon.length / itemsPerPage));
+    // }, [itemOffset, itemsPerPage]);
 
-    const handlePageClick = (event) => {
-      const newOffset = (event.selected * itemsPerPage) % webtoon.length;
-      setItemOffset(newOffset); 
-    }
+    // const handlePageClick = (event) => {
+    //   const newOffset = (event.selected * itemsPerPage) % webtoon.length;
+    //   setItemOffset(newOffset); 
+    // }
 
     const toggleTab = (index) => {
         setCurrentClick(index);
     }
     
-    useEffect((e) => {
-        filterResult('mon');
+    useEffect(() => {
+        filterResultDay('mon');
     },[])
         
     return (
         <Contain>
             <DayScheduled>
-                <button onClick={() => {filterResult('mon'); toggleTab(1)}} style={{background:`${currentClick === 1 ? '#ed1c24' : ''}`, color:`${currentClick === 1 ? 'white' : ''}`}}>월</button>
-                <button onClick={() => {filterResult('tue'); toggleTab(2)}} style={{background:`${currentClick === 2 ? '#ed1c24' : ''}`, color:`${currentClick === 2 ? 'white' : ''}`}}>화</button>
-                <button onClick={() => {filterResult('wed'); toggleTab(3)}} style={{background:`${currentClick === 3 ? '#ed1c24' : ''}`, color:`${currentClick === 3 ? 'white' : ''}`}}>수</button>
-                <button onClick={() => {filterResult('thu'); toggleTab(4)}} style={{background:`${currentClick === 4 ? '#ed1c24' : ''}`, color:`${currentClick === 4 ? 'white' : ''}`}}>목</button>
-                <button onClick={() => {filterResult('fri'); toggleTab(5)}} style={{background:`${currentClick === 5 ? '#ed1c24' : ''}`, color:`${currentClick === 5 ? 'white' : ''}`}}>금</button>
-                <button onClick={() => {filterResult('sat'); toggleTab(6)}} style={{background:`${currentClick === 6 ? '#ed1c24' : ''}`, color:`${currentClick === 6 ? 'white' : ''}`}}>토</button>
-                <button onClick={() => {filterResult('sun'); toggleTab(7)}} style={{background:`${currentClick === 7 ? '#ed1c24' : ''}`, color:`${currentClick === 7 ? 'white' : ''}`}}>일</button>
-                <button onClick={() => {filterResult('ten'); toggleTab(8)}} style={{background:`${currentClick === 8 ? '#ed1c24' : ''}`, color:`${currentClick === 8 ? 'white' : ''}`}}>열흘</button>
+                <button onClick={() => {filterResultDay('mon'); toggleTab(1)}} style={{background:`${currentClick === 1 ? '#ed1c24' : ''}`, color:`${currentClick === 1 ? 'white' : ''}`}}>월</button>
+                <button onClick={() => {filterResultDay('tue'); toggleTab(2)}} style={{background:`${currentClick === 2 ? '#ed1c24' : ''}`, color:`${currentClick === 2 ? 'white' : ''}`}}>화</button>
+                <button onClick={() => {filterResultDay('wed'); toggleTab(3)}} style={{background:`${currentClick === 3 ? '#ed1c24' : ''}`, color:`${currentClick === 3 ? 'white' : ''}`}}>수</button>
+                <button onClick={() => {filterResultDay('thu'); toggleTab(4)}} style={{background:`${currentClick === 4 ? '#ed1c24' : ''}`, color:`${currentClick === 4 ? 'white' : ''}`}}>목</button>
+                <button onClick={() => {filterResultDay('fri'); toggleTab(5)}} style={{background:`${currentClick === 5 ? '#ed1c24' : ''}`, color:`${currentClick === 5 ? 'white' : ''}`}}>금</button>
+                <button onClick={() => {filterResultDay('sat'); toggleTab(6)}} style={{background:`${currentClick === 6 ? '#ed1c24' : ''}`, color:`${currentClick === 6 ? 'white' : ''}`}}>토</button>
+                <button onClick={() => {filterResultDay('sun'); toggleTab(7)}} style={{background:`${currentClick === 7 ? '#ed1c24' : ''}`, color:`${currentClick === 7 ? 'white' : ''}`}}>일</button>
+                <button onClick={() => {filterResultDay('ten'); toggleTab(8)}} style={{background:`${currentClick === 8 ? '#ed1c24' : ''}`, color:`${currentClick === 8 ? 'white' : ''}`}}>열흘</button>
             </DayScheduled>
             <DayWrap>
             {
@@ -91,7 +82,7 @@ const Day = () => {
 export default Day;
 
 const Contain = styled.div`
-    max-width:1320px;
+    width:100%;
     height: 100%;
     margin: 0 auto;
 
@@ -122,14 +113,12 @@ const Contain = styled.div`
 `
 
 const DayScheduled = styled.div`
-    padding:30px 0 20px 0;
-    margin:25px 20px;
-    text-align:center;
+    padding:10px 0 20px 0;
+    max-width:1280px;
+    margin: 0 auto;
 
     button{
-        background:#f8f8f8;
         padding:10px 24px;
-        margin:0 10px;
         font-size:16px;
         border-radius:25px;
         cursor: pointer;
@@ -145,11 +134,11 @@ const DayWrap = styled.div`
 
 
 const Slider = styled.div`
-    width:20%;
+    width:25%;
     padding: 0 0 0 20px;
     position:relative;
     box-sizing:border-box;
-    height:400px;
+    height:450px;
     display:inline-block;
 
     h1{
@@ -179,7 +168,7 @@ const Slider = styled.div`
 
 const ImgBox = styled.div`
     width:100%;
-    height:300px;
+    height:350px;
     overflow:hidden;
     border-radius:10px;
     position:relative;
@@ -190,7 +179,7 @@ const ImgBox = styled.div`
 
     img{
         width:100%;
-        height:300px;
+        height:350px;
         object-fit: cover;
         transition:0.3s;
     }

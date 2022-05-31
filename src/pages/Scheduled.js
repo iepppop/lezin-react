@@ -4,8 +4,8 @@ import Slider from "../components/scheduled/Slider";
 const Scheduled = () => {
   return (
     <>
-    <Slider />
-    <Day />
+  
+    <Day/>
     </>
   )
 }

@@ -11,7 +11,6 @@ import {
     sendPasswordResetEmail,
     confirmPasswordReset,
     GithubAuthProvider
-
 } from 'firebase/auth';
 
 const AuthContext = createContext({

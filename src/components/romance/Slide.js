@@ -1,15 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { romaceslides } from "./SlideData";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
-const Slide = () => {
+const Slide = ({data}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [seeArrow, setSeeArrow] = useState(false);
     const ref = useRef();
 
     const NextSlide = () => {
-        if (currentIndex === romaceslides.length - 3) {
+        if (currentIndex === data.length - 3) {
             return;
         } else {
             setCurrentIndex(currentIndex + 1);
@@ -39,7 +38,7 @@ const Slide = () => {
                 <Container>
                     <Wrap ref={ref}>
                         <SliderWrap>
-                            {romaceslides.map((romance, index) => {
+                            {data.map((romance, index) => {
                                 const keyword = [`${romance.keyword}`]
                                 return (
                                     <One>
