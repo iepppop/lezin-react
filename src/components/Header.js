@@ -83,6 +83,7 @@ const Contain = styled.div`
     height:7vh;
     position:relative;
     border-bottom: 1px solid ${(props) => props.theme.border};
+    z-index:1;
 `
 
 const ContainBg = styled.div`
