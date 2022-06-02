@@ -36,10 +36,9 @@ const Header = ({ theme, toggleTheme }) => {
                             <li><Link to="/scheduled">연재</Link></li>
                             <li><Link to="/romance">로맨스</Link></li>
                             <li><Link to="/boys">소년</Link></li>
-                            <li>드라마</li>
-                            <li>BL</li>
-                            <li>후방주의</li>
-                            <li>무료</li>
+                            <li><Link to="/drama">드라마</Link></li>
+                            <li><Link to="/bl">BL</Link></li>
+                            <li><Link to="/free">무료</Link></li>
                             <li>랭킹</li>
                             <li>이벤트</li>
                         </WrapUl>

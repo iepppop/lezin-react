@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
-const Slide = ({data}) => {
+const Big = ({ data }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [seeArrow, setSeeArrow] = useState(false);
     const ref = useRef();
 
     const NextSlide = () => {
-        if (currentIndex === 3) {
+        if (currentIndex === data.length - 1) {
             return;
         } else {
             setCurrentIndex(currentIndex + 1);
@@ -31,7 +31,6 @@ const Slide = ({data}) => {
         setCurrentIndex(index)
     }
 
-
     return (
         <>
             <Conatain onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)}>
@@ -42,8 +41,19 @@ const Slide = ({data}) => {
                                 const keyword = [`${romance.keyword}`]
                                 return (
                                     <One>
+                                        <Gradient style={{ background: `linear-gradient(to right, ${romance.backColor} 15%,  ${romance.backColor2} 50%, ${romance.backColor} 100%)` }}></Gradient>
                                         <OneWrap>
-                                            <Gradient style={{ background: `linear-gradient(to right, ${romance.backColor} 65%, transparent 100%)` }}>
+                                            <Gradient >
+                                                <ButtonWrap>
+
+                                                    <Prev onClick={() => PrevSlide()}><img
+                                                        src={process.env.PUBLIC_URL + '/image/arrowwhl.png'}
+                                                    /></Prev>
+                                                    <Next onClick={() => NextSlide()}><img
+                                                        src={process.env.PUBLIC_URL + '/image/arrowwh.png'}
+                                                    /></Next>
+
+                                                </ButtonWrap>
                                                 <Content>
                                                     <span>
                                                         <Cate>
@@ -72,6 +82,7 @@ const Slide = ({data}) => {
                                             <Thumbnail>
                                                 <img src={romance.img} />
                                             </Thumbnail>
+
                                         </OneWrap>
                                     </One>
                                 )
@@ -79,42 +90,32 @@ const Slide = ({data}) => {
                         </SliderWrap>
                     </Wrap>
                 </Container>
-                <ButtonWrap style={{ opacity: `${seeArrow ? '1' : '0'}` }}>
-                    {currentIndex === 0 ? null : (
-                        <Prev onClick={() => PrevSlide()}><MdKeyboardArrowLeft /></Prev>
-                    )}
 
-                    {currentIndex === 2 ? null : (
-                        <Next onClick={() => NextSlide()}><MdKeyboardArrowRight /></Next>
-                    )}
-                </ButtonWrap>
 
             </Conatain>
             <Dot>
-                {Array.from({ length: 3 }).map((item, index) => (
-                    <li 
-                    onClick={() => moveDot(index)}
-                    style={{ background: `${currentIndex === index ? '#2d2d2d' : '#eee'}`, padding: `${currentIndex === index ? '0 5px' : ''}`, borderRadius: `${currentIndex === index ? '20px' : '50%'}` }}
+                {Array.from({ length: 4 }).map((item, index) => (
+                    <li
+                        onClick={() => moveDot(index)}
+                        style={{ background: `${currentIndex === index ? '#2d2d2d' : '#eee'}`, padding: `${currentIndex === index ? '0 5px' : ''}`, borderRadius: `${currentIndex === index ? '20px' : '50%'}` }}
                     ></li>
                 ))}
-        </Dot>
+            </Dot>
         </>
     )
 }
-export default Slide;
+export default Big;
 
 const Conatain = styled.div`
-    max-width:1320px;
     margin: 0 auto;
-    height:330px;
-    padding: 0 20px;
+    height:320px;
     position:relative;
 `
 
 const Container = styled.div`
     position:relative;
-    width:100%;
-    height: 100%;
+    max-width:100%;
+    height:100%;
     overflow:hidden;
 `
 
@@ -126,48 +127,49 @@ const Wrap = styled.div`
 `
 
 const SliderWrap = styled.div`
-    width:300%;
+    width:400%;
     height:100%;
     display:flex;
     align-items: center;
 `
 
 const One = styled.div`
-    width:50%;
-    height:85%;
+    width:100%;
+    height:100%;
     position:relative;
-    :nth-child(1){
-        padding:0 20px 0 0;
-    }
-    :nth-child(3){
-        padding:0 20px 0 0;
-    }
-    :nth-child(5){
-        padding:0 20px 0 0;
-    }
 `
 
 const OneWrap = styled.div`
-    width:100%;
+    max-width:1320px;
+    margin: 0 auto;
     height:100%;    
     position:relative;
-    border-radius:15px;
-    overflow:hidden;
 `
 
 
 const Thumbnail = styled.div`
     position:absolute;
-    right:0;
-    height:100%;
+    right:10%;
+    border-radius:20px;
+    top:54%;
+    overflow:hidden;
+    transform:translate(0,-50%);
+    border-radius:15px;
+    z-index:99;
+    height:280px;
+
     img{
-        height:100%;
+        width:400px;
+        height:280px;
+        object-fit:cover;
+        border-radius:20px;
+        overflow: hidden;
     }
 `
 
 const Gradient = styled.div`
-    width:70%;
-    height:100%;
+    width:100%;
+    height:280px;
     position:absolute;
     z-index:1;
     display:flex;
@@ -176,7 +178,8 @@ const Gradient = styled.div`
 `
 
 const Content = styled.div`
-    width:75%;
+    width:80%;
+    padding:0 20px;
     height:75%;
     display:flex;
     flex-direction: column;
@@ -188,7 +191,7 @@ const Content = styled.div`
 
     h1{
         margin:10px 0 0 0;
-        width:210px;
+        width:250px;
         color:#fff;
         line-height:120%;
         letter-spacing:1px;
@@ -233,21 +236,19 @@ const Keyword = styled.div`
 `
 
 const ButtonWrap = styled.div`
-
+  
 `
 
 const Next = styled.div`
     position:absolute;
     z-index: 2;
-    right:-10px;
+    right:0;
     top:50%;
     transform:translate(0,-50%);
-    background:rgba(255,255,255,0.8);
     padding:20px 20px 15px 20px;
     border-radius:50%;
-    color:#000;
-    border: 1px solid #eee;
-    font-size:20px;
+    color:#fff;
+    font-size:50px;
     z-index:999;
     cursor: pointer;
 `
@@ -256,15 +257,13 @@ const Prev = styled.div`
     position:absolute;
     z-index: 2;
     background:#red;
-    left:-10px;
+    left:0;
     top:50%;
     transform:translate(0,-50%);
-    background:rgba(255,255,255,0.8);
     padding:20px 20px 15px 20px;
     border-radius:50%;
-    color:#000;
-    border: 1px solid #eee;
-    font-size:20px;
+    color:#fff;
+    font-size:50px;
     z-index:999;
     cursor: pointer;
 `

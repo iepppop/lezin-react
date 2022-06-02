@@ -31,8 +31,12 @@ const Day = () => {
         
     return (
         <Contain>
+                    
             <DayScheduled>
-                <button onClick={() => {filterResultDay('mon'); toggleTab(1)}} style={{background:`${currentClick === 1 ? '#ed1c24' : ''}`, color:`${currentClick === 1 ? 'white' : ''}`}}>월</button>
+                <button onClick={() => {filterResultDay('mon'); toggleTab(1)}}>
+                    월
+                    <Line />
+                    </button>
                 <button onClick={() => {filterResultDay('tue'); toggleTab(2)}} style={{background:`${currentClick === 2 ? '#ed1c24' : ''}`, color:`${currentClick === 2 ? 'white' : ''}`}}>화</button>
                 <button onClick={() => {filterResultDay('wed'); toggleTab(3)}} style={{background:`${currentClick === 3 ? '#ed1c24' : ''}`, color:`${currentClick === 3 ? 'white' : ''}`}}>수</button>
                 <button onClick={() => {filterResultDay('thu'); toggleTab(4)}} style={{background:`${currentClick === 4 ? '#ed1c24' : ''}`, color:`${currentClick === 4 ? 'white' : ''}`}}>목</button>
@@ -41,7 +45,6 @@ const Day = () => {
                 <button onClick={() => {filterResultDay('sun'); toggleTab(7)}} style={{background:`${currentClick === 7 ? '#ed1c24' : ''}`, color:`${currentClick === 7 ? 'white' : ''}`}}>일</button>
                 <button onClick={() => {filterResultDay('ten'); toggleTab(8)}} style={{background:`${currentClick === 8 ? '#ed1c24' : ''}`, color:`${currentClick === 8 ? 'white' : ''}`}}>열흘</button>
             </DayScheduled>
-            <DayBorder />
             <DayWrap>
             {
                 currentItems.map((values, idx) => {
@@ -114,18 +117,32 @@ const Contain = styled.div`
 `
 
 const DayScheduled = styled.div`
-    padding:10px 0 10px 0;
+    padding:0px 0 30px 0;
     max-width:1280px;
-    margin: 0 auto;
+    margin: 50px auto 10px auto;
+    text-align:center;
 
     button{
-        padding:10px 24px;
+        padding:5px 24px;
         font-size:16px;
-        border-radius:25px;
+        border-radius:10px;
         cursor: pointer;
         font-weight:600;
+        position:relative;
+        margin:0 10px 0 0;
     }
 `
+const Line = styled.div`
+    position:absolute;
+    bottom:3px;
+    width:50%;
+    height:5px;
+    background:red;
+    left:50%;
+    transform:translate(-50%,0);
+    z-index:-1;
+`
+
 
 const DayBorder = styled.div`
     width:100%;
@@ -135,23 +152,24 @@ const DayBorder = styled.div`
 `
 
 const DayWrap = styled.div`
-    width:100%;
+    max-width:1320px;
     height:100%;
     padding:0 20px 0 0;
+    margin: 0 auto;
 `
 
 
 const Slider = styled.div`
-    width:25%;
+    width:16.66%;
     padding: 0 0 0 20px;
     position:relative;
     box-sizing:border-box;
-    height:450px;
+    height:280px;
     display:inline-block;
 
     h1{
         font-weight: 500;
-        font-size:18px;
+        font-size:15px;
         margin:15px 0 0 15px;
     }
 
@@ -159,7 +177,7 @@ const Slider = styled.div`
         margin:3px 0 0 0;
         font-weight:500;
         opacity:0.8;
-        font-size:14px; 
+        font-size:13px; 
         display:inline-block;
     }
 
@@ -167,7 +185,7 @@ const Slider = styled.div`
         display:inline-block;
         font-weight:500;
         opacity:0.4;
-        font-size:14px; 
+        font-size:13px; 
         margin:0 10px 0 15px;
 
     }
@@ -176,7 +194,7 @@ const Slider = styled.div`
 
 const ImgBox = styled.div`
     width:100%;
-    height:350px;
+    height:200px;
     overflow:hidden;
     border-radius:10px;
     position:relative;
@@ -187,7 +205,7 @@ const ImgBox = styled.div`
 
     img{
         width:100%;
-        height:350px;
+        height:250px;
         object-fit: cover;
         transition:0.3s;
     }

@@ -125,12 +125,12 @@ export default Slider;
 
 const Container = styled.div`
   width:100%;
-  height:550px;
+  height:350px;
   transition:0.3s;
   background:#eee;
 `
 const Wrap = styled.div`
-  max-width:1320px;
+  width:100%;
   height: 100%;
   margin: 0 auto;
 `

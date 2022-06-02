@@ -1,23 +1,23 @@
-export const romaceslides = [
+export const boysdata = [
     {
-        cate:'HOT',
-        content:'훌룡하게 남자를 홀려보겠어!',
-        title:'여우야 뭐하니',
+        cate:'추천',
+        content:'세대가 바뀌어도 뜻은 이어진다!',
+        title:'천지해',
         keyword:[
-            '구미호','동양풍',
+            '이종족','동양풍',
         ],
-        backColor:'#a07f85',
-        img:'https://blog.kakaocdn.net/dn/VcxpQ/btrDkarGjwC/1DK5xPmBLKF0UG4I2JJ0N1/img.png'
+        backColor:'#b32917',
+        img:'https://blog.kakaocdn.net/dn/eJmHJs/btrDHesXWwS/uKexEqb3WmBJWDKrlNSVRK/img.png'
     },
     {
-        cate:'2부 시작',
-        content:'스냅샷과 함께 시작된 로맨스',
-        title:'낮에 뜨는 별',
+        cate:'추천',
+        content:'원하는 물건을 구해주는 가게',
+        title:'이름없는 가게',
         keyword:[
-            '연상연하','연예인',
+            '잔혹','미스터리',
         ],
-        backColor:'#2eaef0',
-        img:'https://blog.kakaocdn.net/dn/b4dfZr/btrDpONWWYX/dFnWMmn5brkJS8gmGaCGFk/img.png'
+        backColor:'#030001',
+        img:'https://blog.kakaocdn.net/dn/rJEnC/btrDGcbrmcS/dqARvSgyX7IUmOPi4q7Ek1/img.png'
     },
     {
         cate:'NEW',

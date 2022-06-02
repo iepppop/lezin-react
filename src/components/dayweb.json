@@ -154,15 +154,6 @@
         },
         {
             "id" : 20, 
-            "title" : "보름달 식당", 
-            "artist" : "김보름",
-            "genre" : "드라마",
-            "day" : "thu", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5873525665628160/images/tall.webp?updated=1583219994404&width=720"
-        }
-        ,
-        {
-            "id" : 20, 
             "title" : "매드독", 
             "artist" : "하리보",
             "genre" : "BL",
@@ -414,11 +405,43 @@
         },
         {
             "id" : 51, 
-            "title" : "블랙보이", 
-            "artist" : "노커",
+            "title" : "여우야 뭐하니", 
+            "artist" : "쓰라린",
+            "genre" : "로맨스",
+            "day" : "ten", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5808226196324352/images/tall.webp?updated=1649910278146&width=720"
+        },
+        {
+            "id" : 52, 
+            "title" : "천지해", 
+            "artist" : "핑푸",
             "genre" : "판타지",
-            "day" : "fri", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/235/images/tall.webp?updated=1533904309733&width=720"
+            "day" : "sun", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/59/images/tall.webp?updated=1637805569292&width=720"
+        },
+        {
+            "id" : 53, 
+            "title" : "이름없는 가게", 
+            "artist" : "하몽",
+            "genre" : "판타지",
+            "day" : "thu", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5967542155214848/images/tall.webp?updated=1620200123330&width=720"
+        },
+        {
+            "id" : 54, 
+            "title" : "작전본부: 우리집", 
+            "artist" : "청혈구",
+            "genre" : "드라마",
+            "day" : "sat", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6013643236114432/images/tall.webp?updated=1653010695440&width=720"
+        },
+        {
+            "id" : 55, 
+            "title" : "OX유정", 
+            "artist" : "도국",
+            "genre" : "드라마",
+            "day" : "sat", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6558093126467584/images/tall.webp?updated=1649654310106&width=720"
         }
     ]
 }

@@ -46,17 +46,16 @@ const Wrap = styled.div`
 `
 
 const Slider = styled.div`
-    width:20%;
+    width:16.66%;
     padding: 0 0 0 20px;
     position:relative;
     box-sizing:border-box;
-    height:400px;
+    height:280px;
     display:inline-block;
-    z-index:999;
 
     h1{
         font-weight: 500;
-        font-size:18px;
+        font-size:15px;
         margin:15px 0 0 15px;
     }
 
@@ -64,7 +63,7 @@ const Slider = styled.div`
         margin:3px 0 0 0;
         font-weight:500;
         opacity:0.8;
-        font-size:14px; 
+        font-size:13px; 
         display:inline-block;
     }
 
@@ -72,7 +71,7 @@ const Slider = styled.div`
         display:inline-block;
         font-weight:500;
         opacity:0.4;
-        font-size:14px; 
+        font-size:13px; 
         margin:0 10px 0 15px;
 
     }
@@ -81,7 +80,7 @@ const Slider = styled.div`
 
 const ImgBox = styled.div`
     width:100%;
-    height:300px;
+    height:200px;
     overflow:hidden;
     border-radius:10px;
     position:relative;
@@ -92,7 +91,7 @@ const ImgBox = styled.div`
 
     img{
         width:100%;
-        height:300px;
+        height:250px;
         object-fit: cover;
         transition:0.3s;
     }

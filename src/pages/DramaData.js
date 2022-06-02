@@ -1,23 +1,23 @@
-export const romaceslides = [
+export const dramasdata = [
     {
-        cate:'HOT',
-        content:'훌룡하게 남자를 홀려보겠어!',
-        title:'여우야 뭐하니',
+        cate:'2부시작',
+        content:'우리집에 들어온 비밀요원들?!',
+        title:'작전본부: 우리집',
         keyword:[
-            '구미호','동양풍',
+            '라이벌','비밀',
         ],
-        backColor:'#a07f85',
-        img:'https://blog.kakaocdn.net/dn/VcxpQ/btrDkarGjwC/1DK5xPmBLKF0UG4I2JJ0N1/img.png'
+        backColor:'#c0aca5',
+        img:'https://blog.kakaocdn.net/dn/du34Lo/btrDInXx2g7/kIbQ3gp8SG6xI27jtcBMKK/img.png'
     },
     {
-        cate:'2부 시작',
-        content:'스냅샷과 함께 시작된 로맨스',
-        title:'낮에 뜨는 별',
+        cate:'HOT',
+        content:'X알 없는 존잘남의 로맨스',
+        title:'OX유정남',
         keyword:[
-            '연상연하','연예인',
+            '삼각관계','성장물',
         ],
-        backColor:'#2eaef0',
-        img:'https://blog.kakaocdn.net/dn/b4dfZr/btrDpONWWYX/dFnWMmn5brkJS8gmGaCGFk/img.png'
+        backColor:'#9a70fe',
+        img:'https://blog.kakaocdn.net/dn/deD6F9/btrDFw8nt09/jCdxITlEVCdm1kqDbobjD0/img.png'
     },
     {
         cate:'NEW',

@@ -1,24 +1,19 @@
-import styled from 'styled-components';
-import { useData } from '../contexts/DataContext';
-import { useEffect } from 'react';
-import Slide from '../components/romance/Slide';
-import { boysdata } from './BoysData';
+import { useEffect } from "react";
+import styled from "styled-components";
+import BlSlider from "../components/BL/BlSlider";
+import { useData } from "../contexts/DataContext";
 
-
-
-const Boys = () => {
+const Bl = () => {
   const { filterResult, currentItems } = useData();
 
   useEffect(() => {
-    filterResult('판타지');
+    filterResult('BL');
 }, [])
-
-
   return (
-    <Container> 
+<>
+        <BlSlider/> 
+        <Container> 
         <Wrap>
-      <Slide data={boysdata} />
-      
       {
       currentItems.map((values, idx) => {
           const { id, title, artist, genre, thumbnail } = values;
@@ -36,14 +31,18 @@ const Boys = () => {
       })}
       </Wrap>
       </Container>
+      </>
   )
 }
-export default Boys;
+export default Bl;
+
+
 const Container = styled.div`
     max-width:1320px;
     margin: 0 auto;
     height:350px;
     position:relative;
+    padding:120px 0 0 0;
 `
 const Wrap = styled.div`
     width:100%;

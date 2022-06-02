@@ -2,22 +2,19 @@ import styled from 'styled-components';
 import { useData } from '../contexts/DataContext';
 import { useEffect } from 'react';
 import Slide from '../components/romance/Slide';
-import { boysdata } from './BoysData';
+import { dramasdata } from './DramaData';
 
-
-
-const Boys = () => {
-  const { filterResult, currentItems } = useData();
+const Drama = () => {
+    const { filterResult, currentItems } = useData();
 
   useEffect(() => {
-    filterResult('판타지');
+    filterResult('드라마');
 }, [])
-
 
   return (
     <Container> 
         <Wrap>
-      <Slide data={boysdata} />
+      <Slide data={dramasdata} />
       
       {
       currentItems.map((values, idx) => {
@@ -38,7 +35,8 @@ const Boys = () => {
       </Container>
   )
 }
-export default Boys;
+export default Drama;
+
 const Container = styled.div`
     max-width:1320px;
     margin: 0 auto;
