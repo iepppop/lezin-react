@@ -32,7 +32,7 @@ export const blslides = [
         title:'칼과꽃',
         author:'snob',
         keyword:[
-            '로판','초능력',
+            '절륜공','굴림수','동양풍','주종관계',
         ],
         backColor:'#4d6a70',
         img:'https://blog.kakaocdn.net/dn/vRXq7/btrDQFcBaZA/9ewV0ZUDP5tPviD75zjsCK/img.png',
