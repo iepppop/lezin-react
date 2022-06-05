@@ -7,7 +7,8 @@
             "artist" : "박바퀴",
             "genre" : "일상",
             "day" : "mon", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6185833387393024/images/tall.webp?updated=1626417739320&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6185833387393024/images/tall.webp?updated=1626417739320&width=720",
+            "explain" : "제가 이러고 삽니다."
         },
         {
             "id" : 2, 
@@ -16,7 +17,8 @@
             "artist" : "윤박",
             "genre" : "일상",
             "day" : "mon", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4566161041522688/images/tall.webp?updated=1641192704813&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4566161041522688/images/tall.webp?updated=1641192704813&width=720",
+            "explain" : "원룸에서 츄리닝 차림으로 한 프러포즈, 그리고 결혼..? 스물일곱 동갑내기의 바른(?) 부부생활! 철없는 남편, 그런 그를 거친 생각과 불안한 눈빛으로 지켜보는 아내님! 두 사람의 요절복통 신혼일기, <바른쀼생활>!"
         },
         {
             "id" : 3, 
@@ -25,7 +27,8 @@
             "artist" : "나단",
             "genre" : "BL",
             "day" : "mon", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4974692363730944/images/tall.webp?updated=1650616164701&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4974692363730944/images/tall.webp?updated=1650616164701&width=720",
+            "explain" : "봤냐? 완전 닮았지? 네 전 애인이랑. 친구의 오지랖으로 전 애인과 닮은 애를 청소부로 집에 들여버렸다. 당장 내쫓으려 했지만, 자꾸만 신경 쓰이는 탓에 결국 고용하기로 마음먹었고... 약간의 껄끄러움과 설렘이 공존하던 어느 날, 폭탄 발언을 들어버렸다. 저, 아저씨를 좋아하는 것 같아요."
         },
         {
             "id" : 4, 
@@ -34,7 +37,8 @@
             "artist" : "고지라군",
             "genre" : "판타지",
             "day" : "tue", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/248/images/tall.webp?updated=1649059443521&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/248/images/tall.webp?updated=1649059443521&width=720",
+            "explain" : "마왕을 해치운 용사는 드디어 공주를 구하고 새 삶을 찾는다. 하지만 공주와의 달콤한 미래는 상상으로 끝나버리고... 마왕 격퇴 이후 평범백수로 전락한 용사의 구차한 일상. 고지라군 작가님의 화제작 4컷용사가 리메이크로 찾아왔다!"
         },
         {
             "id" : 5, 
@@ -43,7 +47,8 @@
             "artist" : "NAKTA",
             "genre" : "학원",
             "day" : "wed", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5015838139940864/images/tall.webp?updated=1626418904502&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5015838139940864/images/tall.webp?updated=1626418904502&width=720",
+            "explain" : "고등학교 2학년 새학기를 맞이하는 한누리. 초등학교 시절 전학 갔던 소꿉친구 강호밀이 같은 반 옆자리 짝꿍으로 돌아왔다! 키 147cm로  멈춰버린 자신과 다르게 몇년 새 많은 것이 달라진 호밀. 그의 등장으로 흠칫 긴장하고 덜컹 가슴 뛰는 일상이 시작된다!"
         },
         {
             "id" : 6, 
@@ -52,7 +57,8 @@
             "artist" : "히눈",
             "genre" : "BL",
             "day" : "wed", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4509144894210048/images/tall.webp?updated=1648886689504&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4509144894210048/images/tall.webp?updated=1648886689504&width=720",
+            "explain" :"공부밖에 모르는 모범생 진혁과 일진들 중심에 서있는 임희찬. 진혁은 반 분위기를 흐리는 희찬 무리가 거슬린다. 앞으로 그들을 계속 무시하면서 지내겠다고 다짐을 하지만 하굣길에 희찬이 그의 아버지에게 맞고 있는 장면을 목격하고 마는데… 전혀 어울리지 않을 것 같은 두 사람의 관계는 가까워질 수 있을까?"
         },
         {
             "id" : 7, 
@@ -61,7 +67,8 @@
             "artist" : "므앵갱",
             "genre" : "판타지",
             "day" : "mon", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4705963879235584/images/tall.webp?updated=1649401028557&width=840"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4705963879235584/images/tall.webp?updated=1649401028557&width=840",
+            "explain" : "피의 색으로 모든 것이 나뉘는 세상. 순수한 색일수록 높은 신분을, 섞이고 섞여 혼탁한 색일수록 낮은 신분을 지닌 채 살아가는 인간들 앞에 어느 날 '흡색'이라는 무시무시한 존재가 나타난다. 아무 색도 없는 흡색들은 닥치는 대로 인간의 피를 탐하고, 이에 대항할 수 있는 것은 오직 ‘빛눈의 은덕‘을 입은 사람들뿐. 바로 그 ‘빛눈의 은덕’이 어느 보잘것없던 소녀 시르에게 찾아오게 되는데...! <어둠이 스러지는 꽃> <삼작미인가> 므앵갱 작가의 신작!"
         },
         {
             "id" : 8, 
@@ -70,7 +77,8 @@
             "artist" : "김지효",
             "genre" : "로맨스",
             "day" : "mon", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.jpg?updated=1651545808918&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4907714540535808/images/tall.jpg?updated=1651545808918&width=720",
+            "explain" : "안나는 대장간에서 검 만드는 일을 한다. 어느 날 단골 손님인 알렉스를 숲속 도적떼로부터 구한 이후 그녀의 평범한 일상이 깨지게 되는데…!"
         },
         {
             "id" : 9, 
@@ -79,7 +87,8 @@
             "artist" : "박담영하",
             "genre" : "BL",
             "day" : "tue", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5641055802818560/images/tall.webp?updated=1603872486579&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5641055802818560/images/tall.webp?updated=1603872486579&width=720",
+            "explain" : "부모님의 재혼으로 만나 해서는 안되는 관계를 이어가던 해수와 주원.반복되는 이별과 만남, 다툼과 잠자리 속 무감각해져버린 둘 사이에 태경이 파고들면서 변화는 시작된다."
         },
         {
             "id" : 10, 
@@ -88,7 +97,8 @@
             "artist" : "조만국",
             "genre" : "일상",
             "day" : "tue", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5275168827310080/images/tall.webp?updated=1626417570580&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5275168827310080/images/tall.webp?updated=1626417570580&width=720",
+            "explain" : "원고를 읽고 킹받은 담당PD가 퇴사까지 고민하게 만든, 조만국 작가의 신비주의 일상툰!"
         },
         {
             "id" : 11, 
@@ -97,7 +107,8 @@
             "artist" : "부발",
             "genre" : "판타지",
             "day" : "wed", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6614679117758464/images/tall.webp?updated=1638758362171&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6614679117758464/images/tall.webp?updated=1638758362171&width=720",
+            "explain" : "18살 생일, 이상한 꿈과 함께 잠에서 깨어난 아리는 시골 마을로 전학을 가게 된다. 이번 생일 선물은 특별하다며 그녀를 거대한 나무 앞으로 데려간 부모님이 나무에 노크를 두 번 하자 아리는 땅속으로 끊임없이 떨어지게 되는데?! 매력넘치는 버섯족 친구들의 이야기가 시작된다! 제4회 세계만화공모전 우수상 수상작!"
         },
         {
             "id" : 12, 
@@ -106,7 +117,8 @@
             "artist" : "ASURA",
             "genre" : "드라마",
             "day" : "wed", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4625200343023616/images/tall.webp?updated=1619320632111&width=840"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4625200343023616/images/tall.webp?updated=1619320632111&width=840",
+            "explain" : "시간의 왜곡을 감지할 수 있는 소년 성운협은 시간을 멈출 수 있는 소녀 정은하와의 만남으로 인해 시간능력의 본질과 그 능력의 소유자들의 존재에 대해 파고들게 된다. 그러던 중 시간능력이 십수 년 전에 일어난 어떤 사건과 깊숙이 연결되어 있다는 사실을 알게 되는데..."
         },
         {
             "id" : 13, 
@@ -115,7 +127,8 @@
             "artist" : "이파도",
             "genre" : "BL",
             "day" : "tue", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5665181768679424/images/tall.webp?updated=1621229868182&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5665181768679424/images/tall.webp?updated=1621229868182&width=720",
+            "explain" : "회사의 골칫거리였던 <인시크릿> 멤버 박도진, 그를 유일하게 컨트롤 할 수 있는 멤버 최유원! 두 사람은 나름대로 원만한 팀메이트 관계를 유지하고 있었다. '그날' 박도진이 그런 실수를 하기 전까지는..."
         },
         {
             "id" : 14, 
@@ -124,7 +137,8 @@
             "artist" : "강지영",
             "genre" : "BL",
             "day" : "wed", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5172685072760832/images/tall.webp?updated=1550127491993&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5172685072760832/images/tall.webp?updated=1550127491993&width=720",
+            "explain" : "황제의 소유물에는 손 끝 하나 닿고 싶지 않아! 아버지에게 복수심을 품고 그의 모든 것을 증오하는 4황자 볼프강, 현실을 벗어날 수 있을 힘과 황제의 몰락을 원하는 신수혁. 다른 생각을 가지고 같은 꿈을 꾸는 두 사람…! [OH, MY GOD!] 강지영, [공주는 잠 못 이루고] 하가 작가가 선보이는 초대형 BL 판타지!"
         },
         {
             "id" : 15, 
@@ -133,7 +147,8 @@
             "artist" : "차현",
             "genre" : "BL",
             "day" : "tue", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6234227991969792/images/tall.webp?updated=1610419380910&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6234227991969792/images/tall.webp?updated=1610419380910&width=720",
+            "explain" : "낮에는 유능한 '비서'로, 밤에는 유능한 '남자'로 이중생활을 즐기는 수하. 칼퇴 후 게이바에서 원나잇 상대와 함뜨 전! 그런데 거기가 작다?! 상대를 거절하고 나오는 순간 문 앞에서 누군가와 부딪히는데…. 몸에 집 한 채는 걸치고 다니는 이 남자...박지운...이사님?"
         },
         {
             "id" : 16, 
@@ -142,7 +157,8 @@
             "artist" : "엠제이",
             "genre" : "BL",
             "day" : "thu", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6402044966010880/images/tall.webp?updated=1643271862715&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6402044966010880/images/tall.webp?updated=1643271862715&width=720",
+            "explain" : "한평생 게이임을 부정해왔던 68세의 노인 권승태는 일기장을 통해 19살의 나와 대화를 나누게 되는데.. 이 말도 안 되는 상황을 이용해 과거를 바꾸려고 미래를 알려주기 시작한다."
         },
         {
             "id" : 17, 
@@ -151,7 +167,8 @@
             "artist" : "네치",
             "genre" : "로맨스",
             "day" : "thu", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6430096279011328/images/tall.webp?updated=1645091903455&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6430096279011328/images/tall.webp?updated=1645091903455&width=720",
+            "explain" : "과거 아이돌 팬픽 작가로 꽤 유명했던 '민아'는 자신의 글 쓰는 능력을 갈고 닦아 비엘 소설 작가로 데뷔하여 성공한다. 그러던 어느 날 자신이 덕질했던 아이돌 '류우빈'이 일반인이 되어 본인의 담당 편집자로 나타난다. 졸지에 덕밍하게 생긴 민아는 그 사실을 감추려 노력하지만, 누군가의 폭로로 인해 자신이 우빈의 극성팬이였던 걸 들키게 되는데...?! 염원하던 아이돌과의 만남은 과연 악연일지, 필연일지?"
         },
         {
             "id" : 18, 
@@ -160,7 +177,8 @@
             "artist" : "인디고",
             "genre" : "액션",
             "day" : "thu", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/312/images/tall.webp?updated=1632989104931&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/312/images/tall.webp?updated=1632989104931&width=720",
+            "explain":  "인디고 작가의 틴에이저 히어로물 [내츄럴스]가 본격적인 스케일로 다시 돌아왔다."
         },
         {
             "id" : 19, 
@@ -169,7 +187,8 @@
             "artist" : "금선",
             "genre" : "로맨스",
             "day" : "thu", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6753509090590720/images/tall.webp?updated=1645092031171&width=840"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6753509090590720/images/tall.webp?updated=1645092031171&width=840",
+            "explain":  "뛰어난 모작 실력을 가졌지만 창작엔 재능이 없어 인정받지 못한 화가 요셉은 자괴감을 이기지 못하고 극단적인 선택을 하려고 한다. 그런 그를 막아선 비밀스러운 여자, 르네."
         },
         {
             "id" : 20, 
@@ -178,7 +197,8 @@
             "artist" : "하리보",
             "genre" : "BL",
             "day" : "fri", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5290374773145600/images/tall.jpg?updated=1643187292864&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5290374773145600/images/tall.jpg?updated=1643187292864&width=720",
+            "explain" : "조폭이라는 집안 내력으로 ‘평범한’ 일상에 집착하는 하민. 어느 날 하민이 적대 세력에 납치를 당하는 사건이 벌어지자 그의 아버지는 그 옆에 세혁을 붙여 준다. 그런데 튀어도 너무 튀는 세혁. 평범하고 싶은 하민의 일상에 세혁이라는 강렬한 파문이 일기 시작한다."
         },
         {
             "id" : 21, 
@@ -187,7 +207,8 @@
             "artist" : "노커",
             "genre" : "판타지",
             "day" : "fri", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/235/images/tall.jpg?updated=1533904309733&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/235/images/tall.jpg?updated=1533904309733&width=720",
+            "explain" : "블랙보이와 한스 그리고 카이드락. 용사와 마왕의 불안한 우정 .'어나더월드' 노커 작가의 또 다른 다크 판타지!"
         },
         {
             "id" : 22, 
@@ -196,7 +217,8 @@
             "artist" : "마롭믹",
             "genre" : "BL",
             "day" : "fri", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5305536612728832/images/tall.webp?updated=1617246605493&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5305536612728832/images/tall.webp?updated=1617246605493&width=720",
+            "explain" : "편입생 염세민은 복학 첫날 회화 수업에서 자신이 염탐해 온 John(조요한)과 마주치게 된다. 기쁨과 동시에 양심의 가책을 느낀 세민은 더 이상 요한과 엮이지 않길 바라지만, 그의 바람이 무색하게 요한은 세민에게 접근해 오는데… 조요한을 따라하는 “카피캣” 염세민의 아슬아슬한 3학년 2학기!"
         },
         {
             "id" : 23, 
@@ -205,7 +227,8 @@
             "artist" : "라돌",
             "genre" : "로맨스",
             "day" : "fri", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4727234536734720/images/tall.webp?updated=1645092405587&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4727234536734720/images/tall.webp?updated=1645092405587&width=720",
+            "explain" : "눈에 거슬리는 민서의 미세한 움직임을 혹시나 하는 마음으로 지적해 주었는데 웬걸, 희영의 주문을 완벽히 소화한 민서는 교내 청백전 승리투수가 된다. 희영은 충고를 철저하게 따라준 민서를 다시 보게 되고, 그런 그를 프로선수로 만들기로 결심하는데…!"
         },
         {
             "id" : 24, 
@@ -214,7 +237,8 @@
             "artist" : "김보름",
             "genre" : "드라마",
             "day" : "fri", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5053488885465088/images/tall.webp?updated=1649293177776&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5053488885465088/images/tall.webp?updated=1649293177776&width=720",
+            "explain" : "오늘도 지친 당신에게 필요한 건? 맛있는 밥 한 그릇을 들고 오늘도 보름달식당이 찾아갑니다."
         }
         ,
         {
@@ -234,7 +258,8 @@
             "artist" : "우시목",
             "genre" : "학원",
             "day" : "sun", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5901673735454720/images/tall.webp?updated=1651314534255&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5901673735454720/images/tall.webp?updated=1651314534255&width=720",
+            "explain" : "어린 시절 한새벽 앞에 나타난 윤슬. 그녀는 여우비처럼 예고 없이 나타났다가 예고 없이 떠나버린다. 시간이 흘러 또다시 나타난 윤슬. 그리고 지금은 앞집에 사는 이웃이 되었는데...?!"
         }
         ,
         {
@@ -244,7 +269,8 @@
             "artist" : "오솟",
             "genre" : "개그",
             "day" : "ten", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4733152235356160/images/tall.webp?updated=1626417540383&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4733152235356160/images/tall.webp?updated=1626417540383&width=720",
+            "explain" : "지극히 정상적인(?) 그들의 표준적인 모험 이야기가 시작된다!"
         },
         {
             "id" : 28, 
@@ -253,7 +279,8 @@
             "artist" : "강파클럽",
             "genre" : "BL",
             "day" : "mon", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6290037509783552/images/tall.webp?updated=1641716468916&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6290037509783552/images/tall.webp?updated=1641716468916&width=720",
+            "explain" : "모두가 인정하고 모두가 사랑하는 경영대 최고 인싸 '김태평'. 사실 이 모습이 모두 철저하게 꾸며낸 것이라면? 그리고 이런 이중성을 위협이 전혀 되지 않아 신경도 안 썼던 같은 과 아싸에게 들켜버린다면? 내 완벽한 인생계획에 오점인 아싸 '박희람'을 반드시 치워버려야 한다!"
         },
         {
             "id" : 29, 
@@ -262,7 +289,8 @@
             "artist" : "은별",
             "genre" : "로맨스",
             "day" : "mon", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4766866720751616/images/tall.webp?updated=1635218379860&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4766866720751616/images/tall.webp?updated=1635218379860&width=720",
+            "explain" : "편히 잘 수 있는 방법이 이 남자의 양기를 빼는 것밖에 없다고요?! 유년시절부터 귀신을 보던 비야에게 무당은 남자를 조심하라고 한다. 그 말이 사실인 듯, 비야는 대학생이 되자마자 부동산 사기로 처음 보는 남자와 동거를 하게 되고, 설상가상으로 귀신이 매일 밤 몰려들어 잠 못 이루게 되는데.."
         },
         {
             "id" : 30, 
@@ -271,7 +299,8 @@
             "artist" : "달현지",
             "genre" : "BL",
             "day" : "mon", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5253353104277504/images/tall.webp?updated=1632643453479&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5253353104277504/images/tall.webp?updated=1632643453479&width=720",
+            "explain" : "조금의 욕심도 부릴 수 없는 팍팍한 삶에 완전히 지쳐버린 그 날, 정신을 차려보니 온 방에 흩날리고 있는 지폐들과 낯선 남자의 감촉만이 남아있다. 백만원에 행복할 수 있는 소시민 남우와 행복해지는 방법을 잊은 상속남 시언의 계약 연애"
         },
         {
             "id" : 31, 
@@ -280,7 +309,8 @@
             "artist" : "개운밀밀",
             "genre" : "BL",
             "day" : "mon", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5530699001298944/images/tall.webp?updated=1639724777138&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5530699001298944/images/tall.webp?updated=1639724777138&width=720",
+            "explain" : "미친 것처럼 사시미로 사람을 도륙한 덕분에 미친 사시미, '미미'라는 별명을 달고 다니는 프로 킬러 윤재이. 몇 년 전 의동생 정우를 잃고 난 뒤로는 그에게 있어 삶이란 죽지 못해 이어가는 것일 뿐이다. 그런 그에게 외모, 실력, 사고방식 무엇 하나 범상치 않은 골 때리는 신입 '이고원'이 나타난다."
         },
         {
             "id" : 32, 
@@ -289,7 +319,8 @@
             "artist" : "성원",
             "genre" : "판타지",
             "day" : "mon", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6453048194760704/images/tall.webp?updated=1609317064257&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6453048194760704/images/tall.webp?updated=1609317064257&width=720",
+            "explain" : "단 하나 남은 가족인 남동생마저 불의의 사고로 떠난 후, 그녀는 죽고 싶어도 죽지 못하는 신세가 돼버렸다. 17세 고등학생 모모세, 그녀에게 붙은 수호천사는 축복, 아니면 저주? 그러던 어느 날 모모세는 동네 전단지에서 수상쩍은 단어를 발견한다. 그것은 바로 ‘심.령.사.무.소' <데일리 위치> 성원 작가 신작!"
         },
         {
             "id" : 33, 
@@ -298,7 +329,8 @@
             "artist" : "박지연",
             "genre" : "BL",
             "day" : "tue", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5005186239102976/images/tall.webp?updated=1585215124298&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5005186239102976/images/tall.webp?updated=1585215124298&width=720",
+            "explain" : "마지못해 사귀어왔던 애인과의 뻔한 이별. 후련한 마음으로 삶의 전환점을 찾던 민석은 대형견 백산이를 임시로 보호하게 된다. 구질구질 구남친 대신 귀여운 멍멍이와 함께 자유를 만끽할 줄 알았는데... 생각보다 많이 엉뚱한 존재가 삶에 들어와버렸다!"
         },
         {
             "id" : 34, 
@@ -307,7 +339,8 @@
             "artist" : "굿맨",
             "genre" : "BL",
             "day" : "sat", 
-            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5371258054443008/images/tall.webp?updated=1632989229712&width=720"
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5371258054443008/images/tall.webp?updated=1632989229712&width=720",
+            "explain" : "어릴 적부터 옆집 형 유라를 짝사랑해 온 진성은 갑작스러운 부모님의 사고로 형과 동거하게 된다. 그러나 다가가려 할 때마다 선을 긋는 형에게 더 이상 상처받고 싶지 않았던 진성은 결국 마음을 접으려 하는데... 어느 날 새벽, 그 형이 몰래 들어와 자고 있는 자신을 반찬 삼아 자위하는 것을 목격했다! 형... 내가 아는 형 맞아? ...너 누구야?"
         },
         {
             "id" : 35, 
