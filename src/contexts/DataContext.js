@@ -24,10 +24,18 @@ export const DataContextProvider = ({ children }) => {
         setCurrentItems(result);
     }
 
+    const filterResultFree = (value) => {
+        const result = webtoon.filter((curDate) => {
+            return curDate.free === value;
+        });
+        setCurrentItems(result);
+    }
+
     const value = {
         currentItems,
         filterResult,
         filterResultDay,
+        filterResultFree
     }
     return <DataContext.Provider value={value}>{children}</DataContext.Provider>
 }

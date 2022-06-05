@@ -22,7 +22,7 @@ const Header = ({ theme, toggleTheme }) => {
             ? (<ContainBg />) : null}
             <Wrap>
                 <Logo><Link to="/">
-                    <img src={lezinlogo} alt="" width={35} height={35} />
+                <img src={lezinlogo} width={35} height={35}/>
                 </Link></Logo>
 
                 <Menu>

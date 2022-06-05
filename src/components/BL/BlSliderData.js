@@ -37,5 +37,5 @@ export const blslides = [
         backColor:'#4d6a70',
         img:'https://blog.kakaocdn.net/dn/vRXq7/btrDQFcBaZA/9ewV0ZUDP5tPviD75zjsCK/img.png',
         subimg:'https://ccdn.lezhin.com/v2/comics/4626967191420928/images/tall.webp?updated=1647676248396&width=720'
-    }
+    },
 ]

@@ -3,6 +3,7 @@
         {
             "id" : 1, 
             "title" : "바퀴멘터리", 
+            "en" : "baquimentary",
             "artist" : "박바퀴",
             "genre" : "일상",
             "day" : "mon", 
@@ -11,6 +12,7 @@
         {
             "id" : 2, 
             "title" : "바른쀼생활", 
+            "en" : "20_nov",
             "artist" : "윤박",
             "genre" : "일상",
             "day" : "mon", 
@@ -19,6 +21,7 @@
         {
             "id" : 3, 
             "title" : "나우이", 
+            "en":"naui",
             "artist" : "나단",
             "genre" : "BL",
             "day" : "mon", 
@@ -27,6 +30,7 @@
         {
             "id" : 4, 
             "title" : "4컷용사", 
+            "en" : "cartoon_hero",
             "artist" : "고지라군",
             "genre" : "판타지",
             "day" : "tue", 
@@ -35,6 +39,7 @@
         {
             "id" : 5, 
             "title" : "소꿉친구가 자꾸 괴롭혀", 
+            "en" : "nuri",
             "artist" : "NAKTA",
             "genre" : "학원",
             "day" : "wed", 
@@ -43,6 +48,7 @@
         {
             "id" : 6, 
             "title" : "미성년", 
+            "en" : "immature",
             "artist" : "히눈",
             "genre" : "BL",
             "day" : "wed", 
@@ -51,6 +57,7 @@
         {
             "id" : 7, 
             "title" : "이토록 다채로운 핏빛", 
+            "en" : "colorful",
             "artist" : "므앵갱",
             "genre" : "판타지",
             "day" : "mon", 
@@ -59,6 +66,7 @@
         {
             "id" : 8, 
             "title" : "안나 이야기", 
+            "en":"story_of_anna",
             "artist" : "김지효",
             "genre" : "로맨스",
             "day" : "mon", 
@@ -67,6 +75,7 @@
         {
             "id" : 9, 
             "title" : "러브 오어 헤이트", 
+            "en":"loveorhate",
             "artist" : "박담영하",
             "genre" : "BL",
             "day" : "tue", 
@@ -75,6 +84,7 @@
         {
             "id" : 10, 
             "title" : "조만국박람회", 
+            "en" : "joman",
             "artist" : "조만국",
             "genre" : "일상",
             "day" : "tue", 
@@ -83,6 +93,7 @@
         {
             "id" : 11, 
             "title" : "머쉬룸 스프", 
+            "en" : "mushroomsoup",
             "artist" : "부발",
             "genre" : "판타지",
             "day" : "wed", 
@@ -91,6 +102,7 @@
         {
             "id" : 12, 
             "title" : "왓치가이", 
+            "en" : "watchguy",
             "artist" : "ASURA",
             "genre" : "드라마",
             "day" : "wed", 
@@ -99,6 +111,7 @@
         {
             "id" : 13, 
             "title" : "인시크릿", 
+            "en" : "insecret",
             "artist" : "이파도",
             "genre" : "BL",
             "day" : "tue", 
@@ -107,6 +120,7 @@
         {
             "id" : 14, 
             "title" : "킹스메이커", 
+            "en" : "kingsmaker",
             "artist" : "강지영",
             "genre" : "BL",
             "day" : "wed", 
@@ -115,6 +129,7 @@
         {
             "id" : 15, 
             "title" : "나의 수하", 
+            "en" : "my_suha",
             "artist" : "차현",
             "genre" : "BL",
             "day" : "tue", 
@@ -123,6 +138,7 @@
         {
             "id" : 16, 
             "title" : "소년이 소년에게", 
+            "en" : "dear_boy",
             "artist" : "엠제이",
             "genre" : "BL",
             "day" : "thu", 
@@ -131,6 +147,7 @@
         {
             "id" : 17, 
             "title" : "비밀을 사수하라", 
+            "en" : "secretprotect",
             "artist" : "네치",
             "genre" : "로맨스",
             "day" : "thu", 
@@ -139,6 +156,7 @@
         {
             "id" : 18, 
             "title" : "히어로즈 플랜비", 
+            "en" : "heros_planb",
             "artist" : "인디고",
             "genre" : "액션",
             "day" : "thu", 
@@ -147,6 +165,7 @@
         {
             "id" : 19, 
             "title" : "다윗의 초상", 
+            "en" : "dawit",
             "artist" : "금선",
             "genre" : "로맨스",
             "day" : "thu", 
@@ -155,6 +174,7 @@
         {
             "id" : 20, 
             "title" : "매드독", 
+            "en" : "maddog",
             "artist" : "하리보",
             "genre" : "BL",
             "day" : "fri", 
@@ -163,6 +183,7 @@
         {
             "id" : 21, 
             "title" : "블랙보이", 
+            "en" : "blackboy",
             "artist" : "노커",
             "genre" : "판타지",
             "day" : "fri", 
@@ -170,7 +191,8 @@
         },
         {
             "id" : 22, 
-            "title" : "너는 나의 귀여운 카피캣", 
+            "title" : "나는 너의 귀여운 카피캣", 
+            "en" : "copycat",
             "artist" : "마롭믹",
             "genre" : "BL",
             "day" : "fri", 
@@ -179,6 +201,7 @@
         {
             "id" : 23, 
             "title" : "프로가 되고 싶어", 
+            "en" : "want_pro",
             "artist" : "라돌",
             "genre" : "로맨스",
             "day" : "fri", 
@@ -187,6 +210,7 @@
         {
             "id" : 24, 
             "title" : "보름달 식당", 
+            "en" : "moon",
             "artist" : "김보름",
             "genre" : "드라마",
             "day" : "fri", 
@@ -196,6 +220,7 @@
         {
             "id" : 25, 
             "title" : "클라우드", 
+            "en" : "cloud",
             "artist" : "김파스",
             "genre" : "BL",
             "day" : "sat", 
@@ -205,6 +230,7 @@
         {
             "id" : 26, 
             "title" : "여우비 내리는 날에", 
+            "en" : "foxday",
             "artist" : "우시목",
             "genre" : "학원",
             "day" : "sun", 
@@ -213,7 +239,8 @@
         ,
         {
             "id" : 27, 
-            "title" : "표준규격전사", 
+            "title" : "표준규격전사",
+            "en" : "solider", 
             "artist" : "오솟",
             "genre" : "개그",
             "day" : "ten", 
@@ -222,6 +249,7 @@
         {
             "id" : 28, 
             "title" : "패스, 논패스", 
+            "en" : "passnonepass",
             "artist" : "강파클럽",
             "genre" : "BL",
             "day" : "mon", 
@@ -230,6 +258,7 @@
         {
             "id" : 29, 
             "title" : "잠깐 사정이 있습니다", 
+            "en" : "wait",
             "artist" : "은별",
             "genre" : "로맨스",
             "day" : "mon", 
@@ -238,6 +267,7 @@
         {
             "id" : 30, 
             "title" : "백만원의 로맨스", 
+            "en" : "moneyromance",
             "artist" : "달현지",
             "genre" : "BL",
             "day" : "mon", 
@@ -246,6 +276,7 @@
         {
             "id" : 31, 
             "title" : "미미", 
+            "en" : "mimi",
             "artist" : "개운밀밀",
             "genre" : "BL",
             "day" : "mon", 
@@ -254,6 +285,7 @@
         {
             "id" : 32, 
             "title" : "모모세 헬프", 
+            "en" : "momosehelp",
             "artist" : "성원",
             "genre" : "판타지",
             "day" : "mon", 
@@ -262,6 +294,7 @@
         {
             "id" : 33, 
             "title" : "울프 인더 하우스", 
+            "en" : "wolfinthehouse",
             "artist" : "박지연",
             "genre" : "BL",
             "day" : "tue", 
@@ -270,6 +303,7 @@
         {
             "id" : 34, 
             "title" : "더블트랩", 
+            "en" : "doubletrap",
             "artist" : "굿맨",
             "genre" : "BL",
             "day" : "sat", 
@@ -278,6 +312,7 @@
         {
             "id" : 35, 
             "title" : "와해된 시선 R", 
+            "en" : "see_r",
             "artist" : "루즌아",
             "genre" : "미스터리",
             "day" : "sun", 
@@ -286,6 +321,7 @@
         {
             "id" : 36, 
             "title" : "자살 소년", 
+            "en" : "dieboys",
             "artist" : "박지",
             "genre" : "일상",
             "day" : "ten", 
@@ -294,6 +330,7 @@
         {
             "id" : 37, 
             "title" : "LOVE WINS", 
+            "en" : "lovewins",
             "artist" : "목도리",
             "genre" : "백합",
             "day" : "wed", 
@@ -302,6 +339,7 @@
         {
             "id" : 38, 
             "title" : "바람", 
+            "en" : "winds",
             "artist" : "반메",
             "genre" : "판타지",
             "day" : "wed", 
@@ -310,6 +348,7 @@
         {
             "id" : 39, 
             "title" : "그녀와 그녀의 전남자친구", 
+            "en" : "xboyfriend",
             "artist" : "신비",
             "genre" : "백합",
             "day" : "tue", 
@@ -318,6 +357,7 @@
         {
             "id" : 40, 
             "title" : "낮에 뜨는 별", 
+            "en" : "star",
             "artist" : "고다고",
             "genre" : "로맨스",
             "day" : "sat", 
@@ -326,6 +366,7 @@
         {
             "id" : 41, 
             "title" : "아가씨와 우렁총각", 
+            "en" : "snail",
             "artist" : "제이드",
             "genre" : "로맨스",
             "day" : "end", 
@@ -334,6 +375,7 @@
         {
             "id" : 42, 
             "title" : "연필의 각도", 
+            "en" : "pencil",
             "artist" : "홍자",
             "genre" : "로맨스",
             "day" : "end", 
@@ -342,6 +384,7 @@
         {
             "id" : 43, 
             "title" : "내가 원하는 건", 
+            "en" : "iwant",
             "artist" : "정",
             "genre" : "로맨스",
             "day" : "end", 
@@ -350,6 +393,7 @@
         {
             "id" : 44, 
             "title" : "월간 백합", 
+            "en" : "monthly_gl",
             "artist" : "레드피치",
             "genre" : "로맨스",
             "day" : "ten", 
@@ -358,6 +402,7 @@
         {
             "id" : 45, 
             "title" : "우리사이느은", 
+            "en" : "woori",
             "artist" : "이연지",
             "genre" : "로맨스",
             "day" : "end", 
@@ -366,6 +411,7 @@
         {
             "id" : 46, 
             "title" : "애늙은이", 
+            "en" : "oldchild",
             "artist" : "환댕",
             "genre" : "판타지",
             "day" : "end", 
@@ -373,7 +419,8 @@
         },
         {
             "id" : 47, 
-            "title" : "불멸의 날들", 
+            "title" : "불멸의 날들",
+            "en" : "ImmortalDays", 
             "artist" : "허긴개",
             "genre" : "판타지",
             "day" : "end", 
@@ -382,6 +429,7 @@
         {
             "id" : 48, 
             "title" : "너와 사는 오늘", 
+            "en" : "withyou", 
             "artist" : "두르",
             "genre" : "로맨스",
             "day" : "end", 
@@ -390,6 +438,7 @@
         {
             "id" : 49, 
             "title" : "식사하고 가세요!", 
+            "en" : "eat", 
             "artist" : "스튜디오 웨이브",
             "genre" : "판타지",
             "day" : "thu", 
@@ -398,6 +447,7 @@
         {
             "id" : 50, 
             "title" : "커튼콜 아래그랑", 
+            "en" : "curtoon", 
             "artist" : "바싹탄숯",
             "genre" : "판타지",
             "day" : "ten", 
@@ -406,6 +456,7 @@
         {
             "id" : 51, 
             "title" : "여우야 뭐하니", 
+            "en" : "yeowuya", 
             "artist" : "쓰라린",
             "genre" : "로맨스",
             "day" : "ten", 
@@ -414,6 +465,7 @@
         {
             "id" : 52, 
             "title" : "천지해", 
+            "en" : "chunjihe", 
             "artist" : "핑푸",
             "genre" : "판타지",
             "day" : "sun", 
@@ -422,6 +474,7 @@
         {
             "id" : 53, 
             "title" : "이름없는 가게", 
+            "en" : "noshop", 
             "artist" : "하몽",
             "genre" : "판타지",
             "day" : "thu", 
@@ -438,10 +491,51 @@
         {
             "id" : 55, 
             "title" : "OX유정", 
+            "en" : "oxyoujung", 
             "artist" : "도국",
             "genre" : "드라마",
             "day" : "sat", 
             "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6558093126467584/images/tall.webp?updated=1649654310106&width=720"
+        },
+        {
+            "id" : 56, 
+            "title" : "착각은 자유", 
+            "en" : "freedom",
+            "artist" : "이하나",
+            "genre" : "BL",
+            "free":"free",
+            "day" : "sat", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6546398410309632/images/tall.webp?updated=1628564814470&width=720"
+        },
+        {
+            "id" : 57, 
+            "title" : "시크릿 동맹", 
+            "en" : "secretpa", 
+            "artist" : "레로",
+            "genre" : "드라마",
+            "free":"free",
+            "day" : "sat", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6406678520922112/images/tall.webp?updated=1644732087504&width=720"
+        },
+        {
+            "id" : 58, 
+            "title" : "시선 끝, 30도", 
+            "en" : "stare",
+            "artist" : "소보로",
+            "genre" : "BL",
+            "free":"free",
+            "day" : "tue", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5073458287935488/images/tall.webp?updated=1645421934900&width=720"
+        },
+        {
+            "id" : 59, 
+            "title" : "대표님의 연애게임", 
+            "en" : "jjang", 
+            "artist" : "Ailu Cat",
+            "genre" : "로맨스",
+            "free":"free",
+            "day" : "sat", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/5098498250047488/images/tall.webp?updated=1637629396276&width=720"
         }
     ]
 }

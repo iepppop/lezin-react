@@ -1,20 +1,23 @@
 export const freeslides = [
     {
-        cate:'HOT',
+        cate:'NEW',
         content:'착각 속에서 시작된 러브스토리',
         title:'여우야 뭐하니',
         keyword:[
             '구미호','동양풍',
         ],
+        genre:'BL',
         author:'안녕',
         free:'3시간마다 무료',
         backColor:'#a07f85',
         img:'https://ccdn.lezhin.com/v2/comics/6546398410309632/images/tall.webp?updated=1628564814470&width=720'
     },
     {
-        cate:'2부 시작',
+        cate:'',
         content:'스냅샷과 함께 시작된 로맨스',
-        title:'낮에 뜨는 별',
+        title:'시크릿 동맹',
+        author:'레로',
+        genre:'드라마',
         keyword:[
             '연상연하','연예인',
         ],
@@ -25,64 +28,27 @@ export const freeslides = [
     {
         cate:'NEW',
         content:'백작가 사생아인 그녀의 비밀은?',
-        title:'공작님의 곰인형',
+        title:'시선 끝, 30도',
+        author:'소보로',
+        genre:'BL',
         keyword:[
             '로판','초능력',
         ],
-        free:'3시간마다 무료',
+        free:'24시간마다 무료',
         backColor:'#4d6a70',
-        img:'https://ccdn.lezhin.com/v2/comics/5937982475599872/images/tall.webp?updated=1529550000931&width=720'
+        img:'https://ccdn.lezhin.com/v2/comics/5073458287935488/images/tall.webp?updated=1645421934900&width=720'
     },
     {
-        cate:'HOT',
-        content:'언니 같은 사람 X나 싫어요',
-        title:'싫은 여자',
+        cate:'',
+        content:'용의주도 대표님의 연애게임',
+        title:'대표님의 연애게임',
         free:'24시간마다 무료',
+        author:'Ailu Cat',
+        genre:'로맨스',
         keyword:[
             '백합','애증',
         ],
         backColor:'#552c5a',
-        img:'https://ccdn.lezhin.com/v2/comics/6301365414658048/images/tall.jpg?updated=1602323500283&width=840'
-    },
-    {
-        cate:'NEW',
-        content:'달달,힐링되는 판타지 학원물',
-        title:'여우비 내리는 날에',
-        keyword:[
-            '달달물','힐링물',
-        ],
-        backColor:'#83ada5',
-        img:'https://blog.kakaocdn.net/dn/cgy2Ug/btrDKJlpyuI/uuASlxe6N8d715gcRz3mV1/img.png'
-    },
-    {
-        cate:'HOT',
-        content:'네 숨겨진 재능 내 눈에만 보여',
-        title:'싫은 여자',
-        keyword:[
-            '스포츠','고등학교',
-        ],
-        backColor:'#92ad4b',
-        free:'24시간마다 무료',
-        img:'https://blog.kakaocdn.net/dn/JoJQA/btrDF9E2yXq/2v4WrKUarrmCGxlty99VK1/img.png'
-    },
-    {
-        cate:'HOT',
-        content:'네 숨겨진 재능 내 눈에만 보여',
-        title:'싫은 여자',
-        keyword:[
-            '스포츠','고등학교',
-        ],
-        backColor:'#92ad4b',
-        img:'https://blog.kakaocdn.net/dn/JoJQA/btrDF9E2yXq/2v4WrKUarrmCGxlty99VK1/img.png'
-    },
-    {
-        cate:'HOT',
-        content:'네 숨겨진 재능 내 눈에만 보여',
-        title:'싫은 여자',
-        keyword:[
-            '스포츠','고등학교',
-        ],
-        backColor:'#92ad4b',
-        img:'https://blog.kakaocdn.net/dn/JoJQA/btrDF9E2yXq/2v4WrKUarrmCGxlty99VK1/img.png'
-    },
+        img:'https://ccdn.lezhin.com/v2/comics/5098498250047488/images/tall.webp?updated=1637629396276&width=720'
+    }
 ]

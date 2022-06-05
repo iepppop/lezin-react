@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { useData } from '../../contexts/DataContext';
 
@@ -48,17 +49,18 @@ const Day = () => {
             <DayWrap>
             {
                 currentItems.map((values, idx) => {
-                    const { id, title, artist, genre, thumbnail } = values;
+                    const { id, title, artist, genre, thumbnail, en } = values;
                     return (
                         <>
                             <Slider key={title}>
+                            <Link to={`/comics/${en}`}>
                                 <ImgBox>
                                     <img src={thumbnail} alt={title} />
                                     <Rank><h2></h2></Rank>
                                 </ImgBox>
                                 <h1>{title}</h1>
                                 <span>{genre}&nbsp;&nbsp;l</span><h2>{artist}</h2>
-
+                            </Link>
                             </Slider>
                         </>
                     )

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
 import { useData } from "../../contexts/DataContext";
+import { Link } from "react-router-dom";
 
 const Pages = () => {
     const { filterResult, currentItems } = useData();
@@ -14,16 +15,17 @@ const Pages = () => {
             <Wrap>
             {
                 currentItems.map((values, idx) => {
-                    const { id, title, artist, genre, thumbnail } = values;
+                    const { id, title, artist, genre, thumbnail, en } = values;
                     return (
                             <Slider key={title}>
+                                  <Link to={`/comics/${en}`}>
                                 <ImgBox>
                                     <img src={thumbnail} alt={title} />
                                     <Rank><h2></h2></Rank>
                                 </ImgBox>
                                 <h1>{title}</h1>
                                 <span>{artist}</span>
-
+</Link>
                             </Slider>
                     )
                 })}

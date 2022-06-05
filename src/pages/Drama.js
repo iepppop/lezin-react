@@ -3,6 +3,7 @@ import { useData } from '../contexts/DataContext';
 import { useEffect } from 'react';
 import Slide from '../components/romance/Slide';
 import { dramasdata } from './DramaData';
+import { Link } from 'react-router-dom';
 
 const Drama = () => {
     const { filterResult, currentItems } = useData();
@@ -18,16 +19,17 @@ const Drama = () => {
       
       {
       currentItems.map((values, idx) => {
-          const { id, title, artist, genre, thumbnail } = values;
+          const { id, title, artist, genre, thumbnail, en } = values;
           return (
                   <Slider key={title}>
+                        <Link to={`/comics/${en}`}>
                       <ImgBox>
                           <img src={thumbnail} alt={title} />
                           <Rank><h2></h2></Rank>
                       </ImgBox>
                       <h1>{title}</h1>
                       <span>{artist}</span>
-
+</Link>
                   </Slider>
           )
       })}

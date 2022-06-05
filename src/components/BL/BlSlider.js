@@ -1,94 +1,127 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import {blslides} from './BlSliderData';
+import { blslides } from './BlSliderData';
 
 const BlSlider = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [seeArrow, setSeeArrow] = useState(false);
     const ref = useRef();
+    const slideref = useRef();
+    const transitionTime = 500;
+    const transitionStyle = `transform ${transitionTime}ms ease 0s`;
+    const [slideTransition, setTransition] = useState(transitionStyle);
+    const item = 2;
+    const [currentIndex, setCurrentIndex] = useState(item);
 
-    const NextSlide = () => {
-
+    const setSlides = () => {
+        let addedFront = [];
+        let addedLast = [];
+        let index = 0;
+        while (index < item) {
+            addedLast.push(blslides[index % blslides.length]);
+            addedFront.unshift(blslides[blslides.length - 1 - index % blslides.length]);
+            index++;
+        }
+        return [...addedFront, ...blslides, ...addedLast];
     }
 
-    const PrevSlide = () => {
+    let slider = setSlides();
 
+    const replaceSlide = (index) => {
+        setTimeout(()=>{
+            setTransition('');
+            setCurrentIndex(index);
+        }, transitionTime);
+    }
+
+
+    const handleSwipe = (direction) => {
+        let index = currentIndex + direction;
+        setCurrentIndex(index);
+        if (index < item) {
+            index += blslides.length;
+            replaceSlide(index);
+        } else if (index >= blslides.length + item) {
+            index -= blslides.length;
+            replaceSlide(index);
+        }
+        setTransition(transitionStyle);
     }
 
     useEffect(() => {
+        ref.current.style.transform = `translateX(-${currentIndex}00%)`;
+        slideref.current.style.width = `${slider.length}00%`;
+    });
 
-    }, [currentIndex]);
 
     return (
         <Contain>
-            {/* <Blur>
-            <ImgWraper>
-                            <img src="https://blog.kakaocdn.net/dn/b68Qvf/btrDGbKtBeh/icUt3U7Mcib1WY8uKckXSk/img.png" />
-                        </ImgWraper>
-            </Blur> */}
             <Container>
+
                 <Slider>
-                    <SliderWrap ref={ref}>
-                        <SliderLength>
-                     {blslides.map((bl,idx)=>{
-                             const keyword = [`${bl.keyword}`]
-                         return (
-                            <SliderMain style={{ background:`${bl.backColor}`}}>
-                            <ImgWrap>
-                                <ImgBox>
-                                    <img src={bl.img}/>
-                                </ImgBox>
-                            </ImgWrap>
-                            <Content>
-                                <FirstC>
-                                    <h5>
-                                        <span>{bl.cate}</span>
-                                    </h5>
-                                    <h1>
-                                    {bl.content1}
-                                    </h1>
-                                    <h2>
-                                    {bl.content2}
-                                    </h2>
-                                    <h3>
-                                        <div>
-                                        {bl.title}
-                                        </div>
-                                    </h3>
-                                    <h4>© {bl.author}</h4>
-                                </FirstC>
-                                <LastC>
-                                    <ImgContain>
-                                        <img src={bl.subimg} />
-                                    </ImgContain>
-                                    <h5>  {keyword.map((x, i) => {
-                                                            const words = x.split(',', 5);
-                                                            return (
-                                                                <Keyword key={words[0]}>
-                                                                    <li>#{words[0]}</li>
-                                                                    <li>#{words[1]}</li>
-                                                                    <li>#{words[2]}</li>
-                                                                    <li>#{words[3]}</li>
-                                                                </Keyword>
-                                                            )
-                                                        })}</h5>
-                                    <span></span>
-                                </LastC>
-                            </Content>
-                            <PointColor>
-                            </PointColor>
-                            <ButtonWrap>
-                                <Prev onClick={() => PrevSlide()}><img
-                                    src={process.env.PUBLIC_URL + '/image/arrowwhl.png'}
-                                /></Prev>
-                                <Next onClick={() => NextSlide()}><img
-                                    src={process.env.PUBLIC_URL + '/image/arrowwh.png'}
-                                /></Next>
-                            </ButtonWrap>
-                            </SliderMain>
-                         )
-                     })}
-                    </SliderLength>
+                    <SliderWrap ref={ref} style={{transition: slideTransition}}>
+                        <SliderLength ref={slideref}>
+                        {slider.map((bl, idx) => {
+                                const keyword = [`${bl.keyword}`];
+                                return (
+                                    <SliderMain style={{ background: `${bl.backColor}` }} key={bl.title}>
+                                        <ImgWrap>
+                                            <ImgBox>
+                                                <img src={bl.img} />
+                                            </ImgBox>
+                                        </ImgWrap>
+                                        <Content>
+                                            <FirstC>
+                                                <h5>
+                                                    <span>{bl.cate}</span>
+                                                </h5>
+                                                <h1>
+                                                    {bl.content1}
+                                                </h1>
+                                                <h2>
+                                                    {bl.content2}
+                                                </h2>
+                                                <h3>
+                                                    <div>
+                                                        {bl.title}
+                                                    </div>
+                                                </h3>
+                                                <h4>
+                                                {keyword.map((x, i) => {
+                                                    const words = x.split(',', 5);
+                                                    return (
+                                                        <Keyword key={words[0]}>
+                                                            <li>#{words[0]}</li>
+                                                            <li>#{words[1]}</li>
+                                                            <li>#{words[2]}</li>
+                                                            <li>#{words[3]}</li>
+                                                        </Keyword>
+                                                    )
+                                                })}
+                                                </h4>
+                                            </FirstC>
+                                            <LastC>
+                                                <ImgContain>
+                                                    <img src={bl.subimg} />
+                                                </ImgContain>
+                                                <h5>
+                                                © {bl.author}
+                                                </h5>
+                                                <span></span>
+                                            </LastC>
+                                        </Content>
+                                        <PointColor>
+                                        </PointColor>
+                                        <ButtonWrap>
+                                            <Prev onClick={() => handleSwipe(-1)}><img
+                                                src={process.env.PUBLIC_URL + '/image/arrowwhl.png'}
+                                            /></Prev>
+                                            <Next onClick={() => handleSwipe(+1)}><img
+                                                src={process.env.PUBLIC_URL + '/image/arrowwh.png'}
+                                            /></Next>
+                                        </ButtonWrap>
+                                    </SliderMain>
+                                )
+                            })}
+                        </SliderLength>
                     </SliderWrap>
                 </Slider>
             </Container>
@@ -135,17 +168,16 @@ const Slider = styled.div`
     height:280px;
     border-radius:15px;
     position:relative;
+    overflow:hidden;
 `
 
 const SliderWrap = styled.div`
     position:absolute;
     width:100%;
     height:100%;
-    transition:0.3s;
 `
 
 const SliderLength = styled.div`
-    width:300%;
     height:100%;
     display:flex;
 `
