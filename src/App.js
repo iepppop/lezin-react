@@ -32,8 +32,8 @@ function App() {
         <ThemeProvider theme={themeMode}>
         <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
         <GlobalStyles />
-        <Container>
       <Header theme={theme} toggleTheme={toggleTheme}/>
+      <Container>
       <Routes>
         <Route path="/" element={<Main />}></Route>
         <Route path="/scheduled" element={<Scheduled webtoon={webtoon}/>}></Route>
@@ -60,6 +60,6 @@ export default App;
 
 const Container = styled.div`
   width:100%;
-  height: auto;
+  height: 93vh;
   font-family: 'Pretendard';
 `

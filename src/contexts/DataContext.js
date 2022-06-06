@@ -9,7 +9,6 @@ export const useData = () => useContext(DataContext);
 export const DataContextProvider = ({ children }) => {
     const webtoon = dayweb.webtoon;
     const [currentItems, setCurrentItems] = useState([webtoon]);
-    const [file, setFile] = useState([]);
 
     const filterResult = (value) => {
         const result = webtoon.filter((curDate) => {
@@ -33,6 +32,7 @@ export const DataContextProvider = ({ children }) => {
     }
 
     const [wordEntered, setWordEntered] = useState("");
+    const [itemSearch, setItemSearch] = useState([webtoon]);
 
     const filterSearch = (event) => {
         const searchWord = event.target.value;
@@ -41,14 +41,15 @@ export const DataContextProvider = ({ children }) => {
             return item.title.toLowerCase().includes(searchWord.toLowerCase());
         });
         if(searchWord === ""){
-            setCurrentItems([]);
+            setItemSearch([]);
         }else{
-            setCurrentItems(newFilter);
+            setItemSearch(newFilter);
         }
     };
 
     const clearInput = () => {
         setWordEntered("");
+        setItemSearch([]);
     }
 
 
@@ -59,7 +60,8 @@ export const DataContextProvider = ({ children }) => {
         filterResultFree,
         filterSearch,
         clearInput,
-        wordEntered
+        wordEntered,
+        itemSearch,
     }
     return <DataContext.Provider value={value}>{children}</DataContext.Provider>
 }

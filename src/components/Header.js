@@ -14,7 +14,7 @@ const Header = ({ theme, toggleTheme }) => {
     const { currentUser, logout } = useAuth();
     const location = useLocation();
     const webtoon = dayweb.webtoon;
-    const { currentItems, filterSearch } = useData();
+    const { currentItems, filterSearch, itemSearch } = useData();
 
     return (
         <Contain>
@@ -49,9 +49,9 @@ const Header = ({ theme, toggleTheme }) => {
                         <li>
                             <ClickInput style={{ opacity: `${search ? '1' : '0'}`, zIndex: `${search ? '99' : '-1'}` }}>
                                 <AiOutlineSearch onClick={() => setSearch(false)} style={{ padding : '0 0 0 0' }} />
-                                <SearchBar placeholder="작품/작가명을 검색해주세요." data={webtoon}/>
+                                <SearchBar placeholder="작품/작가명을 검색해주세요."/>
                             </ClickInput>
-                            <AiOutlineSearch onClick={() => setSearch(true)} style={{ cursor: 'pointer' }} /></li>
+                            <AiOutlineSearch onClick={() => setSearch(true)} style={{ cursor: 'pointer'}} /></li>
                         <li> <Toggle theme={theme} toggleTheme={toggleTheme} /></li>
                         {location.pathname === '/login' || location.pathname === '/register' ? null : (
                             <>

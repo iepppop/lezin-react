@@ -2,24 +2,39 @@ import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useData } from "../contexts/DataContext";
 import styled from 'styled-components';
+import dayweb from '../components/dayweb.json'
 
 const Comics = () => {
     const { id } = useParams();
     const { currentItems } = useData();
-    const comicslist = currentItems.filter(list => list.en == id);
+    const webtoon = dayweb.webtoon;
+    const comicslist = webtoon.filter(list => list.en == id);
    return (
+       <Box>
     <Container>
        {comicslist.map((comic,idx)=> {
            return(
                <Wrap>
                <ImgWrap>
                <Img>
-            <img src={comic.thumbnail}/>      
+               <ImgPadding>
+            <img src={comic.thumbnail}/> 
+            </ImgPadding>     
             </Img>
-            <h1>{comic.title}</h1>
-            <h2>© {comic.artist}</h2>
+            <ImgContent>
+            <h1>{comic.title}<Genre>{comic.genre}</Genre></h1>
+            <h2>작가 {comic.artist}</h2>
             <span>{comic.explain}</span>
+            <Keyword>
+                <li># 로맨스</li>    <li># 드라마</li>    <li># 19세</li>
+            </Keyword>
+            </ImgContent>
                </ImgWrap>
+               <First>
+                   <span>
+                   첫 화 보기
+                   </span>
+               </First>
                <ContentWrap> 
                <h5>매주 화요일 연재</h5>
                <ContentList>
@@ -60,73 +75,111 @@ const Comics = () => {
            )
        })}
         </Container>
+        </Box>
   )
 }
 export default Comics;
 
+const Box = styled.div`
+    background:#f8f8f8;
+    width:100%;
+    height:100%;
+`
+
 const Container = styled.div`
-    max-width:1320px;
+    max-width:805px;
+    background:#fff;
     margin:0 auto;
-    padding:0 20px;
 `
 
 const Wrap = styled.div`
     width:100%;
     height:100%;
     position:relative;
-    display:flex;
-`
-
-const Gradient = styled.div`
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    position:absolute;
-    background: linear-gradient(to right, pink 22%, transparent 50%, pink 78%);
 `
 
 const ImgWrap = styled.div`
-    width:30%;
-    height:100%;
-    
-    img{
-        width:100%;
-    }
+    width:100%;
+    height:260px;
+    position:relative;
+    display:flex;
+    align-items: center;
+    overflow:hidden;
+    justify-content:center;
+    background:#fff;
+    overflow:hidden;
 
     h1{
-        font-weight:500;
+        font-weight:600;
         padding:10px 10px 5px 10px;
+        display:flex;
+        align-items: center;
+        font-size:25px;
     }
 
     h2{
         font-weight:500;
         font-size:14px;
-        padding:0 10px;
+        padding:0 0 20px 12px;
+        opacity:0.8;
     }
 
     span{
         padding:10px;
         display:block;
-        font-weight:500;
+        font-weight:400;
         font-size:14px;
+        line-height:130%;
     }
 `
 
 const Img = styled.div`
-    width:100%;
-    height:500px;
+    width:35%;
+    height:200px;
     display:flex;
     align-items: center;
     overflow:hidden;
+    justify-content:center;
+    overflow:hidden;
+    padding:30px;
+    
+
+    img{
+        width:100%;
+        object-fit: cover;
+    }
+`
+
+const ImgPadding = styled.div`
+   
+`
+
+const ImgContent = styled.div`
+    width:65%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    margin:0 30px 0 0;
+`
+
+const Genre = styled.div`
+    font-weight:bold;
+    padding:6px 9px 5px 9px;
+    background:rgba(255,51,51,0.1) 100%;
+    color:rgba(255,51,51,1.0);
+    font-size:12px;
+    margin:0 0 0 20px;
+    border-radius:30px;
+    display:inline-block;
 `
 
 const ContentWrap = styled.ul`
-    width:70%;
+    width:100%;
     height:100%;
+    padding:0 30px;
 
     h5{
-        margin:15px 0 15px 50px;
+        margin:25px 0 15px 0;
         font-weight:400;
     }
 `
@@ -137,7 +190,6 @@ const ContentList = styled.li`
     overflow:hidden;
     display:flex;
     align-items: center;
-    padding:0 0 0 50px;
 `
 
 const Boreder = styled.div`
@@ -171,5 +223,44 @@ const Content = styled.div`
         font-weight:500;
         font-size:13px;
         opacity:0.6;
+    }
+`
+
+const Keyword = styled.ul`
+    display:flex;
+
+    span{
+        font-weight:900;
+        font-size:14px;
+        padding:7px 13px;
+        margin:0px 20px 20px 0;
+        color:red;
+    }
+
+    li{
+        font-weight:800;
+        font-size:12px;
+        border-radius:15px;
+        padding:7px 8px;
+        opacity:0.8;
+        margin:0 10px 0 0;
+        font-weight:600;
+        border:1px solid #eee;
+    }
+`
+
+const First = styled.div`
+    width:100%;
+    heigh:50px;
+    padding:0 30px;
+    text-align:center;
+
+    span{
+        background:rgba(255,51,51,1.0);
+        display:block;
+        padding:20px 0 20px 0;
+        color:#fff;
+        width:100%;
+        height:100%;
     }
 `

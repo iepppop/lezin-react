@@ -4,15 +4,13 @@ import { Link } from 'react-router-dom';
 import { useData } from '../contexts/DataContext';
 
 const SearchBar = ({ placeholder }) => {
-    const { currentItems, filterSearch, clearInput, wordEntered } = useData();
-
-
+    const { currentItems, filterSearch, clearInput, wordEntered, itemSearch } = useData();
   return (
     <Contain>
         <input type="text" placeholder={placeholder} onChange={filterSearch} value={wordEntered}/>
-        {currentItems.length !== 0 && (
+        {wordEntered.length !== 0 ? (
             <DataResult>
-            {currentItems.slice(0,3).map((values, key)=>{ 
+            {itemSearch.slice(0,3).map((values, key)=>{ 
                  const { id, title, artist, genre, thumbnail, en } = values;
                 return(
                     <Link to={`/comics/${en}`}>
@@ -29,7 +27,7 @@ const SearchBar = ({ placeholder }) => {
                 )
             })}
         </DataResult>
-        )}
+        ) : null}
     </Contain>
   )
 }
