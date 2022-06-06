@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const Comics = () => {
     const { id } = useParams();
     const { currentItems } = useData();
-    const comicslist = currentItems.filter(list => list.en === String(id));
+    const comicslist = currentItems.filter(list => list.en == id);
    return (
     <Container>
        {comicslist.map((comic,idx)=> {

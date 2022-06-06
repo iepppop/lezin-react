@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { sliderdatas } from './SliderData';
 import React, { useState, useEffect, useRef } from 'react';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Slider = () => {
   const ref = useRef(null);
@@ -70,6 +71,7 @@ const Slider = () => {
                         onMouseOver={() => setSeeArrow(true)}
                         onMouseOut={() => setSeeArrow(false)}
                       >
+                        
                         <MainSlider>
                           <img src={data.img} />
                           <Bgop />
@@ -89,12 +91,9 @@ const Slider = () => {
                               </Total>
                             </ContentDep>
                           </Content>
-
                         </MainSlider>
-
                         <Blank />
-
-
+                        
                       </BoxWrap>
                     )
                   })}

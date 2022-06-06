@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { Link } from "react-router-dom";
 
 const Big = ({ data }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -41,6 +42,7 @@ const Big = ({ data }) => {
                                 const keyword = [`${romance.keyword}`]
                                 return (
                                     <One>
+                                        
                                         <Gradient style={{ background: `linear-gradient(to right, ${romance.backColor} 15%,  ${romance.backColor2} 50%, ${romance.backColor} 100%)` }}></Gradient>
                                         <OneWrap>
                                             <Gradient >
@@ -54,7 +56,9 @@ const Big = ({ data }) => {
                                                     /></Next>
 
                                                 </ButtonWrap>
+                                               
                                                 <Content>
+                                                <Link to={`${romance.link}`}>
                                                     <span>
                                                         <Cate>
                                                             {romance.cate}
@@ -77,13 +81,16 @@ const Big = ({ data }) => {
                                                             )
                                                         })}
                                                     </h3>
+                                                    </Link>
                                                 </Content>
+                                               
                                             </Gradient>
                                             <Thumbnail>
                                                 <img src={romance.img} />
                                             </Thumbnail>
 
                                         </OneWrap>
+                                       
                                     </One>
                                 )
                             })}

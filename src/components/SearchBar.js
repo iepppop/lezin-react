@@ -1,35 +1,38 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { useData } from '../contexts/DataContext';
 
-const SearchBar = ({ placeholder, data}) => {
+const SearchBar = ({ placeholder,data }) => {
+    const { currentItems, filterSearch } = useData();
     const [filteredData, setFilterData] = useState([]); 
-    const handleFilter = (event) => {
-        const searchWord = event.target.value;
-        const newFilter = data.filter((value)=> {
-            return value.title.toLowerCase().includes(searchWord.toLowerCase());
-        });
-        if(searchWord === ""){
-            setFilterData([]);
-        }else{
-            setFilterData(newFilter);
-        }
+    const [wordEntered, setWordEntered] = useState("");
+
+    const clearInput = () => {
+        setFilterData([]);
     }
+
+
+
   return (
     <Contain>
-        <input type="text" placeholder={placeholder} onChange={handleFilter}/>
-        {filteredData.length !== 0 && (
+        <input type="text" placeholder={placeholder} onChange={filterSearch}/>
+        {currentItems.length !== 0 && (
             <DataResult>
-            {filteredData.slice(0,3).map((value, key)=>{ 
+            {currentItems.slice(0,3).map((values, key)=>{ 
+                 const { id, title, artist, genre, thumbnail, en } = values;
                 return(
+                    <Link to={`/comics/${en}`}>
                     <ValueWrap>
                         <ImgWrap>
-                        <img src={value.thumbnail} />
+                        <img src={thumbnail} />
                         </ImgWrap>
                         <Content>
-                    <h1>{value.title}</h1>
-                    <h2>{value.artist}</h2>
+                    <h1>{title}</h1>
+                    <h2>{artist}</h2>
                     </Content>
                     </ValueWrap>
+                    </Link> 
                 )
             })}
         </DataResult>

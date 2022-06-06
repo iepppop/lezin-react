@@ -7,12 +7,14 @@ import { Toggle } from './Toggle';
 import { useAuth } from "../contexts/AuthContext";
 import SearchBar from "./SearchBar";
 import dayweb from './dayweb.json';
+import { useData } from '../contexts/DataContext'
 
 const Header = ({ theme, toggleTheme }) => {
     const [search, setSearch] = useState(false);
     const { currentUser, logout } = useAuth();
     const location = useLocation();
     const webtoon = dayweb.webtoon;
+    const { currentItems, filterSearch } = useData();
 
     return (
         <Contain>

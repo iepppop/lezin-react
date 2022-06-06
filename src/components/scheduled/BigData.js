@@ -8,7 +8,8 @@ export const bigslides = [
         ],
         backColor:'#f69e2b',
         backColor2:'#ec8a09',
-        img:'https://ccdn.lezhin.com/v2/comics/4705963879235584/images/wide?updated=1649401028557'
+        img:'https://ccdn.lezhin.com/v2/comics/4705963879235584/images/wide?updated=1649401028557',
+        link:'/comics/colorful'
     },
     {
         cate:'2부 시작',
@@ -19,7 +20,8 @@ export const bigslides = [
         ],
         backColor:'#2eaef0',
         backColor2:'#0090e9',
-        img:'https://ccdn.lezhin.com/v2/comics/6290037509783552/images/wide?updated=1641716468916'
+        img:'https://ccdn.lezhin.com/v2/comics/6290037509783552/images/wide?updated=1641716468916',
+        link:'/comics/passnonepass'
     },
     {
         cate:'화요일 연재',
@@ -30,7 +32,8 @@ export const bigslides = [
         ],
         backColor:'#fe9c90',
         backColor2:'#ff8273       ',
-        img:'https://ccdn.lezhin.com/v2/comics/5641055802818560/images/wide.jpg?updated=1603872486579&width=632'
+        img:'https://ccdn.lezhin.com/v2/comics/5641055802818560/images/wide.jpg?updated=1603872486579&width=632',
+        link:'/comics/loveorhate'
     },
     {
         cate:'수요일 연재',
@@ -41,6 +44,7 @@ export const bigslides = [
         ],
         backColor:'#cc4e1d',
         backColor2:'#b74316',
-        img:'https://ccdn.lezhin.com/v2/comics/6400253992501248/images/wide.jpg?updated=1637205016851&width=632'
+        img:'https://ccdn.lezhin.com/v2/comics/6400253992501248/images/wide.jpg?updated=1637205016851&width=632',
+        link:'/comics/winds'
     },
 ]
