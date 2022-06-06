@@ -3,27 +3,20 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useData } from '../contexts/DataContext';
 
-const SearchBar = ({ placeholder,data }) => {
-    const { currentItems, filterSearch } = useData();
-    const [filteredData, setFilterData] = useState([]); 
-    const [wordEntered, setWordEntered] = useState("");
-
-    const clearInput = () => {
-        setFilterData([]);
-    }
-
+const SearchBar = ({ placeholder }) => {
+    const { currentItems, filterSearch, clearInput, wordEntered } = useData();
 
 
   return (
     <Contain>
-        <input type="text" placeholder={placeholder} onChange={filterSearch}/>
+        <input type="text" placeholder={placeholder} onChange={filterSearch} value={wordEntered}/>
         {currentItems.length !== 0 && (
             <DataResult>
             {currentItems.slice(0,3).map((values, key)=>{ 
                  const { id, title, artist, genre, thumbnail, en } = values;
                 return(
                     <Link to={`/comics/${en}`}>
-                    <ValueWrap>
+                    <ValueWrap onClick={clearInput}>
                         <ImgWrap>
                         <img src={thumbnail} />
                         </ImgWrap>

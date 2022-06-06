@@ -32,8 +32,11 @@ export const DataContextProvider = ({ children }) => {
         setCurrentItems(result);
     }
 
+    const [wordEntered, setWordEntered] = useState("");
+
     const filterSearch = (event) => {
         const searchWord = event.target.value;
+        setWordEntered(searchWord);
         const newFilter = webtoon.filter((item)=> {
             return item.title.toLowerCase().includes(searchWord.toLowerCase());
         });
@@ -44,6 +47,10 @@ export const DataContextProvider = ({ children }) => {
         }
     };
 
+    const clearInput = () => {
+        setWordEntered("");
+    }
+
 
     const value = {
         currentItems,
@@ -51,6 +58,8 @@ export const DataContextProvider = ({ children }) => {
         filterResultDay,
         filterResultFree,
         filterSearch,
+        clearInput,
+        wordEntered
     }
     return <DataContext.Provider value={value}>{children}</DataContext.Provider>
 }
