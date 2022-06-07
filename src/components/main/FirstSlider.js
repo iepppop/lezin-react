@@ -2,25 +2,27 @@ import styled from 'styled-components';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import React, { useState, useEffect, useRef } from 'react';
 import { firstSliders } from './FirstSliderData';
+import { Link } from 'react-router-dom';
 
 const FirstSlider = () => {
     const [seeArrow, setSeeArrow] = useState(false);
     const ref = useRef(null);
     const sliderRef = useRef(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
     const transitionTime = 500;
     const transitionStyle = `transform ${transitionTime}ms ease 0s`;
     const [slideTransition, setTransition] = useState(transitionStyle);
     const [isSwiping, setIsSwiping] = useState(false);
     const [prevSlideX, setPrevSlideX] = useState(false);
+    const item = 2;
+    const [currentIndex, setCurrentIndex] = useState(1);
 
     const slideCopy = () => {
         let addedFront = [];
         let addedLast = [];
         let index = 0;
-        while (index < 1) {
-            addedLast.push(firstSliders[0],firstSliders[1])
-            addedFront.unshift(firstSliders[3])
+        while (index < item) {
+            addedLast.push(firstSliders[index % firstSliders.length]);
+            addedFront.unshift(firstSliders[firstSliders.length - 1 - index % firstSliders.length]);
             index ++;
         } 
         return[...addedFront, ...firstSliders, ...addedLast];
@@ -51,16 +53,6 @@ const FirstSlider = () => {
         setIsSwiping(true);
         handleSlide(currentIndex + direction);
     }
-
-    // const getItemIndex = (index) => {
-    //     index -= 1;
-    //     if (index < 0) {
-    //         index += slides.length;
-    //     }else if(index >= slides.length){
-    //         index -= slides.length;
-    //     }
-    //     return index;
-    // }
 
     const useInterval = (callback, delay) => {
         const savedCallback = useRef();
@@ -131,9 +123,9 @@ const FirstSlider = () => {
                                     <Imgbox>
                                         <img src={slider.img} alt={index} />
                                     </Imgbox>
-
+                                  
                                 </Slides>
-                            )
+                                )
                         })}
                     </Slider>
                 </SliderWrap>

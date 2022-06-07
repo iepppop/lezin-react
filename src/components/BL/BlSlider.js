@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { blslides } from './BlSliderData';
+import { Link } from 'react-router-dom';
 
 const BlSlider = () => {
     const ref = useRef();
@@ -62,7 +63,9 @@ const BlSlider = () => {
                         {slider.map((bl, idx) => {
                                 const keyword = [`${bl.keyword}`];
                                 return (
+                                   
                                     <SliderMain style={{ background: `${bl.backColor}` }} key={bl.title}>
+                                         <Link to={`${bl.link}`}>
                                         <ImgWrap>
                                             <ImgBox>
                                                 <img src={bl.img} />
@@ -110,7 +113,16 @@ const BlSlider = () => {
                                         </Content>
                                         <PointColor>
                                         </PointColor>
-                                        <ButtonWrap>
+                                        </Link>
+                                    </SliderMain>
+                              
+                                )
+                            })}
+                                                                  
+                        </SliderLength>
+                        
+                    </SliderWrap>
+                    <ButtonWrap>
                                             <Prev onClick={() => handleSwipe(-1)}><img
                                                 src={process.env.PUBLIC_URL + '/image/arrowwhl.png'}
                                             /></Prev>
@@ -118,11 +130,6 @@ const BlSlider = () => {
                                                 src={process.env.PUBLIC_URL + '/image/arrowwh.png'}
                                             /></Next>
                                         </ButtonWrap>
-                                    </SliderMain>
-                                )
-                            })}
-                        </SliderLength>
-                    </SliderWrap>
                 </Slider>
             </Container>
         </Contain>
@@ -333,7 +340,7 @@ const ButtonWrap = styled.div`
 
 const Next = styled.div`
     position:absolute;
-    z-index: 2;
+    z-index: 99;
     right:0;
     top:50%;
     transform:translate(0,-50%);
@@ -347,7 +354,7 @@ const Next = styled.div`
 
 const Prev = styled.div`
     position:absolute;
-    z-index: 2;
+    z-index: 99;
     background:#red;
     left:0;
     top:50%;

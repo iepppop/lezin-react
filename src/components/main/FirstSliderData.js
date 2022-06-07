@@ -7,6 +7,7 @@ export const firstSliders = [
         img:'https://blog.kakaocdn.net/dn/d7L0Si/btrBVChBLAO/m6Akf7khhRVp5zFjfDC4D1/img.png',
         color:'linear-gradient(to right, #fec74a, #ebd53f, #fec74a)',
         hover:'translateX(55px) translateY(20px)',
+        link:'/comics/paintings'
     },
     {
         one:'5 / 31까지',
@@ -15,7 +16,8 @@ export const firstSliders = [
         effect:'https://blog.kakaocdn.net/dn/l7RzO/btrAR9AtgaE/vDaOgkQ0Vrfjh6YGp3ec0K/img.png',
         img:'https://blog.kakaocdn.net/dn/v8HSC/btrBWP15ci1/hMd9vKZbllmp3gvOCG8y0K/img.png',
         color:'linear-gradient(to right, #82a7ff, #2ab7ff, #82a7ff)',
-        hover:'scale(1.1)'
+        hover:'scale(1.1)',
+        link:'/comics/'
     },
     {
         one:'5 / 22까지',

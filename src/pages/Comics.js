@@ -176,10 +176,10 @@ const Genre = styled.div`
 const ContentWrap = styled.ul`
     width:100%;
     height:100%;
-    padding:0 30px;
+    padding:0 0 20px 0;
 
     h5{
-        margin:25px 0 15px 0;
+        margin:25px 0 15px 30px;
         font-weight:400;
     }
 `
@@ -188,8 +188,7 @@ const ContentList = styled.li`
     width:100%;
     height:140px;
     overflow:hidden;
-    display:flex;
-    align-items: center;
+    margin:0 0 5px 0;
 `
 
 const Boreder = styled.div`
@@ -197,21 +196,24 @@ const Boreder = styled.div`
     height:100%;
     display:flex;
     align-items: center;
+    margin:0 20px 0 0;
 `
 
 const ContentImg = styled.div`
-    width:30%;
-    height:100%;
-    display:flex;
-    align-items: center;
+    width:35%;
+    height:200px;
+    overflow:hidden;
+    padding:30px;
 
     img{
         width:100%;
+        object-fit:cover;
+        margin-top:-50px;
     }
 `
 const Content = styled.div`
-    width:70%;
-    padding:0 0 0 50px;
+    width:65%;
+    padding:0 30px 0 25px;
 
     h1{
         font-weight:500;
@@ -262,5 +264,9 @@ const First = styled.div`
         color:#fff;
         width:100%;
         height:100%;
+    }
+
+    :hover{
+        opacity:0.9;
     }
 `
