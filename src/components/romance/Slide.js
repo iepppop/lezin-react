@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Slide = ({data}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,6 +43,7 @@ const Slide = ({data}) => {
                                 const keyword = [`${romance.keyword}`]
                                 return (
                                     <One>
+                                      <Link to={`${romance.link}`}>
                                         <OneWrap>
                                             <Gradient style={{ background: `linear-gradient(to right, ${romance.backColor} 65%, transparent 100%)` }}>
                                                 <Content>
@@ -73,6 +75,7 @@ const Slide = ({data}) => {
                                                 <img src={romance.img} />
                                             </Thumbnail>
                                         </OneWrap>
+                                        </Link>
                                     </One>
                                 )
                             })}

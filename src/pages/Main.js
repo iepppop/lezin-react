@@ -7,15 +7,17 @@ import Event from "../components/main/Event";
 import Famous from "../components/main/Famous";
 import PopularEnding from "../components/main/PopularEnding";
 import Footer from "../components/Footer";
+import dayweb from '../components/dayweb.json'
 
 
 const Main = () => {
+  const webtoon = dayweb.webtoon;
   return (
     <Containers>
         <FirstSlider/>
-        <Popular title="오늘의 인기 TOP"/>
+        <Popular title="오늘의 인기 TOP" webtoon={webtoon}/>
         <Pat />
-        <Popular title="금주의 화제작"/>
+        <Popular title="금주의 화제작" webtoon={webtoon}/>
         <Banner/>
         <New/>
         <Event />

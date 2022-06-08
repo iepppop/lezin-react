@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { events } from './EventData';
 
@@ -9,7 +10,7 @@ const Event = () => {
        {events.map((eve,idx)=>{
            return (
                <Wrap key={eve.name}>
-
+                <Link to={`${eve.link}`}>
                    <ImgWrap>
                  <img src={process.env.PUBLIC_URL + `/image/event0${idx + 1}.png`} alt={eve.name} />
                  </ImgWrap>
@@ -17,6 +18,7 @@ const Event = () => {
                      <h2>{eve.name}</h2>
                      <h3>{eve.genre} &nbsp;I</h3>
                      <h4>&nbsp;&nbsp;{eve.author}</h4>
+                     </Link>
                </Wrap>
            )
        })}
@@ -71,10 +73,11 @@ const Wrap = styled.div`
 
     h5{
         margin:20px 0 0 0;
-        background:#ff0008;
+        background:rgba(255,51,51,0.1) 100%;
+        color:rgba(255,51,51,1.0);
         display:inline-block;
-        color:white;
-        padding:2px 10px;
+        font-weight:800;
+        padding:4px 10px;
         border-radius:20px;
     }
 `

@@ -10,7 +10,8 @@ export const freeslides = [
         author:'안녕',
         free:'3시간마다 무료',
         backColor:'#a07f85',
-        img:'https://ccdn.lezhin.com/v2/comics/6546398410309632/images/tall.webp?updated=1628564814470&width=720'
+        img:'https://ccdn.lezhin.com/v2/comics/6546398410309632/images/tall.webp?updated=1628564814470&width=720',
+        link:'/comics/yeowuya'
     },
     {
         cate:'',
@@ -23,7 +24,8 @@ export const freeslides = [
         ],
         free:'3시간마다 무료',
         backColor:'#2eaef0',
-        img:'https://ccdn.lezhin.com/v2/comics/6406678520922112/images/tall.webp?updated=1644732087504&width=720'
+        img:'https://ccdn.lezhin.com/v2/comics/6406678520922112/images/tall.webp?updated=1644732087504&width=720',
+        link:'/comics/secretpa'
     },
     {
         cate:'NEW',
@@ -36,7 +38,9 @@ export const freeslides = [
         ],
         free:'24시간마다 무료',
         backColor:'#4d6a70',
-        img:'https://ccdn.lezhin.com/v2/comics/5073458287935488/images/tall.webp?updated=1645421934900&width=720'
+        img:'https://ccdn.lezhin.com/v2/comics/5073458287935488/images/tall.webp?updated=1645421934900&width=720',
+        link:'/comics/stare'
+        
     },
     {
         cate:'',
@@ -49,6 +53,7 @@ export const freeslides = [
             '백합','애증',
         ],
         backColor:'#552c5a',
-        img:'https://ccdn.lezhin.com/v2/comics/5098498250047488/images/tall.webp?updated=1637629396276&width=720'
+        img:'https://ccdn.lezhin.com/v2/comics/5098498250047488/images/tall.webp?updated=1637629396276&width=720',
+        link:'/comics/jjang'
     }
 ]

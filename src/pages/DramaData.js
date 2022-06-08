@@ -7,7 +7,8 @@ export const dramasdata = [
             '라이벌','비밀',
         ],
         backColor:'#c0aca5',
-        img:'https://blog.kakaocdn.net/dn/du34Lo/btrDInXx2g7/kIbQ3gp8SG6xI27jtcBMKK/img.png'
+        img:'https://blog.kakaocdn.net/dn/du34Lo/btrDInXx2g7/kIbQ3gp8SG6xI27jtcBMKK/img.png',
+        link:'/comics/myhome'
     },
     {
         cate:'HOT',
@@ -17,7 +18,8 @@ export const dramasdata = [
             '삼각관계','성장물',
         ],
         backColor:'#9a70fe',
-        img:'https://blog.kakaocdn.net/dn/deD6F9/btrDFw8nt09/jCdxITlEVCdm1kqDbobjD0/img.png'
+        img:'https://blog.kakaocdn.net/dn/deD6F9/btrDFw8nt09/jCdxITlEVCdm1kqDbobjD0/img.png',
+        link:'/comics/oxyoujung'
     },
     {
         cate:'NEW',

@@ -7,7 +7,8 @@ export const boysdata = [
             '이종족','동양풍',
         ],
         backColor:'#b32917',
-        img:'https://blog.kakaocdn.net/dn/eJmHJs/btrDHesXWwS/uKexEqb3WmBJWDKrlNSVRK/img.png'
+        img:'https://blog.kakaocdn.net/dn/eJmHJs/btrDHesXWwS/uKexEqb3WmBJWDKrlNSVRK/img.png',
+        link:'/comics/chunjihe'
     },
     {
         cate:'추천',
@@ -17,7 +18,8 @@ export const boysdata = [
             '잔혹','미스터리',
         ],
         backColor:'#030001',
-        img:'https://blog.kakaocdn.net/dn/rJEnC/btrDGcbrmcS/dqARvSgyX7IUmOPi4q7Ek1/img.png'
+        img:'https://blog.kakaocdn.net/dn/rJEnC/btrDGcbrmcS/dqARvSgyX7IUmOPi4q7Ek1/img.png',
+        link:'/comics/noshop'
     },
     {
         cate:'NEW',

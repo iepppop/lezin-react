@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import {ImClock2} from 'react-icons/im';
+import { Link } from 'react-router-dom';
 
 const FreeSlide = ({data}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,6 +35,7 @@ const FreeSlide = ({data}) => {
                         const keyword = [`${romance.keyword}`]
                         return (
                             <One>
+                              <Link to={`${romance.link}`}>
                                 <OneWrap>
                                     <Thumbnail>
                                         <img src={romance.img} />
@@ -47,6 +49,7 @@ const FreeSlide = ({data}) => {
                                       <h2>{romance.author} l {romance.genre}</h2>
                                         </Content>
                                 </OneWrap>
+                                </Link>
                             </One>
                         )
                     })}

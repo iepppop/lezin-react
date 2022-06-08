@@ -12,7 +12,8 @@ export const news = [
         color:'#f6f6f6',
         keyword:[
             '액션','미래','비밀'
-        ]
+        ],
+        link:'/comics/ImmortalDays'
     },
     {
         name: '하테마테',
@@ -27,7 +28,8 @@ export const news = [
         color:'#b7510b',
         keyword:[
             '현대물','일상물','감성',
-        ]
+        ],
+        link:'/comics/ImmortalDays'
     },
     {
         name: '칼과 꽃',
@@ -42,6 +44,7 @@ export const news = [
         color:'#02004b',
         keyword:[
             '절륜공','굴림수','동양풍','주종관계','복수'
-        ]
+        ],
+        link:'/comics/ImmortalDays'
     },
 ]

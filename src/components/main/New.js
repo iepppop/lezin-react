@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { RiDoubleQuotesL , RiDoubleQuotesR } from 'react-icons/ri';
 import { MdOutlineArrowForwardIos } from 'react-icons/md';
+import { Link } from "react-router-dom";
 
 
 
@@ -35,8 +36,10 @@ const New = ({ theme }) => {
                     const keyword = [`${news.keyword}`]
                     return (
                         <>
+                        <Link to={`${news.link}`}>
                             <Slide key={news.name} style={{ opacity: `${currentIndex === index ? "1" : "0"}`,
                          }}>
+                             
                                 <Info>
                                     <span>
                                         <h5>{currentIndex + 1} / 3</h5>
@@ -87,6 +90,7 @@ const New = ({ theme }) => {
                                     </BlurContent>
                                 </Content>
                             </Slide>
+                            </Link>
                             <NextButton>
                                 <NB onClick={NextImg} > </NB>
                             </NextButton>

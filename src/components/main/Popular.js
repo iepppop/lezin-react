@@ -7,7 +7,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 const Popular = ({ title }) => {
     const [seeArrow, setSeeArrow] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const ref = useRef(null);
+    const ref = useRef(null);  
 
     const NextSlider = () => {
         if (currentIndex >= populars.length - 1) {
