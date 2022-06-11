@@ -31,6 +31,11 @@ export const DataContextProvider = ({ children }) => {
         setCurrentItems(result);
     }
 
+    const filterRandom = (array) => {
+        const result = array.sort(() => Math.random() - 0.5);
+        setCurrentItems(result);
+    }
+
     const [wordEntered, setWordEntered] = useState("");
     const [itemSearch, setItemSearch] = useState([webtoon]);
 
@@ -51,8 +56,7 @@ export const DataContextProvider = ({ children }) => {
         setWordEntered("");
         setItemSearch([]);
     }
-
-
+    
     const value = {
         currentItems,
         filterResult,
@@ -62,6 +66,7 @@ export const DataContextProvider = ({ children }) => {
         clearInput,
         wordEntered,
         itemSearch,
+        filterRandom
     }
     return <DataContext.Provider value={value}>{children}</DataContext.Provider>
 }

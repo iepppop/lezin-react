@@ -14,7 +14,7 @@ const FirstSlider = () => {
     const [isSwiping, setIsSwiping] = useState(false);
     const [prevSlideX, setPrevSlideX] = useState(false);
     const item = 2;
-    const [currentIndex, setCurrentIndex] = useState(1);
+    const [currentIndex, setCurrentIndex] = useState(item);
 
     const slideCopy = () => {
         let addedFront = [];
@@ -23,9 +23,9 @@ const FirstSlider = () => {
         while (index < item) {
             addedLast.push(firstSliders[index % firstSliders.length]);
             addedFront.unshift(firstSliders[firstSliders.length - 1 - index % firstSliders.length]);
-            index ++;
-        } 
-        return[...addedFront, ...firstSliders, ...addedLast];
+            index++;
+        }
+        return [...addedFront, ...firstSliders, ...addedLast];
     }
 
     let slides = slideCopy();
@@ -37,44 +37,19 @@ const FirstSlider = () => {
         }, transitionTime);
     }
 
-    const handleSlide = (index) => {
+
+    const handleSwipe = (direction) => {
+        let index = currentIndex + direction;
         setCurrentIndex(index);
-        if(index - 1 < 0) {
+        if (index < item) {
             index += firstSliders.length;
             replaceSlide(index);
-        }else if(index - 1  >= firstSliders.length){
+        } else if (index >= firstSliders.length + item) {
             index -= firstSliders.length;
             replaceSlide(index);
         }
         setTransition(transitionStyle);
     }
-
-    const handleSwipe = (direction) => {
-        setIsSwiping(true);
-        handleSlide(currentIndex + direction);
-    }
-
-    const useInterval = (callback, delay) => {
-        const savedCallback = useRef();
-        useEffect(() => {
-            savedCallback.current = callback;
-        },[callback]);
-
-        useEffect(() =>{
-            const tick =()=> {
-                savedCallback.current();
-            }
-            if(delay !== null){
-                let id = setInterval(tick, delay);
-                return () => clearInterval(id);
-            }
-        },[delay])
-    }
-
-    useInterval(() => {
-        handleSlide(currentIndex + 1)
-    }, !isSwiping && !prevSlideX ? 3000 : null);
-
 
     useEffect(() => {
         ref.current.style.transform = `translateX(-${currentIndex}00%)`;
@@ -97,6 +72,7 @@ const FirstSlider = () => {
                                 onMouseOver={() => setSeeArrow(true)} 
                                 onMouseOut={() => setSeeArrow(false)} 
                                 key={index}>
+                                     <Link to={`${slider.link}`}>
                                    {seeArrow ? (
                                         <Effect style={{ transform: `${slider.hover}`}}>
                                         <img src={slider.effect} alt={index} />
@@ -106,7 +82,9 @@ const FirstSlider = () => {
                                     <img src={slider.effect} alt={index} />
                                 </Effect>
                                    )}
-                                    <Contentbox>
+                                 
+                                         <ContentWrap>
+                                         <Contentbox>
                                         <Content>
                                         <h1>
                                             EVENT
@@ -123,8 +101,10 @@ const FirstSlider = () => {
                                     <Imgbox>
                                         <img src={slider.img} alt={index} />
                                     </Imgbox>
-                                  
+                                    </ContentWrap>
+                                    </Link> 
                                 </Slides>
+                             
                                 )
                         })}
                     </Slider>
@@ -140,18 +120,24 @@ const FirstSlider = () => {
             </PrevButton>
         <DotsWrap>
                     <Dots>
-                        <Dot style={{ opacity: `${currentIndex === 0 ? "1" : currentIndex === 4 ? "1" : "0"}` }} />
-                        <Dot style={{ opacity: `${currentIndex === 1 ? "1" : currentIndex === 5 ? "1" : "0"}` }} />
-                        <Dot style={{ opacity: `${currentIndex === 2 ? "1" : "0"}` }} />
-                        <Dot style={{ opacity: `${currentIndex === 3 ? "1" : "0"}` }} />
+                        <Dot style={{ opacity: `${currentIndex === 2 ? "1" : currentIndex === 6 ? "1" : "0"}` }} />
+                        <Dot style={{ opacity: `${currentIndex === 3 ? "1" : currentIndex === 7 ? "1" : "0"}` }} />
+                        <Dot style={{ opacity: `${currentIndex === 4 ? "1" : "0"}` }} />
+                        <Dot style={{ opacity: `${currentIndex === 5 ? "1" : "0"}` }} />
                     </Dots>
-                    <DotNum>{currentIndex === 4 ? '1' : currentIndex === 5 ? '2' : currentIndex + 1}/{firstSliders.length}</DotNum>
+                    <DotNum>{currentIndex === 6 ? '1' : currentIndex === 0 ? '4' : currentIndex - 1}/{firstSliders.length}</DotNum>
                 </DotsWrap>
                 </BoxWrap>
         </Box>
     )
 }
-export default FirstSlider
+export default FirstSlider;
+
+const ContentWrap = styled.div`
+    width:100%;
+    height:100%;
+    position:absolute;
+`
 
 const Box = styled.div`
     max-width:1320px;
@@ -178,7 +164,6 @@ const Container = styled.div`
     max-width:1280px;
     position:relative;
     height:100%;
-    transform:translateX(-100%);
     border-radius:20px;
 `
 
@@ -221,24 +206,25 @@ const Slides = styled.div`
 const Imgbox = styled.div`
     width:60%;
     height:100%;
-    position:relative;
-    right:0;
+    position:absolute;
+    top:0;
+    right:100px;
 
     img{
         object-fit: cover;
         height:100%;
-        position:absolute;
-        left:-120px;
+        vertical-align:bottom;
     }
 `
 
 const Contentbox = styled.div`
-    width:40%;
+    width:100%;
     height:100%;
     display:flex;
     flex-direction:column;
     align-items:start;
-    padding:0 0 0 130px;
+    position:absolute;
+    left:130px;
 
     h1{
         font-size:19px;
@@ -263,6 +249,7 @@ const Contentbox = styled.div`
 
 const Content = styled.div`
     height:45%;
+    width:100%;
     display:flex;
     flex-direction:column;
     justify-content:end;

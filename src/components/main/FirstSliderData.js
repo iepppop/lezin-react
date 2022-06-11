@@ -17,7 +17,7 @@ export const firstSliders = [
         img:'https://blog.kakaocdn.net/dn/v8HSC/btrBWP15ci1/hMd9vKZbllmp3gvOCG8y0K/img.png',
         color:'linear-gradient(to right, #82a7ff, #2ab7ff, #82a7ff)',
         hover:'scale(1.1)',
-        link:'/comics/'
+        link:'/comics/solider'
     },
     {
         one:'5 / 22까지',
@@ -26,7 +26,8 @@ export const firstSliders = [
         effect:'',
         img:'https://blog.kakaocdn.net/dn/K7XPk/btrARqW4aZc/4kc7aP1fXhZNDlNccL6kR1/img.png',
         color:'linear-gradient(to right, #fdaf6a, #f9ed9a, #fdaf6a)',
-        hover:'scale(1.1)'
+        hover:'scale(1.1)',
+        link:'/comics/woori'
     },
     {
         one:'5 / 25까지',
@@ -35,6 +36,7 @@ export const firstSliders = [
         effect:'https://blog.kakaocdn.net/dn/TC14D/btrBSDa5lbp/vynKEz6CvN5ekyyfCuGlWk/img.png',
         img:'https://blog.kakaocdn.net/dn/BJkR7/btrBShlDte1/hYr1Fbk0nsZXTKCnT1AU40/img.png',
         color:'linear-gradient(to right, #c57e7c, #b5889c, #c57e7c',
-        hover:'scale(1.1)'
+        hover:'scale(1.1)',
+        link:'/comics/raon'
     }
 ]

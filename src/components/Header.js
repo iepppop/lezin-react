@@ -1,8 +1,9 @@
 import styled, { ThemeProvider } from "styled-components";
 import lezinlogo from '../img/lezinlogo.png';
 import { AiOutlineSearch } from 'react-icons/ai';
+import {HiOutlineUser} from 'react-icons/hi';
 import { Link, Navigate, useLocation } from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Toggle } from './Toggle';
 import { useAuth } from "../contexts/AuthContext";
 import SearchBar from "./SearchBar";
@@ -10,11 +11,13 @@ import dayweb from './dayweb.json';
 import { useData } from '../contexts/DataContext'
 
 const Header = ({ theme, toggleTheme }) => {
-    const [search, setSearch] = useState(false);
-    const { currentUser, logout } = useAuth();
+    const [search, setSearch ] = useState(false);
+    const { currentUser, logout, photoURL } = useAuth();
     const location = useLocation();
     const webtoon = dayweb.webtoon;
     const { currentItems, filterSearch, itemSearch } = useData();
+
+
 
     return (
         <Contain>
@@ -57,14 +60,16 @@ const Header = ({ theme, toggleTheme }) => {
                             <>
                                 {currentUser
                                     ? (
-                                        <button>
-                                            <span
-                                                onClick={async e => {
-                                                    e.preventDefault()
-                                                    logout()
-                                                }}
-                                            >로그아웃</span>
-                                        </button>)
+                                        // <button>
+                                        //     <span
+                                        //         onClick={async e => {
+                                        //             e.preventDefault()
+                                        //             logout()
+                                        //         }}
+                                        //     >로그아웃</span>
+                                        // </button>
+                                        <li><Link to='/profile'><Img><img src={photoURL} alt="avatar" /></Img></Link></li>
+                                        )
                                     : (
                                         <Link to="/login">
                                             <button>로그인</button>
@@ -192,4 +197,17 @@ const ClickInput = styled.div`
     display:flex;
     align-items:center;
     z-index:9999;
+`
+
+const Img = styled.div`
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    overflow:hidden;
+    margin-top:-5px;
+    border:1px solid #eee;
+
+    img{
+        width:100%;
+    }
 `

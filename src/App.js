@@ -18,6 +18,7 @@ import Drama from './pages/Drama';
 import Bl from './pages/Bl';
 import Free from './pages/Free';
 import Comics from './pages/Comics';
+import Profile from './components/Profile';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
         <Route path="/bl" element={<Bl/>}></Route>
         <Route path="/free" element={<Free/>}></Route>
         <Route path="/comics/:id" element={<Comics/>}></Route>
+        <Route path="/profile" element={<Profile/>}></Route>
       </Routes>
       </Container>
       </ThemeProvider>

@@ -9,6 +9,7 @@ import useMounted from "./hooks/useMounted";
 const Register = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [isSubmitting , setIsSubmittig] = useState(false);
     const { register }  = useAuth();

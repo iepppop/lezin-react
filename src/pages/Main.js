@@ -8,16 +8,21 @@ import Famous from "../components/main/Famous";
 import PopularEnding from "../components/main/PopularEnding";
 import Footer from "../components/Footer";
 import dayweb from '../components/dayweb.json'
+import { useData } from '../contexts/DataContext';
+import { useEffect } from 'react';
 
 
 const Main = () => {
-  const webtoon = dayweb.webtoon;
+  const { currentItems, filterRandom } = useData();
+
+
+
   return (
     <Containers>
         <FirstSlider/>
-        <Popular title="오늘의 인기 TOP" webtoon={webtoon}/>
+        <Popular title="오늘의 인기 TOP" data={currentItems}/>
         <Pat />
-        <Popular title="금주의 화제작" webtoon={webtoon}/>
+        <Popular title="금주의 화제작" data={currentItems}/>
         <Banner/>
         <New/>
         <Event />

@@ -40,6 +40,6 @@ export const events = [
         name: '메리고 라운드',
         author:'나솔',
         genre:'로맨스',
-        link:'/comics/woori'
+        link:'/comics/merry_go_round'
     },
 ]

@@ -3,11 +3,15 @@ import { populars } from './PopularData';
 import { populars2 } from './Popular2Data';
 import React, { useState, useRef, useEffect } from 'react';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { Link } from 'react-router-dom';
+import dayweb from '../dayweb.json'
 
-const Popular = ({ title }) => {
+const Popular = ({ title, data, filterRandom }) => {
     const [seeArrow, setSeeArrow] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const ref = useRef(null);  
+    const ref = useRef(null); 
+    const slideref = useRef(null);   
+    const webtoon = dayweb.webtoon;
 
     const NextSlider = () => {
         if (currentIndex >= populars.length - 1) {
@@ -27,7 +31,11 @@ const Popular = ({ title }) => {
 
     useEffect(() => {
         ref.current.style.transform = `translateX(-${currentIndex}00%)`;
+        slideref.current.style.width = `${populars.length / 5 * 100}%`;
+        
     })
+
+
 
     return (
         <Box>
@@ -46,14 +54,13 @@ const Popular = ({ title }) => {
                 </Title>
                 <Hidden>
                     <TopWrap ref={ref}>
-
-                        <Wrapper>
-
+                    <Wrapper ref={slideref}>
                             {title === '금주의 화제작' ? (
-                                <>
-                                    {populars2.map((popular, index) => {
+                                   < >
+                                    {populars.map((popular, index) => {
                                         return (
                                             <Slider key={popular.name}>
+                                                   <Link to={`${popular.link}`}>
                                                 {/* {
                                                     index < 3 ? (
                                                         <RibbonWrap>
@@ -75,16 +82,18 @@ const Popular = ({ title }) => {
                                                 </ImgBox>
                                                 <h1>{popular.name}</h1>
                                                 <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
-
+                                                </Link>
                                             </Slider>
+                                            
                                         )
                                     })}
                                 </>
                             ) : (
                                 <>
-                                    {populars.map((popular, index) => {
+                                    {populars2.map((popular, index) => {
                                         return (
                                             <Slider key={popular.name}>
+                                                  <Link to={`${popular.link}`}>
                                                 {/* {
                                                     index < 3 ? (
                                                     
@@ -105,13 +114,14 @@ const Popular = ({ title }) => {
                                                 </ImgBox>
                                                 <h1>{popular.name}</h1>
                                                 <span>{popular.genre}&nbsp;&nbsp;l</span><h2>{popular.author}</h2>
+                                                </Link>
                                             </Slider>
                                         )
                                     })}
-                                </>
+                              </>
                             )}
-
-                        </Wrapper>
+                            </Wrapper>
+                   
 
                     </TopWrap>
                 </Hidden>
@@ -125,23 +135,25 @@ const Box = styled.div`
     max-width:1320px;
     margin: 80px auto 100px auto;
     height:410px;
-    padding: 0 20px;
+    padding:0 0 0 20px;
 `
 
 const Container = styled.div`
-    position:relative;
     width:100%;
     height: 100%;
+    padding:0;
+    position:relative;
 `
 
 const ButtonWrap = styled.div`
-
+    position:relative;
+    top:50%;
 `
 
 const Next = styled.div`
     position:absolute;
     z-index: 2;
-    right:-32px;
+    right:-14px;
     top:50%;
     transform:translate(0,-50%);
     background:rgba(255,255,255,0.8);
@@ -158,7 +170,7 @@ const Prev = styled.div`
     position:absolute;
     z-index: 2;
     background:#red;
-    left:-32px;
+    left:-29px;
     top:50%;
     transform:translate(0,-50%);
     background:rgba(255,255,255,0.8);
@@ -187,7 +199,12 @@ const TopWrap = styled.div`
 
 const Wrapper = styled.div`
     display:flex;
-    width:200%;
+
+`
+
+const WrapSlide = styled.div`
+    display:flex;
+
 `
 
 const Slider = styled.div`
@@ -221,12 +238,13 @@ const Slider = styled.div`
     }
 
     &:nth-child(1){
-     padding:0;
+        padding:0;
+    }
+    
+    &:nth-child(10){
+        padding:0 20px 0 20px;
     }
 
-    &:nth-child(6){
-        padding: 0 0 0 1px;
-       }
 
 
 `
@@ -290,8 +308,8 @@ const New = styled.div`
 `
 
 const Up = styled.div`
-background:#ff208b;
-border-radius:10px;
+    background:#ff208b;
+    border-radius:10px;
     padding:4px 10px 5px 10px;
     font-size:10px;
     font-weight:800;
