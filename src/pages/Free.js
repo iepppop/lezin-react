@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import FreeSlide from '../components/free/FreeSlide';
 import { freeslides } from "./FreeData";
 import { useData } from "../contexts/DataContext";
 
@@ -14,7 +13,7 @@ const Free = () => {
 
   return (
     <div>
-      <FreeSlide data={freeslides} />
+      <span data={freeslides} />
       <Contain>
         {
           currentItems.map((values, idx) => {
