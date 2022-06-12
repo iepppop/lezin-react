@@ -23,23 +23,25 @@ export const dramasdata = [
     },
     {
         cate:'NEW',
-        content:'백작가 사생아인 그녀의 비밀은?',
-        title:'공작님의 곰인형',
+        content:'시간을 감지할 수 있는 소년',
+        title:'왓치가이',
         keyword:[
-            '로판','초능력',
+            '드라마','초능력',
         ],
-        backColor:'#4d6a70',
-        img:'https://blog.kakaocdn.net/dn/b2ajVX/btrDj9tcBVn/oXQriZ12lVv7iMigfrRdZ1/img.png'
+        backColor:'red',
+        img:'https://ccdn.lezhin.com/v2/comics/4625200343023616/images/tall.webp?updated=1619320632111&width=840',
+        link:'/comics/watchguy'
     },
     {
         cate:'HOT',
-        content:'언니 같은 사람 X나 싫어요',
-        title:'싫은 여자',
+        content:'지친 당신에게 필요한 건?',
+        title:'보름달 식당',
         keyword:[
-            '백합','애증',
+            '드라마','힐링',
         ],
         backColor:'#552c5a',
-        img:'https://blog.kakaocdn.net/dn/81mB7/btrDkWNiN2F/xUrlpNnSWFU00bWhubvlj1/img.png'
+        img:'https://ccdn.lezhin.com/v2/comics/5053488885465088/images/tall.webp?updated=1649293177776&width=720',
+        link:'/comics/moon'
     },
     {
         cate:'NEW',
@@ -49,7 +51,8 @@ export const dramasdata = [
             '달달물','힐링물',
         ],
         backColor:'#83ada5',
-        img:'https://blog.kakaocdn.net/dn/cgy2Ug/btrDKJlpyuI/uuASlxe6N8d715gcRz3mV1/img.png'
+        img:'https://blog.kakaocdn.net/dn/cgy2Ug/btrDKJlpyuI/uuASlxe6N8d715gcRz3mV1/img.png',
+        link:'/comics/foxday'
     },
     {
         cate:'HOT',
@@ -59,6 +62,7 @@ export const dramasdata = [
             '스포츠','고등학교',
         ],
         backColor:'#92ad4b',
-        img:'https://blog.kakaocdn.net/dn/JoJQA/btrDF9E2yXq/2v4WrKUarrmCGxlty99VK1/img.png'
+        img:'https://blog.kakaocdn.net/dn/JoJQA/btrDF9E2yXq/2v4WrKUarrmCGxlty99VK1/img.png',
+        link:'/comics/want_pro'
     },
 ]

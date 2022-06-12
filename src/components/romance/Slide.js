@@ -45,7 +45,7 @@ const Slide = ({data}) => {
                                     <One>
                                       <Link to={`${romance.link}`}>
                                         <OneWrap>
-                                            <Gradient style={{ background: `linear-gradient(to right, ${romance.backColor} 65%, transparent 100%)` }}>
+                                            <Gradient style={{ background: `linear-gradient(to right, ${romance.backColor} 55%, transparent 100%)` }}>
                                                 <Content>
                                                     <span>
                                                         <Cate>
@@ -162,9 +162,14 @@ const OneWrap = styled.div`
 const Thumbnail = styled.div`
     position:absolute;
     right:0;
+    width:70%;
+    display:flex;
+    align-items: center;
     height:100%;
     img{
-        height:100%;
+        width:100%;
+        object-fit: cover;
+        margin-top:50px;
     }
 `
 
