@@ -44,8 +44,6 @@ const Header = ({ theme, toggleTheme }) => {
                             <li><Link to="/drama">드라마</Link></li>
                             <li><Link to="/bl">BL</Link></li>
                             <li><Link to="/free">무료</Link></li>
-                            <li>랭킹</li>
-                            <li>이벤트</li>
                         </WrapUl>
                     )}
                     <MenuUl>
