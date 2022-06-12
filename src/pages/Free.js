@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import FreeSlide from "../components/free/FreeSlide";
-import { freeslides } from "../components/romance/FreeData";
+import { freeslides } from "./FreeData";
 import { useData } from "../contexts/DataContext";
 
 const Free = () => {
@@ -10,30 +10,30 @@ const Free = () => {
 
   useEffect(() => {
     filterResultFree('free');
-}, [])
+  }, [])
 
   return (
     <div>
-      <FreeSlide data={freeslides }/>
+      <FreeSlide data={freeslides} />
       <Contain>
-      {
-      currentItems.map((values, idx) => {
-          const { id, title, artist, genre, thumbnail, en } = values;
-          return (
-                  <Slider key={title}>
-                        <Link to={`/comics/${en}`}>
-                      <ImgBox>
-                          <img src={thumbnail} alt={title} />
-                    
-                      </ImgBox>
-                      <h1>{title}</h1>
-                      <span>{artist}</span>
-</Link>
-                  </Slider>
-          )
-      })}
+        {
+          currentItems.map((values, idx) => {
+            const { id, title, artist, genre, thumbnail, en } = values;
+            return (
+              <Slider key={title}>
+                <Link to={`/comics/${en}`}>
+                  <ImgBox>
+                    <img src={thumbnail} alt={title} />
 
-</Contain>
+                  </ImgBox>
+                  <h1>{title}</h1>
+                  <span>{artist}</span>
+                </Link>
+              </Slider>
+            )
+          })}
+
+      </Contain>
     </div>
   )
 }
