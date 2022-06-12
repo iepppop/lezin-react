@@ -108,10 +108,13 @@ const BlSlider = () => {
                                                 <h5>
                                                 © {bl.author}
                                                 </h5>
-                                                <span></span>
+                                                <span>
+
+                                                </span>
                                             </LastC>
                                         </Content>
                                         <PointColor>
+                                            
                                         </PointColor>
                                         </Link>
                                     </SliderMain>
@@ -120,7 +123,7 @@ const BlSlider = () => {
                             })}
                                                                   
                         </SliderLength>
-                        
+                       
                     </SliderWrap>
                     <ButtonWrap>
                                             <Prev onClick={() => handleSwipe(-1)}><img
@@ -130,6 +133,13 @@ const BlSlider = () => {
                                                 src={process.env.PUBLIC_URL + '/image/arrowwh.png'}
                                             /></Next>
                                         </ButtonWrap>
+                                        <DotsWrap>
+                    <Dots>
+                        <Dot style={{ opacity: `${currentIndex === 2 ? "1" : currentIndex === 6 ? "1" : "0"}` }} />
+                        <Dot style={{ opacity: `${currentIndex === 3 ? "1" : currentIndex === 7 ? "1" : "0"}` }} />
+                        <Dot style={{ opacity: `${currentIndex === 4 ? "1" : "0"}` }} />
+                    </Dots>
+                </DotsWrap>
                 </Slider>
             </Container>
         </Contain>
@@ -137,10 +147,45 @@ const BlSlider = () => {
 }
 export default BlSlider;
 
+const DotsWrap = styled.div`
+    position:absolute;
+    bottom:50px;
+    right:100px;
+    z-index:99;
+    display:flex;
+`
+
+const Dots = styled.div`
+    width:70px;
+    overflow:hidden;
+    display:flex;
+    height:3px;
+    overflow:hidden;
+    background:rgba(255,255,255,0.5);
+`
+
+const Dot = styled.div`
+    width:25px;
+    height:3px;
+    background:#fff;
+    opacity:0.6;
+`
+
+const DotNum = styled.div`
+    font-size:10px;
+    letter-spacing: 5px;
+    margin:0 0 0 24px;
+    margin-top:-3px;
+    color:#181818;
+    font-weight: 600;
+`
+
+
+
 const Contain = styled.div`
     width:100%;
     height:228px;
-    background:#f8f8f8;
+    background:${(props) => props.theme.border};
     position:relative;
 `
 const Blur = styled.div`
@@ -297,10 +342,7 @@ const LastC = styled.div`
     }
 
     span{
-        width:75px;
-        height:2px;
-        background:#fff;
-        margin:10px 0 0 0;
+        margin:20px 0 0 0;
     }
 `
 

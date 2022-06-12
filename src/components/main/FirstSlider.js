@@ -31,7 +31,7 @@ const FirstSlider = () => {
     let slides = slideCopy();
 
     const replaceSlide = (index) => {
-        setTimeout(()=>{
+        setTimeout(() => {
             setTransition('');
             setCurrentIndex(index);
         }, transitionTime);
@@ -59,66 +59,65 @@ const FirstSlider = () => {
     return (
         <Box>
             <BoxWrap>
-        <Contain>
-            <Container>
-                <SliderWrap ref={ref} style={{transition: slideTransition}}>
-                    <Slider ref={sliderRef}>
-                        {slides.map((slider, index) => {
-                            // const itemIndex = getItemIndex(index);
-                            return (
-                                <Slides 
-                                style={{ 
-                                background: `${slider.color}`}}
-                                onMouseOver={() => setSeeArrow(true)} 
-                                onMouseOut={() => setSeeArrow(false)} 
-                                key={index}>
-                                     <Link to={`${slider.link}`}>
-                                   {seeArrow ? (
-                                        <Effect style={{ transform: `${slider.hover}`}}>
-                                        <img src={slider.effect} alt={index} />
-                                    </Effect>
-                                   ): (
-                                    <Effect>
-                                    <img src={slider.effect} alt={index} />
-                                </Effect>
-                                   )}
-                                 
-                                         <ContentWrap>
-                                         <Contentbox>
-                                        <Content>
-                                        <h1>
-                                            EVENT
-                                        </h1>
-                                        <h2>
-                                            {slider.one}
-                                            <p>{slider.two}</p>
-                                        </h2>
-                                        <span>
-                                            <img src={slider.name} alt={index} />
-                                        </span>
-                                        </Content>
-                                    </Contentbox>
-                                    <Imgbox>
-                                        <img src={slider.img} alt={index} />
-                                    </Imgbox>
-                                    </ContentWrap>
-                                    </Link> 
-                                </Slides>
-                             
-                                )
-                        })}
-                    </Slider>
-                </SliderWrap>
+                <Contain>
+                    <Container>
+                        <SliderWrap ref={ref} style={{ transition: slideTransition }}>
+                            <Slider ref={sliderRef}>
+                                {slides.map((slider, index) => {
+                                    // const itemIndex = getItemIndex(index);
+                                    return (
+                                        <Slides
+                                            style={{
+                                                background: `${slider.color}`
+                                            }}
+                                            onMouseOver={() => setSeeArrow(true)}
+                                            onMouseOut={() => setSeeArrow(false)}
+                                            key={index}>
+                                            <Link to={`${slider.link}`}>
+                                                {seeArrow ? (
+                                                    <Effect style={{ transform: `${slider.hover}` }}>
+                                                        <img src={slider.effect} alt={index} />
+                                                    </Effect>
+                                                ) : (
+                                                    <Effect>
+                                                        <img src={slider.effect} alt={index} />
+                                                    </Effect>
+                                                )}
+                                                <ContentWrap>
+                                                    <Contentbox>
+                                                        <Content>
+                                                            <h1>
+                                                                EVENT
+                                                            </h1>
+                                                            <h2>
+                                                                {slider.one}
+                                                                <p>{slider.two}</p>
+                                                            </h2>
+                                                            <span>
+                                                                <img src={slider.name} alt={index} />
+                                                            </span>
+                                                        </Content>
+                                                    </Contentbox>
+                                                    <Imgbox>
+                                                        <img src={slider.img} alt={index} />
+                                                    </Imgbox>
+                                                </ContentWrap>
+                                            </Link>
+                                        </Slides>
+                                    )
+                                })}
+                            </Slider>
+                        </SliderWrap>
 
-            </Container>
-        </Contain>
-        <NextButton style={{ opacity: `${seeArrow ? '1' : '0'}` }} onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)} onClick={() => handleSwipe(+1)}>
-                <MdKeyboardArrowRight />
-            </NextButton>
-            <PrevButton style={{ opacity: `${seeArrow ? '1' : '0'}` }} onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)} onClick={() => handleSwipe(-1)}>
-                <MdKeyboardArrowLeft />
-            </PrevButton>
-        <DotsWrap>
+                    </Container>
+                </Contain>
+                <NextButton style={{ opacity: `${seeArrow ? '1' : '0'}` }} onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)} onClick={() => handleSwipe(+1)}>
+                    <MdKeyboardArrowRight />
+                </NextButton>
+                <PrevButton style={{ opacity: `${seeArrow ? '1' : '0'}` }} onMouseOver={() => setSeeArrow(true)} onMouseOut={() => setSeeArrow(false)} onClick={() => handleSwipe(-1)}>
+                    <MdKeyboardArrowLeft />
+                </PrevButton>
+                <DotsWrap>
                     <Dots>
                         <Dot style={{ opacity: `${currentIndex === 2 ? "1" : currentIndex === 6 ? "1" : "0"}` }} />
                         <Dot style={{ opacity: `${currentIndex === 3 ? "1" : currentIndex === 7 ? "1" : "0"}` }} />
@@ -127,7 +126,7 @@ const FirstSlider = () => {
                     </Dots>
                     <DotNum>{currentIndex === 6 ? '1' : currentIndex === 0 ? '4' : currentIndex - 1}/{firstSliders.length}</DotNum>
                 </DotsWrap>
-                </BoxWrap>
+            </BoxWrap>
         </Box>
     )
 }

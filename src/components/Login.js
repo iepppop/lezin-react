@@ -85,7 +85,7 @@ const Login = () => {
                         type="button"
                         onClick={() =>
                             signInWithFacebook()
-                                .then(user => console.log(user))
+                                .then(user => navigate('/'))
                                 .catch(error => console.log(error))
                         }>
                            <LogoIcon><img src="https://blog.kakaocdn.net/dn/YIv5n/btrCp5LjyUl/36xbgDXfDwmdVZUDCQDy21/tfile.svg" height={16}></img></LogoIcon>페이스북으로 로그인</Register>

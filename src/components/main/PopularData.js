@@ -70,6 +70,6 @@ export const populars = [
         genre:'BL',
         author:'김은지',
         img:'https://ccdn.lezhin.com/v2/comics/4740116490027008/images/tall.webp?updated=1632989304770&width=720',
-        link:'/comics/"limited_run'
+        link:'/comics/limited_run'
     },
 ]

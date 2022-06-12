@@ -158,7 +158,7 @@ const Content = styled.div`
     flex-direction: column;
     justify-content: center;
     position:relative;
-    background:#fff;
+    background:${(props) => props.theme.body};
 
     span{
    
