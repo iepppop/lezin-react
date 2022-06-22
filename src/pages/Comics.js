@@ -9,86 +9,88 @@ const Comics = () => {
     const { currentItems } = useData();
     const webtoon = dayweb.webtoon;
     const comicslist = webtoon.filter(list => list.en == id);
-   return (
-       <Box>
-    <Container>
-       {comicslist.map((comic,idx)=> {
-           return(
-               <Wrap>
-               <ImgWrap>
-               <Img>
-               <ImgPadding>
-            <img src={comic.thumbnail}/> 
-            </ImgPadding>     
-            </Img>
-            <ImgContent>
-            <h1>{comic.title}<Genre>{comic.genre}</Genre></h1>
-            <h2>작가 {comic.artist}</h2>
-            <span>{comic.explain}</span>
-            <Keyword>
-                <li># 로맨스</li>    <li># 드라마</li>    <li># 19세</li>
-            </Keyword>
-            </ImgContent>
-               </ImgWrap>
-               <First>
-                   <span>
-                   첫 화 보기
-                   </span>
-               </First>
-               <ContentWrap> 
-               <h5>매주 화요일 연재</h5>
-               <ContentList>
-                   <Boreder>
-               <ContentImg>
-               <img src={comic.thumbnail}/>  
-               </ContentImg>  
-               <Content>
-               <h1>01</h1>
-                   <h2>22.05.26</h2>
-                   </Content>  
-                   </Boreder>
-               </ContentList>
-               <ContentList>
-                   <Boreder>
-               <ContentImg>
-               <img src={comic.thumbnail}/>  
-               </ContentImg>  
-               <Content>
-               <h1>02</h1>
-                   <h2>22.05.26</h2>
-                   </Content>  
-                   </Boreder>
-               </ContentList>
-               <ContentList>
-                   <Boreder>
-               <ContentImg>
-               <img src={comic.thumbnail}/>  
-               </ContentImg>  
-               <Content>
-               <h1>03</h1>
-                   <h2>22.05.26</h2>
-                   </Content>  
-                   </Boreder>
-               </ContentList>
-               </ContentWrap>
-                </Wrap>
-           )
-       })}
-        </Container>
+    return (
+        <Box>
+            <Container>
+                {comicslist.map((comic, idx) => {
+                    return (
+                        <Wrap>
+                            <ImgWrap>
+                                <Img>
+                                    <ImgPadding>
+                                        <img src={comic.thumbnail} alt="img"/>
+                                    </ImgPadding>
+                                </Img>
+                                <ImgContent>
+                                    <h1>{comic.title}<Genre>{comic.genre}</Genre></h1>
+                                    <h2>작가 {comic.artist}</h2>
+                                    <span>{comic.explain}</span>
+                                    <Keyword>
+                                        <li># 로맨스</li>
+                                        <li># 드라마</li>
+                                        <li># 19세</li>
+                                    </Keyword>
+                                </ImgContent>
+                            </ImgWrap>
+                            <First>
+                                <span>
+                                    첫 화 보기
+                                </span>
+                            </First>
+                            <ContentWrap>
+                                <h5>매주 화요일 연재</h5>
+                                <ContentList>
+                                    <Boreder>
+                                        <ContentImg>
+                                            <img src={comic.thumbnail} alt="img1"/>
+                                        </ContentImg>
+                                        <Content>
+                                            <h1>01</h1>
+                                            <h2>22.05.26</h2>
+                                        </Content>
+                                    </Boreder>
+                                </ContentList>
+                                <ContentList>
+                                    <Boreder>
+                                        <ContentImg>
+                                            <img src={comic.thumbnail} alt="img2"/>
+                                        </ContentImg>
+                                        <Content>
+                                            <h1>02</h1>
+                                            <h2>22.05.26</h2>
+                                        </Content>
+                                    </Boreder>
+                                </ContentList>
+                                <ContentList>
+                                    <Boreder>
+                                        <ContentImg>
+                                            <img src={comic.thumbnail} alt="img3"/>
+                                        </ContentImg>
+                                        <Content>
+                                            <h1>03</h1>
+                                            <h2>22.05.26</h2>
+                                        </Content>
+                                    </Boreder>
+                                </ContentList>
+                            </ContentWrap>
+                        </Wrap>
+                    )
+                })}
+            </Container>
         </Box>
-  )
+    )
 }
 export default Comics;
 
 const Box = styled.div`
-    background:#f8f8f8;
+    background:${(props) => props.theme.login};
     width:100%;
     height:100%;
 `
 
 const Container = styled.div`
     max-width:805px;
-    background:#fff;
+    background:${(props) => props.theme.body};
     margin:0 auto;
 `
 
@@ -106,7 +108,7 @@ const ImgWrap = styled.div`
     align-items: center;
     overflow:hidden;
     justify-content:center;
-    background:#fff;
+    background:${(props) => props.theme.body};
     overflow:hidden;
 
     h1{

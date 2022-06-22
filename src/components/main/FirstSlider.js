@@ -6,17 +6,66 @@ import { Link } from 'react-router-dom';
 
 const FirstSlider = () => {
     const [seeArrow, setSeeArrow] = useState(false);
-    const ref = useRef(null);
-    const sliderRef = useRef(null);
+    // const ref = useRef(null);
+    // const sliderRef = useRef(null);
+    // const transitionTime = 500;
+    // const transitionStyle = `transform ${transitionTime}ms ease 0s`;
+    // const [slideTransition, setTransition] = useState(transitionStyle);
+    // const [isSwiping, setIsSwiping] = useState(false);
+    // const [prevSlideX, setPrevSlideX] = useState(false);
+    // const item = 2;
+    // const [currentIndex, setCurrentIndex] = useState(item);
+
+    // const slideCopy = () => {
+    //     let addedFront = [];
+    //     let addedLast = [];
+    //     let index = 0;
+    //     while (index < item) {
+    //         addedLast.push(firstSliders[index % firstSliders.length]);
+    //         addedFront.unshift(firstSliders[firstSliders.length - 1 - index % firstSliders.length]);
+    //         index++;
+    //     }
+    //     return [...addedFront, ...firstSliders, ...addedLast];
+    // }
+
+    // let slides = slideCopy();
+
+    
+    // const replaceSlide = (index) => {
+    //     setTimeout(()=>{
+    //         setTransition('');
+    //         setCurrentIndex(index);
+    //     }, transitionTime);
+    // }
+
+
+    // const handleSwipe = (direction) => {
+    //     let index = currentIndex + direction;
+    //     setCurrentIndex(index);
+    //     if (index < item) {
+    //         index += firstSliders.length;
+    //         replaceSlide(index);
+    //     } else if (index >= firstSliders.length + item) {
+    //         index -= firstSliders.length;
+    //         replaceSlide(index);
+    //     }
+    //     setTransition(transitionStyle);
+    // }
+
+    // useEffect(() => {
+    //     ref.current.style.transform = `translateX(-${currentIndex}00%)`;
+    //     sliderRef.current.style.width = `${slides.length}00%`;
+    // })
+
+    const ref = useRef();
+    const slideref = useRef();
     const transitionTime = 500;
     const transitionStyle = `transform ${transitionTime}ms ease 0s`;
     const [slideTransition, setTransition] = useState(transitionStyle);
-    const [isSwiping, setIsSwiping] = useState(false);
-    const [prevSlideX, setPrevSlideX] = useState(false);
     const item = 2;
     const [currentIndex, setCurrentIndex] = useState(item);
 
-    const slideCopy = () => {
+    const setSlides = () => {
         let addedFront = [];
         let addedLast = [];
         let index = 0;
@@ -28,10 +77,10 @@ const FirstSlider = () => {
         return [...addedFront, ...firstSliders, ...addedLast];
     }
 
-    let slides = slideCopy();
+    let slider = setSlides();
 
     const replaceSlide = (index) => {
-        setTimeout(() => {
+        setTimeout(()=>{
             setTransition('');
             setCurrentIndex(index);
         }, transitionTime);
@@ -53,17 +102,19 @@ const FirstSlider = () => {
 
     useEffect(() => {
         ref.current.style.transform = `translateX(-${currentIndex}00%)`;
-        sliderRef.current.style.width = `${slides.length}00%`;
-    })
+        slideref.current.style.width = `${slider.length}00%`;
+    });
+
+    
 
     return (
         <Box>
             <BoxWrap>
                 <Contain>
                     <Container>
-                        <SliderWrap ref={ref} style={{ transition: slideTransition }}>
-                            <Slider ref={sliderRef}>
-                                {slides.map((slider, index) => {
+                        <SliderWrap ref={ref} style={{transition: slideTransition }}>
+                            <Slider ref={slideref}>
+                                {slider.map((slider, index) => {
                                     // const itemIndex = getItemIndex(index);
                                     return (
                                         <Slides

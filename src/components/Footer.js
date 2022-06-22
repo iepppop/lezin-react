@@ -37,14 +37,14 @@ export default Footer;
 
 const Container = styled.div`
     width:100%;
-    border: 1px solid #eee;
+    border-top: 1px solid  ${(props) => props.theme.border};
     height:120px;
 `
 
 const Contain = styled.div`
     max-width:1280px;
     margin: 0 auto;
-    color: white;
+    color: ${(props) => props.theme.text};
     height: 100%;
 `
 
@@ -56,17 +56,22 @@ const FooterWrap = styled.div`
   width:100%;
   height:100%;
   display:flex;
-  padding:30px 0 0 0;
+  padding:0 0 0 0;
+  align-items: center;
 `
 
 const Firstbox = styled.div`
   align-items: first;
   width:20%;
   justify-content: first;
+  display:flex;
+  padding:0 0 0 0;
+  align-items: center;
+  flex-direction: column;
 
   
   h5{
-    color:black;
+    color: ${(props) => props.theme.text};
     font-weight:600;
     font-size:11px;
     margin:5px 0 0 0;
@@ -76,8 +81,11 @@ const Firstbox = styled.div`
 
 const Secondbox = styled.ul`
   width:60%;
+  display:flex;
+  padding:0 0 0 0;
+  flex-direction: column;
   span{
-    color:#000;
+    color: ${(props) => props.theme.text};
     opacity:0.8;
     display:block;
     font-weight:600;
@@ -87,7 +95,7 @@ const Secondbox = styled.ul`
 `
 
 const SecondUl = styled.ul`
-  color:#000;
+  color: ${(props) => props.theme.text};
   display:flex;
   font-weight:600;
   font-size:12px;
@@ -106,6 +114,7 @@ const Thirdbox = styled.ul`
   display:flex;
   justify-content: end;
   align-items: center;
+  height:100%;
 
   li{
     margin: 0 10px 0 0;

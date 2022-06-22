@@ -674,6 +674,46 @@
             "day" : "sat", 
             "thumbnail" : "https://ccdn.lezhin.com/v2/comics/4740116490027008/images/tall.webp?updated=1632989304770&width=720",
             "explain" : "신인 배우 서연오. 아직 무명인 그로서는 늘어만 가는 아버지의 도박 빚이 버겁기만 하다. 그런데 어느 날 모 대기업 전무인 제혁으로부터 자신의 애인을 연기해달라는 스폰 제안을 받게 되는데...! 서연오씨 몸부터 맞춰 봅시다."
+        },
+        {
+            "id" : 67, 
+            "title" : "킬링스토킹", 
+            "en" : "killings", 
+            "artist" : "쿠기",
+            "genre" : "BL",
+            "day" : "sat", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6341929660055552/images/tall.webp?updated=1648623079902&width=720",
+            "explain" : "같은 과 동기 상우를 좋아하다 못해 스토킹하게 된 윤범. 하지만 모두에게 밝은 이미지로 어필하던 상우의 정체는 상상도 할 수 없는 어둠 그 자체였다. 그리고 그 사실을 알아챈 순간, 윤범에게는 죽음이 한 발짝 다가오는데...!"
+        },
+        {
+            "id" : 68, 
+            "title" : "골든아워", 
+            "en" : "the_golden_hour", 
+            "artist" : "박수빈",
+            "genre" : "드라마",
+            "day" : "ten", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/6262255336620032/images/tall.webp?updated=1641430463933&width=720",
+            "explain" : "환자를 살리면 살릴수록 적자가 늘어나는 아이러니한 상황. 그는 과연 수많은 외상환자들의 목숨을 붙들 수 있을 것인가!"
+        },
+        {
+            "id" : 69, 
+            "title" : "호박장군", 
+            "en" : "pumpking", 
+            "artist" : "이운",
+            "genre" : "판타지",
+            "day" : "wed", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/112/images/tall.webp?updated=1602829780420&width=840",
+            "explain" : "평화를 위해 오랜 시간 억압되어 잊혀진 장군들. 마침내 힘이 해방되며 그 존재감을 드러내게 되는데... 폭력의 시대가 열리고, 장군들은 전쟁을 시작한다. 여전히 긴장감 넘치는 전개, 더 과감한 액션! <호박장군> 2부 '군쟁' 시작!"
+        },
+        {
+            "id" : 70, 
+            "title" : "어둠이 스러지는 꽃", 
+            "en" : "audum_kkot", 
+            "artist" : "므앵갱",
+            "genre" : "판타지",
+            "day" : "ten", 
+            "thumbnail" : "https://ccdn.lezhin.com/v2/comics/9/images/tall.webp?updated=1520223358179&width=720",
+            "explain" : "죽은 자의 영혼을 거두는 저승사자, 어둠을 보는 어느 노인과 어둠을 벗삼아 자란 난길. 그리고 노인의 곁을 떠나지 않는 또 다른 어둠이 있다. 어느 날 할머니와 난길의 앞에 어둠을 베는 칼과 남자가 나타난다. 한국적인 삶과 죽음의 세계를 어둠이라는 존재로 풀어내는 퓨전 판타지 사극."
         }
     ]
 }

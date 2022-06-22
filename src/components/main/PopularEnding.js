@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { popularEnding } from './PopularEndingData';
 import React, { useState, useRef, useEffect } from 'react';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const PopularEnding = () => {
     const [current, setCurrent] = useState(0);
@@ -48,6 +49,7 @@ const PopularEnding = () => {
                     {popularEnding.map((ending, index) => {
                         return (
                             <Slides key={ending.name}>
+                                 <Link to={`${ending.link}`}>
                                 <Img>
                                 <img src={ending.img} />
                                 </Img>
@@ -59,6 +61,7 @@ const PopularEnding = () => {
                                 <Author>
                                 <h5>©</h5> {ending.author}
                                 </Author>
+                                </Link>
                             </Slides>
                         )
                     })}
