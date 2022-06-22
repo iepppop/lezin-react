@@ -1,4 +1,6 @@
 # 레진코믹스
+![csa](https://user-images.githubusercontent.com/91578173/174973913-91f4730e-540f-47ac-b6cf-1befbfcb9cb0.png)
+
 
 ### URL
 lezin-react.vercel.app
@@ -15,3 +17,4 @@ lezin-react.vercel.app
 - firebase
 - context
 - styled-components
+
