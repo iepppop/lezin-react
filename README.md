@@ -1,5 +1,5 @@
 # 레진코믹스
-![csa](https://user-images.githubusercontent.com/91578173/174973913-91f4730e-540f-47ac-b6cf-1befbfcb9cb0.png)
+![fa](https://user-images.githubusercontent.com/91578173/174974462-8a286bb2-2638-4809-bdb8-9f6f333e741b.png)
 
 
 ### URL
