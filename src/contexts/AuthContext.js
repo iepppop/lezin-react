@@ -52,6 +52,7 @@ export const AuthContextProvider = ({ children }) => {
     const logout = () => {
         signOut(auth);
     }
+    
     const signInWithGoogle = ( email, password) => {
         const provider = new GoogleAuthProvider();
         return signInWithPopup(auth, provider);
