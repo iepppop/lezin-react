@@ -2,7 +2,7 @@
 ![fa](https://user-images.githubusercontent.com/91578173/174974462-8a286bb2-2638-4809-bdb8-9f6f333e741b.png)
 
 ### URL
-[lezin-react.vercel.app](lezin-react.vercel.app)
+[lezin-react.vercel.app](https://lezin-react.vercel.app/)
 
 ### Install
     npm start
