@@ -42,7 +42,7 @@ export default Bl;
 const Container = styled.div`
   max-width: 1320px;
   margin: 0 auto;
-  height: 350px;
+  height:auto;
   position: relative;
   padding: 120px 0 0 0;
 `;

@@ -85,7 +85,9 @@ export default Comics;
 const Box = styled.div`
     background:${(props) => props.theme.login};
     width:100%;
-    height:100%;
+    height:93vh;
+    position:relative;
+    overflow:hidden;
 `
 
 const Container = styled.div`

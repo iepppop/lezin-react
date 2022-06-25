@@ -58,14 +58,6 @@ const Header = ({ theme, toggleTheme }) => {
                             <>
                                 {currentUser
                                     ? (
-                                        // <button>
-                                        //     <span
-                                        //         onClick={async e => {
-                                        //             e.preventDefault()
-                                        //             logout()
-                                        //         }}
-                                        //     >로그아웃</span>
-                                        // </button>
                                         <li><Link to='/profile'><Img><img src={photoURL} alt="avatar" /></Img></Link></li>
                                         )
                                     : (

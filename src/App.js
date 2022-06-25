@@ -64,6 +64,8 @@ export default App;
 
 const Container = styled.div`
   width:100%;
-  height: 93vh;
+  height: auto;
   font-family: 'Pretendard';
+  overflow:hidden;
+  position:relative;
 `
