@@ -1,8 +1,16 @@
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Footer = () => {
+  const location = useLocation();
   return (
-    <Container>
+ <>
+ {location.pathname === "/login" 
+ ||location.pathname === "/register"
+ || location.pathname === "/forgot-password"
+ || location.pathname.includes("comics")
+ ?null : (
+      <Container>
       <Contain>
         <FooterWrap>
           <Firstbox>
@@ -31,6 +39,8 @@ const Footer = () => {
         </FooterWrap>
       </Contain>
     </Container>
+ )}
+ </>
   )
 }
 export default Footer;
@@ -39,6 +49,7 @@ const Container = styled.div`
     width:100%;
     border-top: 1px solid  ${(props) => props.theme.border};
     height:120px;
+    margin:40px 0 0 0;
 `
 
 const Contain = styled.div`

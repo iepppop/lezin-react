@@ -90,6 +90,7 @@ const Box = styled.div`
 
 const Container = styled.div`
     max-width:805px;
+    height:100%;
     background:${(props) => props.theme.body};
     margin:0 auto;
 `

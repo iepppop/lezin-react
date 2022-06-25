@@ -19,6 +19,7 @@ import Bl from './pages/Bl';
 import Free from './pages/Free';
 import Comics from './pages/Comics';
 import Profile from './components/Profile';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
         <Route path="/comics/:id" element={<Comics/>}></Route>
         <Route path="/profile" element={<Profile/>}></Route>
       </Routes>
+      <Footer />
       </Container>
       </ThemeProvider>
     </BrowserRouter>

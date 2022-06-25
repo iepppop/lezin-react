@@ -28,7 +28,6 @@ const Main = () => {
         <Event />
         <Famous />
         <PopularEnding />
-        <Footer />
     </Containers>
   )
 }

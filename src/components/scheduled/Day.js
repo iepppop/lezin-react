@@ -34,10 +34,7 @@ const Day = () => {
         <Contain>
                     
             <DayScheduled>
-                <button onClick={() => {filterResultDay('mon'); toggleTab(1)}}>
-                    월
-                    <Line />
-                    </button>
+                <button onClick={() => {filterResultDay('mon'); toggleTab(1)}} style={{background:`${currentClick === 1 ? '#ed1c24' : ''}`, color:`${currentClick === 1 ? 'white' : ''}`}}>월</button>
                 <button onClick={() => {filterResultDay('tue'); toggleTab(2)}} style={{background:`${currentClick === 2 ? '#ed1c24' : ''}`, color:`${currentClick === 2 ? 'white' : ''}`}}>화</button>
                 <button onClick={() => {filterResultDay('wed'); toggleTab(3)}} style={{background:`${currentClick === 3 ? '#ed1c24' : ''}`, color:`${currentClick === 3 ? 'white' : ''}`}}>수</button>
                 <button onClick={() => {filterResultDay('thu'); toggleTab(4)}} style={{background:`${currentClick === 4 ? '#ed1c24' : ''}`, color:`${currentClick === 4 ? 'white' : ''}`}}>목</button>
@@ -125,9 +122,9 @@ const DayScheduled = styled.div`
     text-align:center;
 
     button{
-        padding:5px 24px;
+        padding:10px 24px;
         font-size:16px;
-        border-radius:10px;
+        border-radius:22px;
         cursor: pointer;
         font-weight:600;
         position:relative;
