@@ -11,7 +11,7 @@ export const blslides = [
         backColor:'#79d0d9',
         img:'https://blog.kakaocdn.net/dn/b68Qvf/btrDGbKtBeh/icUt3U7Mcib1WY8uKckXSk/img.png',
         subimg:'https://ccdn.lezhin.com/v2/comics/6147621996789760/images/tall.webp?updated=1635137566970&width=720',
-        link:'/comics/loveorhate'
+        link:'/comics/swingbaeevy'
     },
     {
         cate:'개정판',
@@ -39,6 +39,6 @@ export const blslides = [
         backColor:'#4d6a70',
         img:'https://blog.kakaocdn.net/dn/vRXq7/btrDQFcBaZA/9ewV0ZUDP5tPviD75zjsCK/img.png',
         subimg:'https://ccdn.lezhin.com/v2/comics/4626967191420928/images/tall.webp?updated=1647676248396&width=720',
-        link:'/comics/loveorhate'
+        link:'/comics/knife_flower'
     },
 ]

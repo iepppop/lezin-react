@@ -49,6 +49,7 @@ const Container = styled.div`
     width:100%;
     border-top: 1px solid  ${(props) => props.theme.border};
     height:120px;
+    margin:40px 0 0 0;
 `
 
 const Contain = styled.div`
@@ -76,7 +77,7 @@ const Firstbox = styled.div`
   justify-content: first;
   display:flex;
   padding:0 0 0 0;
-  align-items: center;
+  align-items: first;
   flex-direction: column;
 
   

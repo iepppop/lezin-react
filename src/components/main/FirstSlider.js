@@ -96,9 +96,15 @@ const FirstSlider = () => {
         } else if (index >= firstSliders.length + item) {
             index -= firstSliders.length;
             replaceSlide(index);
-        }
+        } 
         setTransition(transitionStyle);
     }
+
+    useEffect(() => {
+       if(currentIndex === 2){
+        setTransition('');
+       }
+    })
 
     useEffect(() => {
         ref.current.style.transform = `translateX(-${currentIndex}00%)`;
@@ -320,7 +326,7 @@ const Dots = styled.div`
     display:flex;
     height:5px;
     overflow:hidden;
-    background:rgba(255,255,255,0.5);
+    background:rgba(0,0,0,0.5);
 `
 
 const Dot = styled.div`

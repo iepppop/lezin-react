@@ -220,7 +220,7 @@ const Slider = styled.div`
     height:280px;
     border-radius:15px;
     position:relative;
-    overflow:hidden;
+
 `
 
 const SliderWrap = styled.div`
