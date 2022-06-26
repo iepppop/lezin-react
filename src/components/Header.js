@@ -122,6 +122,11 @@ const WrapUl = styled.ul`
     display:flex;
     align-items: center;
     margin:0 0 0 30px;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        font-size:11px;
+      }
     
     li{
         padding:0 20px;

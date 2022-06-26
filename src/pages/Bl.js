@@ -46,6 +46,7 @@ const Container = styled.div`
   position: relative;
   padding: 140px 0 0 0;
 `;
+
 const Wrap = styled.div`
   width: 100%;
   height: 100%;
