@@ -50,6 +50,7 @@ const Container = styled.div`
     border-top: 1px solid  ${(props) => props.theme.border};
     height:120px;
     margin:40px 0 0 0;
+    padding:0 20px;
 `
 
 const Contain = styled.div`
