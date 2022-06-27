@@ -27,7 +27,7 @@ const BlSlider = () => {
     let slider = setSlides();
 
     const replaceSlide = (index) => {
-        setTimeout(()=>{
+        setTimeout(() => {
             setTransition('');
             setCurrentIndex(index);
         }, transitionTime);
@@ -58,88 +58,88 @@ const BlSlider = () => {
             <Container>
 
                 <Slider>
-                    <SliderWrap ref={ref} style={{transition: slideTransition}}>
+                    <SliderWrap ref={ref} style={{ transition: slideTransition }}>
                         <SliderLength ref={slideref}>
-                        {slider.map((bl, idx) => {
+                            {slider.map((bl, idx) => {
                                 const keyword = [`${bl.keyword}`];
                                 return (
-                                   
-                                    <SliderMain style={{ background: `${bl.backColor}` }} key={bl.title}>
-                                         <Link to={`${bl.link}`}>
-                                        <ImgWrap>
-                                            <ImgBox>
-                                                <img src={bl.img} />
-                                            </ImgBox>
-                                        </ImgWrap>
-                                        <Content>
-                                            <FirstC>
-                                                <h5>
-                                                    <span>{bl.cate}</span>
-                                                </h5>
-                                                <h1>
-                                                    {bl.content1}
-                                                </h1>
-                                                <h2>
-                                                    {bl.content2}
-                                                </h2>
-                                                <h3>
-                                                    <div>
-                                                        {bl.title}
-                                                    </div>
-                                                </h3>
-                                                <h4>
-                                                {keyword.map((x, i) => {
-                                                    const words = x.split(',', 5);
-                                                    return (
-                                                        <Keyword key={words[0]}>
-                                                            <li>#{words[0]}</li>
-                                                            <li>#{words[1]}</li>
-                                                            <li>#{words[2]}</li>
-                                                            <li>#{words[3]}</li>
-                                                        </Keyword>
-                                                    )
-                                                })}
-                                                </h4>
-                                            </FirstC>
-                                            <LastC>
-                                                <ImgContain>
-                                                    <img src={bl.subimg} />
-                                                </ImgContain>
-                                                <h5>
-                                                © {bl.author}
-                                                </h5>
-                                                <span>
 
-                                                </span>
-                                            </LastC>
-                                        </Content>
-                                        <PointColor>
-                                            
-                                        </PointColor>
+                                    <SliderMain style={{ background: `${bl.backColor}` }} key={bl.title}>
+                                        <Link to={`${bl.link}`}>
+                                            <ImgWrap>
+                                                <ImgBox>
+                                                    <img src={bl.img} />
+                                                </ImgBox>
+                                            </ImgWrap>
+                                            <Content>
+                                                <FirstC>
+                                                    <h5>
+                                                        <span>{bl.cate}</span>
+                                                    </h5>
+                                                    <h1>
+                                                        {bl.content1}
+                                                    </h1>
+                                                    <h2>
+                                                        {bl.content2}
+                                                    </h2>
+                                                    <h3>
+                                                        <div>
+                                                            {bl.title}
+                                                        </div>
+                                                    </h3>
+                                                    <h4>
+                                                        {keyword.map((x, i) => {
+                                                            const words = x.split(',', 5);
+                                                            return (
+                                                                <Keyword key={words[0]}>
+                                                                    <li>#{words[0]}</li>
+                                                                    <li>#{words[1]}</li>
+                                                                    <li>#{words[2]}</li>
+                                                                    <li>#{words[3]}</li>
+                                                                </Keyword>
+                                                            )
+                                                        })}
+                                                    </h4>
+                                                </FirstC>
+                                                <LastC>
+                                                    <ImgContain>
+                                                        <img src={bl.subimg} />
+                                                    </ImgContain>
+                                                    <h5>
+                                                        © {bl.author}
+                                                    </h5>
+                                                    <span>
+
+                                                    </span>
+                                                </LastC>
+                                            </Content>
+                                            <PointColor>
+
+                                            </PointColor>
                                         </Link>
                                     </SliderMain>
-                              
+
                                 )
                             })}
-                                                                  
+
                         </SliderLength>
-                       
+
                     </SliderWrap>
                     <ButtonWrap>
-                                            <Prev onClick={() => handleSwipe(-1)}><img
-                                                src={process.env.PUBLIC_URL + '/image/arrowwhl.png'}
-                                            /></Prev>
-                                            <Next onClick={() => handleSwipe(+1)}><img
-                                                src={process.env.PUBLIC_URL + '/image/arrowwh.png'}
-                                            /></Next>
-                                        </ButtonWrap>
-                                        <DotsWrap>
-                    <Dots>
-                        <Dot style={{ opacity: `${currentIndex === 2 ? "1" : currentIndex === 6 ? "1" : "0"}` }} />
-                        <Dot style={{ opacity: `${currentIndex === 3 ? "1" : currentIndex === 7 ? "1" : "0"}` }} />
-                        <Dot style={{ opacity: `${currentIndex === 4 ? "1" : "0"}` }} />
-                    </Dots>
-                </DotsWrap>
+                        <Prev onClick={() => handleSwipe(-1)}><img
+                            src={process.env.PUBLIC_URL + '/image/arrowwhl.png'}
+                        /></Prev>
+                        <Next onClick={() => handleSwipe(+1)}><img
+                            src={process.env.PUBLIC_URL + '/image/arrowwh.png'}
+                        /></Next>
+                    </ButtonWrap>
+                    <DotsWrap>
+                        <Dots>
+                            <Dot style={{ opacity: `${currentIndex === 2 ? "1" : currentIndex === 6 ? "1" : "0"}` }} />
+                            <Dot style={{ opacity: `${currentIndex === 3 ? "1" : currentIndex === 7 ? "1" : "0"}` }} />
+                            <Dot style={{ opacity: `${currentIndex === 4 ? "1" : "0"}` }} />
+                        </Dots>
+                    </DotsWrap>
                 </Slider>
             </Container>
         </Contain>
@@ -208,7 +208,7 @@ const ImgWraper = styled.div`
 `
 
 const Container = styled.div`
-    max-width:1320px;
+    width:1320px;
     height:100%;
     padding: 0 20px;
     margin:0 auto;
@@ -219,7 +219,8 @@ const Slider = styled.div`
     width:100%;
     height:280px;
     border-radius:15px;
-    position:relative;
+    position:relative;    
+    overflow:hidden;
 
 `
 
