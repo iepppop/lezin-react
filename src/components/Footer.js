@@ -53,7 +53,7 @@ const Container = styled.div`
 `
 
 const Contain = styled.div`
-    max-width:1280px;
+    width:1280px;
     margin: 0 auto;
     color: ${(props) => props.theme.text};
     height: 100%;

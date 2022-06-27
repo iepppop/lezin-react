@@ -40,7 +40,7 @@ const Bl = () => {
 export default Bl;
 
 const Container = styled.div`
-  max-width: 1320px;
+  width: 1320px;
   margin: 0 auto;
   height:auto;
   position: relative;

@@ -132,7 +132,7 @@ const Popular = ({ title, data, filterRandom }) => {
 export default Popular;
 
 const Box = styled.div`
-    max-width:1320px;
+    width:1320px;
     margin: 80px auto 100px auto;
     height:410px;
     padding:0 0 0 20px;

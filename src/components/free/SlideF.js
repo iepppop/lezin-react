@@ -72,7 +72,7 @@ const Box = styled.div`
 `
 
 const Conatain = styled.div`
-    max-width:1320px;
+    width:1320px;
     margin: 0 auto;
     height:420px;
     padding: 0 20px;

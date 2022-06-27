@@ -107,7 +107,7 @@ const ModColor = styled.div`
 `
 
 const Box = styled.div`
-    max-width:1320px;
+    width:1320px;
     margin:120px auto 0px auto;
     height:640px;
     padding: 0 20px;

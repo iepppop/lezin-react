@@ -13,7 +13,7 @@ const Free = () => {
   }, [])
 
   return (
-    <div>
+    <>
       <SlideF data={freeslides} />
       <Contain>
         {
@@ -34,13 +34,13 @@ const Free = () => {
           })}
 
       </Contain>
-    </div>
+    </>
   )
 }
 export default Free;
 
 const Contain = styled.div`
-  max-width:1320px;
+  width:1320px;
   margin: 0 auto;
   height:auto;
   position:relative;

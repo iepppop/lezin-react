@@ -75,7 +75,7 @@ const PopularEnding = () => {
 export default PopularEnding;
 
 const Box =  styled.div`
-    max-width:1320px;
+    width:1320px;
     margin:120px auto 100px auto;
     padding:0 20px;
     height:410px;

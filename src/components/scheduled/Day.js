@@ -117,7 +117,7 @@ const Contain = styled.div`
 
 const DayScheduled = styled.div`
     padding:0px 0 30px 0;
-    max-width:1280px;
+    width:1280px;
     margin: 50px auto 10px auto;
     text-align:center;
 
@@ -151,7 +151,7 @@ const DayBorder = styled.div`
 `
 
 const DayWrap = styled.div`
-    max-width:1320px;
+    width:1320px;
     height:100%;
     padding:0 20px 0 0;
     margin: 0 auto;

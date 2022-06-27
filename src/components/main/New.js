@@ -120,7 +120,7 @@ const Containers = styled.div`
 
 const NewWrap = styled.div`
     margin:0 auto;
-    max-width:1320px;
+    width:1320px;
     height:60%;
     top:50%;
     transform: translate(0,-50%);

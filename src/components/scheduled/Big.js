@@ -42,7 +42,7 @@ const Big = ({ data }) => {
                                 const keyword = [`${romance.keyword}`]
                                 return (
                                     <One>
-                                        
+
                                         <Gradient style={{ background: `linear-gradient(to right, ${romance.backColor} 15%,  ${romance.backColor2} 50%, ${romance.backColor} 100%)` }}></Gradient>
                                         <OneWrap>
                                             <Gradient >
@@ -56,58 +56,56 @@ const Big = ({ data }) => {
                                                     /></Next>
 
                                                 </ButtonWrap>
-                                               
+
                                                 <Content>
-                                                <Link to={`${romance.link}`}>
-                                                    <span>
-                                                        <Cate>
-                                                            {romance.cate}
-                                                        </Cate>
-                                                    </span>
-                                                    <h1>
-                                                        {romance.content}
-                                                    </h1>
-                                                    <h2>
-                                                        {romance.title}
-                                                    </h2>
-                                                    <h3>
-                                                        {keyword.map((x, i) => {
-                                                            const words = x.split(',', 5);
-                                                            return (
-                                                                <Keyword key={words[0]}>
-                                                                    <li>#{words[0]}</li>
-                                                                    <li>#{words[1]}</li>
-                                                                </Keyword>
-                                                            )
-                                                        })}
-                                                    </h3>
+                                                    <Link to={`${romance.link}`}>
+                                                        <span>
+                                                            <Cate>
+                                                                {romance.cate}
+                                                            </Cate>
+                                                        </span>
+                                                        <h1>
+                                                            {romance.content}
+                                                        </h1>
+                                                        <h2>
+                                                            {romance.title}
+                                                        </h2>
+                                                        <h3>
+                                                            {keyword.map((x, i) => {
+                                                                const words = x.split(',', 5);
+                                                                return (
+                                                                    <Keyword key={words[0]}>
+                                                                        <li>#{words[0]}</li>
+                                                                        <li>#{words[1]}</li>
+                                                                    </Keyword>
+                                                                )
+                                                            })}
+                                                        </h3>
                                                     </Link>
                                                 </Content>
-                                               
+
                                             </Gradient>
                                             <Thumbnail>
                                                 <img src={romance.img} />
                                             </Thumbnail>
 
                                         </OneWrap>
-                                       
+
                                     </One>
                                 )
                             })}
                         </SliderWrap>
                     </Wrap>
+                    <Dot>
+                        {Array.from({ length: 4 }).map((item, index) => (
+                            <li
+                                onClick={() => moveDot(index)}
+                                style={{ background: `${currentIndex === index ? '#2d2d2d' : '#eee'}`, padding: `${currentIndex === index ? '0 5px' : ''}`, borderRadius: `${currentIndex === index ? '20px' : '50%'}` }}
+                            ></li>
+                        ))}
+                    </Dot>
                 </Container>
-
-
             </Conatain>
-            <Dot>
-                {Array.from({ length: 4 }).map((item, index) => (
-                    <li
-                        onClick={() => moveDot(index)}
-                        style={{ background: `${currentIndex === index ? '#2d2d2d' : '#eee'}`, padding: `${currentIndex === index ? '0 5px' : ''}`, borderRadius: `${currentIndex === index ? '20px' : '50%'}` }}
-                    ></li>
-                ))}
-            </Dot>
         </>
     )
 }
@@ -121,7 +119,7 @@ const Conatain = styled.div`
 
 const Container = styled.div`
     position:relative;
-    max-width:100%;
+    width:100%;
     height:100%;
     overflow:hidden;
 `
@@ -147,7 +145,7 @@ const One = styled.div`
 `
 
 const OneWrap = styled.div`
-    max-width:1320px;
+    width:1320px;
     margin: 0 auto;
     height:100%;    
     position:relative;

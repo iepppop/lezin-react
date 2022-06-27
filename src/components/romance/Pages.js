@@ -36,7 +36,7 @@ const Pages = () => {
 export default Pages;
 
 const Container = styled.div`
-    max-width:1320px;
+    width:1320px;
     margin: 0 auto;
     height:auto;
     position:relative;

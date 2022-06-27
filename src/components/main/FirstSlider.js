@@ -196,9 +196,10 @@ const ContentWrap = styled.div`
 `
 
 const Box = styled.div`
-    max-width:1320px;
+    width:1320px;
     margin: 30px auto;
-    padding: 0 20px;    height:100%;
+    padding: 0 20px;    
+    height:100%;
 `
 
 const BoxWrap = styled.div`
@@ -229,12 +230,6 @@ const Effect = styled.div`
     right:-300px;
     top:-50px;
     transition: transform 500ms ease-in-out 25ms;
-
-    @media only screen and (max-width: 768px) {
-        img{
-            width:1000px;
-        }
-    }
 `
 
 const SliderWrap = styled.div`
@@ -242,11 +237,6 @@ const SliderWrap = styled.div`
     height:100%;
     cursor: pointer;
     position:absolute;
-
-    @media only screen and (max-width: 768px) {
-        height:400px;
-    }
-
 
     :hover ${Effect}{
         // transform: translateX(55px) translateY(20px);
@@ -281,11 +271,6 @@ const Imgbox = styled.div`
         height:100%;
         vertical-align:bottom;
     }
-
-    @media only screen and (max-width: 768px) {
-        width:300px;
-        right:300px;
-    }
 `
 
 const Contentbox = styled.div`
@@ -297,29 +282,17 @@ const Contentbox = styled.div`
     position:absolute;
     left:130px;
 
-    @media only screen and (max-width: 768px) {
-        left:50px;
-    }
-
     h1{
         font-size:19px;
         font-weight: 700;
         color:#181818;
         margin:0 0 20px 0;
-
-        @media only screen and (max-width: 768px) {
-            font-size:12px;
-        }
     }
 
     h2{
         font-size:30px;
         font-weight: 400;
-        color:#181818;
-
-        @media only screen and (max-width: 768px) {
-            font-size:22px;
-        }
+        color:#181818;s
     }
 
     span{
@@ -327,14 +300,6 @@ const Contentbox = styled.div`
         position:absolute;
         z-index:99;
         bottom:120px;
-
-        @media only screen and (max-width: 768px) {
-            bottom:160px;
-
-            img{
-                width:100px;
-            }
-        }
     }
 `
 
@@ -352,10 +317,6 @@ const DotsWrap = styled.div`
     left:133px;
     z-index:2;
     display:flex;
-    @media only screen and (max-width: 768px) {
-        display:none;
-    }
-    
 `
 
 const Dots = styled.div`

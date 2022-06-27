@@ -93,7 +93,7 @@ const ContainBg = styled.div`
 `
 
 const Wrap = styled.div`
-    max-width:1320px;
+    width:1320px;
     height: 100%;
     margin: 0 auto;
     padding:0 20px;
@@ -122,11 +122,6 @@ const WrapUl = styled.ul`
     display:flex;
     align-items: center;
     margin:0 0 0 30px;
-
-    @media only screen and (max-width: 768px) {
-        width: 100%;
-        font-size:11px;
-      }
     
     li{
         padding:0 20px;

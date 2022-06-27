@@ -17,7 +17,7 @@ const Banner = () => {
 export default Banner;
 
 const Contain = styled.div`
-    max-width:1320px;
+    width:1320px;
     margin:120px auto 0 auto; 
     padding: 0 20px;  
     height:200px;
